@@ -60,32 +60,32 @@
 
         <div class="container">
             <div class="row">
-                <a id="dossier" href="#" class="col-md-2 color column-space">
+                <a id="dossier" href="#" class="color column-space col-sm">
                     Mon dossier
                 </a>
 
-                <a id="sms" href="#" class="col-md-2 color column-space">
+                <a id="sms" href="#" class="color column-space col-sm">
                     Alert SMS
                 </a>
 
-                <a id="actu" href="#" class="col-md-2 color column-space">
+                <a id="actu" href="#" class="color column-space col-sm">
                     Actualité & documents
                 </a>
             </div>
 
             <div class="row">
                 <a id="emploi_univ" href="https://ent.univ-artois.fr/esup-news/feeds/pub/item?c=1&itemID=34"
-                   target="_blank" class="col-md-2 color column-space">
+                   target="_blank" class="color column-space col-sm">
                     Offres
                     d'emploi de l'université
                 </a>
                 <a id="career" href="https://univ-artois.jobteaser.com/fr/users/sso_activation" target="_blank"
-                   class="col-md-2 color column-space">
+                   class="color column-space col-sm">
                     Career
                     Center
                 </a>
                 <a id="contrat" href="http://conpere.univ-artois.fr/etudiants/accueil" target="_blank"
-                   class="col-md-2 color column-space">
+                   class="color column-space col-sm">
                     Contrat
                     pédagogique
                 </a>
@@ -95,18 +95,18 @@
             <div class="row">
                 <a id="convention"
                    href="http://pstagev2.univ-artois.fr/esup-pstage/stylesheets/stage/welcome.xhtml;jsessionid=4ACEDAF24617B6ADFCC0D11E2D67D7EC"
-                   target="_blank" class="col-md-2 color column-space">
+                   target="_blank" class="color column-space col-sm">
                     Convention de stage
                 </a>
 
                 <a id="transferts"
                    href="https://esup-transferts.univ-artois.fr/esup-transferts/stylesheets/depart/welcome.xhtml?ticket=ST-5592-9gScmVLfJSOsJsrAOK91-auth.univ-artois.fr"
-                   target="_blank" class="col-md-2 color column-space">
+                   target="_blank" class="color column-space col-sm">
                     Transferts-departs
                 </a>
 
                 <a id="toeic" href="http://www.univ-artois.fr/inscription-au-toeic" target="_blank"
-                   class="col-md-2 color column-space">
+                   class="color column-space col-sm">
                     Inscription au
                     TOEIC
                 </a>
@@ -115,17 +115,17 @@
             <div class="row">
                 <a id="ia_web"
                    href="http://www.univ-artois.fr/formations/admission-inscription-transfert/reinscription"
-                   target="_blank" class="col-md-2 color column-space">
+                   target="_blank" class="color column-space col-sm">
                     IA Web
                 </a>
 
                 <a id="ip_web" href="http://www.univ-artois.fr/inscription-pedagogique" target="_blank"
-                   class="col-md-2 color column-space">
+                   class="color column-space col-sm">
                     IP Web
                 </a>
 
                 <a id="inscription_cles" href="http://www.univ-artois.fr/inscription-au-cles" target="_blank"
-                   class="col-md-2 color column-space">
+                   class="color column-space col-sm">
                     Inscription
                     au
                     CLES
