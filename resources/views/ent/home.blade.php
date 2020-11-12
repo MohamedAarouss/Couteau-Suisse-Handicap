@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
+    <script src="../../js/dragndrop.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -19,6 +23,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     @livewireStyles
+    <script>
+        $( function() {
+            $( "a" ).draggable();
+        } );
+    </script>
 
 </head>
 
@@ -30,8 +39,9 @@
     </x-slot>
 
     <body>
+    <div class="box"></div>
     <div>
-        <div id="campus_en_ligne">
+        <div  id="campus_en_ligne">
             <a id="campus" href="/campus">Campus en ligne</a>
 
             <!-- Importation du component Counter
@@ -200,5 +210,11 @@
     a:link {
         text-decoration: none;
         color: black;
+    }
+    .box{
+        width: 150px;
+        height: 150px;
+        background-color: #a0aec0;
+        border: 5px solid #1a202c ;
     }
 </style>
