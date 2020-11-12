@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,10 +21,7 @@
 
     <!-- Styles -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    @livewireStyles
 
 </head>
 
@@ -42,7 +39,7 @@
             </div>
 
 
-            <div class="col-md-4 d-flex flex-center flex-wrap sortable">
+            <div id="sortableSchooling" class="row connectedSortable m-4" style="border: solid 1px">
                 <div class="text-center red m-2 square">
                     <a id="dossier" href="#">
                         Mon dossier
@@ -138,7 +135,7 @@
             <livewire:counter/>
             -->
 
-            <div class="col-md-4 d-flex flex-center flex-wrap sortable">
+            <div id="sortableCampus" class="row connectedSortable m-4" style="border: solid 1px">
                 <div class="green m-2 square">
                     <a id="moodle" href="https://moodle.univ-artois.fr/cours/"
                        target="_blank">
@@ -185,7 +182,7 @@
             </h2>
 
 
-            <div class="col-md-4 d-flex flex-center flex-wrap sortable">
+            <div id="sortableHelp" class="row connectedSortable m-4" style="border: solid 1px">
                 <div class="grey m-2 square">
                     <a id="tuto"
                        href="http://esupweb.univ-artois.fr/esup/tutos/etudiant/co/00a_guideWeb.html">Tutoriels</a>
@@ -198,7 +195,7 @@
                 Bureau virtuel
             </h2>
 
-            <div class="col-md-4 d-flex flex-center flex-wrap sortable">
+            <div id="sortableOffice" class="row connectedSortable m-4" style="border: solid 1px">
                 <div class="orange m-2 square">
                     <a id="webmail" class="sortable orange column-space col-sm" href="https://wmailetu.univ-artois.fr/"
                        target="_blank">Mon webmail</a>
@@ -232,7 +229,7 @@
                 Intranet
             </h2>
 
-            <div class="col-md-4 d-flex flex-center flex-wrap sortable">
+            <div id="sortableIntranet" class="row connectedSortable m-4" style="border: solid 1px">
                 <div class="purple ge m-2 square">
                     <a id="net" href="http://intranet.univ-artois.fr/etudiant"
                        target="_blank">Intranet</a>
@@ -245,7 +242,7 @@
                 Documentation
             </h2>
 
-            <div class="col-md-4 d-flex flex-center flex-wrap sortable">
+            <div id="sortableDocumentation" class="row connectedSortable m-4" style="border: solid 1px">
                 <div class="blue m-2 square">
                     <a id="encyclopedie"
                        href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
@@ -265,14 +262,17 @@
             </div>
         </div>
     </div>
-    @livewireScripts
     </body>
 </x-app-layout>
 
 </html>
 
 <script>
-    $(".sortable").sortable();
+    $("#sortableSchooling, #sortableCampus, #sortableHelp, #sortableOffice, #sortableIntranet, #sortableDocumentation").sortable({
+        connectWith: ".connectedSortable",
+        placeholder: 'drop-placeholder'
+    });
+
 </script>
 
 <style>
@@ -328,5 +328,15 @@
         font-size: 15px;
         font-weight: bold;
         font-family: Nunito, serif;
+    }
+
+    .drop-placeholder {
+        background-color: lightgray;
+        height: 120px;
+        width: 120px;
+        border-radius: 4px;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        line-height: 1.2em;
     }
 </style>
