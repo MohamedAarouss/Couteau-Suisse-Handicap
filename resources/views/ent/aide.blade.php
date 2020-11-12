@@ -23,7 +23,7 @@
     @endif
 
     <div id="aide">
-        <a id="retour" href="/home">Retour au tableau de bord</a>
+        <a id="retour" href="/ent/home">Retour au tableau de bord</a>
         <br>
         <a id="tuto" href="http://esupweb.univ-artois.fr/esup/tutos/etudiant/co/00a_guideWeb.html">Tutoriels</a>
 

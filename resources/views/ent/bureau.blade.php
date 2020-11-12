@@ -24,7 +24,7 @@
     @endif
 
     <div id="bureau_virtuel">
-        <a id="retour" href="/home">Retour au tableau de bord</a>
+        <a id="retour" href="/ent/home">Retour au tableau de bord</a>
         <br>
         <a id="webmail" href="https://wmailetu.univ-artois.fr/" target="_blank">Mon webmail</a>
         <br>
