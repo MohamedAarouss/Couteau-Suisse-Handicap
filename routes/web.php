@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/home', function () {
@@ -38,7 +38,7 @@ Route::get('/bureau_virtuel', function () {
 
 Route::get('/documentation',function(){
     return view('ent/documentation');
-});
+});*/
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
