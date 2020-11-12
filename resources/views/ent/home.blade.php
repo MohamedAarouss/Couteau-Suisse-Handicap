@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -20,13 +17,7 @@
             integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
             crossorigin="anonymous">
     </script>
-
-    <script>
-        $( function() {
-            $( "a" ).draggable();
-        } );
-
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 
     <!-- Styles -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -34,7 +25,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     @livewireStyles
-
 
 </head>
 
@@ -44,196 +34,235 @@
             {{ __('ENT') }}
         </h2>
     </x-slot>
+    <div class="super"></div>
 
-    <body>
-    <div id="box"></div>
     <div>
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            Scolarité
-        </h2>
-
         <div class="container">
-            <div class="row">
-                <a id="dossier" href="#" class="red column-space col-sm">
-                    Mon dossier
-                </a>
-
-                <a id="sms" href="#" class="red column-space col-sm">
-                    Alert SMS
-                </a>
-
-                <a id="actu" href="#" class="red column-space col-sm">
-                    Actualité & documents
-                </a>
-            </div>
-
-            <div class="row">
-                <a id="emploi_univ" href="https://ent.univ-artois.fr/esup-news/feeds/pub/item?c=1&itemID=34"
-                   target="_blank" class="red column-space col-sm">
-                    Offres
-                    d'emploi de l'université
-                </a>
-                <a id="career" href="https://univ-artois.jobteaser.com/fr/users/sso_activation" target="_blank"
-                   class="red column-space col-sm">
-                    Career
-                    Center
-                </a>
-                <a id="contrat" href="http://conpere.univ-artois.fr/etudiants/accueil" target="_blank"
-                   class="red column-space col-sm">
-                    Contrat
-                    pédagogique
-                </a>
+            <div class="font-semibold text-xl text-gray-800">
+                Scolarité
             </div>
 
 
-            <div class="row">
-                <a id="convention"
-                   href="http://pstagev2.univ-artois.fr/esup-pstage/stylesheets/stage/welcome.xhtml;jsessionid=4ACEDAF24617B6ADFCC0D11E2D67D7EC"
-                   target="_blank" class="red column-space col-sm">
-                    Convention de stage
-                </a>
+            <div class="col-md-4 d-flex flex-center flex-wrap sortable">
+                <div class="text-center red m-2 square">
+                    <a id="dossier" href="#">
+                        Mon dossier
+                    </a>
+                </div>
 
-                <a id="transferts"
-                   href="https://esup-transferts.univ-artois.fr/esup-transferts/stylesheets/depart/welcome.xhtml?ticket=ST-5592-9gScmVLfJSOsJsrAOK91-auth.univ-artois.fr"
-                   target="_blank" class="red column-space col-sm">
-                    Transferts-departs
-                </a>
+                <div class="red m-2 square">
+                    <a id="sms" href="#">
+                        Alert SMS
+                    </a>
+                </div>
 
-                <a id="toeic" href="http://www.univ-artois.fr/inscription-au-toeic" target="_blank"
-                   class="red column-space col-sm">
-                    Inscription au
-                    TOEIC
-                </a>
-            </div>
+                <div class="red m-2 square">
+                    <a id="actu" href="#">
+                        Actualité & documents
+                    </a>
+                </div>
 
-            <div class="row">
-                <a id="ia_web"
-                   href="http://www.univ-artois.fr/formations/admission-inscription-transfert/reinscription"
-                   target="_blank" class="red column-space col-sm">
-                    IA Web
-                </a>
+                <div class="red m-2 square">
+                    <a id="emploi_univ" href="https://ent.univ-artois.fr/esup-news/feeds/pub/item?c=1&itemID=34"
+                       target="_blank">
+                        Offres
+                        d'emploi de l'université
+                    </a>
+                </div>
 
-                <a id="ip_web" href="http://www.univ-artois.fr/inscription-pedagogique" target="_blank"
-                   class="red column-space col-sm">
-                    IP Web
-                </a>
+                <div class="red m-2 square">
+                    <a id="career" href="https://univ-artois.jobteaser.com/fr/users/sso_activation" target="_blank">
+                        Career
+                        Center
+                    </a>
+                </div>
 
-                <a id="inscription_cles" href="http://www.univ-artois.fr/inscription-au-cles" target="_blank"
-                   class="red column-space col-sm">
-                    Inscription
-                    au
-                    CLES
-                </a>
+                <div class="red m-2 square">
+                    <a id="contrat" href="http://conpere.univ-artois.fr/etudiants/accueil" target="_blank">
+                        Contrat pédagogique
+                    </a>
+                </div>
+
+                <div class="red m-2 square">
+                    <a id="convention"
+                       href="http://pstagev2.univ-artois.fr/esup-pstage/stylesheets/stage/welcome.xhtml;jsessionid=4ACEDAF24617B6ADFCC0D11E2D67D7EC"
+                       target="_blank">
+                        Convention de stage
+                    </a>
+                </div>
+
+                <div class="red m-2 square">
+                    <a id="transferts"
+                       href="https://esup-transferts.univ-artois.fr/esup-transferts/stylesheets/depart/welcome.xhtml?ticket=ST-5592-9gScmVLfJSOsJsrAOK91-auth.univ-artois.fr"
+                       target="_blank">
+                        Transferts-departs
+                    </a>
+                </div>
+
+                <div class="red m-2 square">
+                    <a id="toeic" href="http://www.univ-artois.fr/inscription-au-toeic" target="_blank">
+                        Inscription au
+                        TOEIC
+                    </a>
+                </div>
+
+                <div class="red m-2 square">
+                    <a id="ia_web"
+                       href="http://www.univ-artois.fr/formations/admission-inscription-transfert/reinscription"
+                       target="_blank">
+                        IA Web
+                    </a>
+                </div>
+
+                <div class="red m-2 square">
+                    <a id="ip_web" href="http://www.univ-artois.fr/inscription-pedagogique" target="_blank">
+                        IP Web
+                    </a>
+                </div>
+
+                <div class="red m-2 square">
+                    <a id="inscription_cles" href="http://www.univ-artois.fr/inscription-au-cles" target="_blank">
+                        Inscription
+                        au
+                        CLES
+                    </a>
+                </div>
             </div>
         </div>
 
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            Campus en ligne
-        </h2>
-
-        <!-- Importation du component Counter
-        <livewire:counter/>
-        -->
-
         <div class="container">
-            <div class="row">
-                <a id="moodle" class="green column-space col-sm" href="https://moodle.univ-artois.fr/cours/"
-                   target="_blank">
-                    Moodle
-                </a>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Campus en ligne
+            </h2>
 
-                <a id="maison_des_langues" class="green column-space col-sm"
-                   href="http://www.univ-artois.fr/formations/la-maison-des-langues"
-                   target="_blank">Maison
-                    des langues</a>
+            <!-- Importation du component Counter
+            <livewire:counter/>
+            -->
 
-                <a id="cles" class="green column-space col-sm"
-                   href="http://www.univ-artois.fr/formations/certifications/cles"
-                   target="_blank">CLES</a>
-            </div>
+            <div class="col-md-4 d-flex flex-center flex-wrap sortable">
+                <div class="green m-2 square">
+                    <a id="moodle" href="https://moodle.univ-artois.fr/cours/"
+                       target="_blank">
+                        Moodle
+                    </a>
+                </div>
 
-            <div class="row">
-                <a id="ressource_pedagogique" class="green column-space col-sm"
-                   href="http://www.sup-numerique.gouv.fr/" target="_blank">Ressources
-                    pédagogiques</a>
+                <div class="green m-2 square">
+                    <a id="maison_des_langues"
+                       href="http://www.univ-artois.fr/formations/la-maison-des-langues"
+                       target="_blank">Maison
+                        des langues</a>
+                </div>
 
-                <a id="covoit_artois" class="green column-space col-sm"
-                   href="http://covoiturage.univ-artois.fr/covoiturage/mon-compte"
-                   target="_blank">CoVoit'Artois</a>
+                <div class="green m-2 square">
+                    <a id="cles"
+                       href="http://www.univ-artois.fr/formations/certifications/cles"
+                       target="_blank">CLES</a>
+                </div>
 
-                <a id="sport" class="green column-space col-sm"
-                   href="https://atlas.univ-artois.fr/atlas_etu/mes_inscriptions.php" target="_blank">Inscriptions
-                    Activités Sportives</a>
+                <div class="green m-2 square">
+                    <a id="ressource_pedagogique"
+                       href="http://www.sup-numerique.gouv.fr/" target="_blank">Ressources
+                        pédagogiques</a>
+                </div>
+
+                <div class="green m-2 square">
+                    <a id="covoit_artois"
+                       href="http://covoiturage.univ-artois.fr/covoiturage/mon-compte"
+                       target="_blank">CoVoit'Artois</a>
+                </div>
+
+                <div class="green m-2 square">
+                    <a id="sport"
+                       href="https://atlas.univ-artois.fr/atlas_etu/mes_inscriptions.php" target="_blank">Inscriptions
+                        Activités Sportives</a>
+                </div>
             </div>
         </div>
 
-
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            Aide
-        </h2>
-
         <div class="container">
-            <div class="row">
-                <a id="tuto" class="grey column-space col-sm"
-                   href="http://esupweb.univ-artois.fr/esup/tutos/etudiant/co/00a_guideWeb.html">Tutoriels</a>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Aide
+            </h2>
+
+
+            <div class="col-md-4 d-flex flex-center flex-wrap sortable">
+                <div class="grey m-2 square">
+                    <a id="tuto"
+                       href="http://esupweb.univ-artois.fr/esup/tutos/etudiant/co/00a_guideWeb.html">Tutoriels</a>
+                </div>
             </div>
         </div>
 
-
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            Bureau virtuel
-        </h2>
-
         <div class="container">
-            <div class="row">
-                <a id="webmail" class="orange column-space col-sm" href="https://wmailetu.univ-artois.fr/"
-                   target="_blank">Mon webmail</a>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Bureau virtuel
+            </h2>
 
-                <a id="annuaire" class="orange column-space col-sm" href="#">Annuaire</a>
+            <div class="col-md-4 d-flex flex-center flex-wrap sortable">
+                <div class="orange m-2 square">
+                    <a id="webmail" class="sortable orange column-space col-sm" href="https://wmailetu.univ-artois.fr/"
+                       target="_blank">Mon webmail</a>
+                </div>
 
-                <a id="mdp" class="orange column-space col-sm" href="https://monmotdepasse.univ-artois.fr/"
-                   target="_blank">Changement de mot de
-                    passe</a>
-            </div>
-            <div class="row">
-                <a id="liste" class="orange column-space col-sm"
-                   href="http://weblistes.univ-artois.fr/sympa/?ticket=ST-5314-fyHW7YtHOI0cVkVw6txr-auth.univ-artois.fr"
-                   target="_blank">Listes de diffusion</a>
+                <div class="orange m-2 square">
+                    <a id="annuaire" href="#">Annuaire</a>
+                </div>
 
-                <a id="zoom" class="orange column-space col-sm"
-                   href="http://esupweb.univ-artois.fr/esup/pages/zoom/" target="_blank">Zoom</a>
-            </div>
-        </div>
+                <div class="orange m-2 square">
+                    <a id="mdp" href="https://monmotdepasse.univ-artois.fr/"
+                       target="_blank">Changement de mot de
+                        passe</a>
+                </div>
 
+                <div class="orange m-2 square">
+                    <a id="liste"
+                       href="http://weblistes.univ-artois.fr/sympa/?ticket=ST-5314-fyHW7YtHOI0cVkVw6txr-auth.univ-artois.fr"
+                       target="_blank">Listes de diffusion</a>
+                </div>
 
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            Intranet
-        </h2>
-
-        <div class="container">
-            <div class="row">
-                <a id="net" class="purple column-space col-sm" href="http://intranet.univ-artois.fr/etudiant"
-                   target="_blank">Intranet</a>
+                <div class="orange m-2 square">
+                    <a id="zoom"
+                       href="http://esupweb.univ-artois.fr/esup/pages/zoom/" target="_blank">Zoom</a>
+                </div>
             </div>
         </div>
 
+        <div class="container">
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Intranet
+            </h2>
 
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            Documentation
-        </h2>
+            <div class="col-md-4 d-flex flex-center flex-wrap sortable">
+                <div class="purple ge m-2 square">
+                    <a id="net" href="http://intranet.univ-artois.fr/etudiant"
+                       target="_blank">Intranet</a>
+                </div>
+            </div>
+        </div>
 
         <div class="container">
-            <div class="row">
-                <a id="encyclopedie" class="blue column-space col-sm"
-                   href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
-                   target="_blank">Encyclopaedia Universalis</a>
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+                Documentation
+            </h2>
 
-                <a id="bibliotheque" class="blue column-space col-sm"
-                   href="http://portail-bu.univ-artois.fr/medias/medias.aspx?INSTANCE=exploitation&SSO_FORCELOGON=TRUE&PORTAL_ID=general_portal.xml"
-                   target="_blank">Bibliothèques</a>
+            <div class="col-md-4 d-flex flex-center flex-wrap sortable">
+                <div class="blue m-2 square">
+                    <a id="encyclopedie"
+                       href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
+                       target="_blank">Encyclopaedia Universalis</a>
+                </div>
 
-                <a id="unt" class="blue column-space col-sm" href="http://univ-numerique.fr/"
-                   target="_blank">UNT</a>
+                <div class="blue m-2 square">
+                    <a id="bibliotheque"
+                       href="http://portail-bu.univ-artois.fr/medias/medias.aspx?INSTANCE=exploitation&SSO_FORCELOGON=TRUE&PORTAL_ID=general_portal.xml"
+                       target="_blank">Bibliothèques</a>
+                </div>
+
+                <div class="blue m-2 square">
+                    <a id="unt" href="http://univ-numerique.fr/"
+                       target="_blank">UNT</a>
+                </div>
             </div>
         </div>
     </div>
@@ -242,6 +271,22 @@
 </x-app-layout>
 
 </html>
+
+<script>
+    $(".sortable").sortable({containment:'document'});
+    $(".sortable").draggable({containment:'document', revert:true});
+    $( ".super" ).droppable({
+        drop: function( event, ui ) {
+            alert('drop');
+            $.ajax({
+                'success':function () {
+                    $('.super').append(ui);
+                }
+            });
+
+        }
+    });
+</script>
 
 <style>
     .red {
@@ -288,10 +333,18 @@
         text-decoration: none;
         color: black;
     }
-    #box{
+
+    .square {
+        padding-top: 40px;
+        height: 110px;
+        width: 110px;
+        font-size: 15px;
+        font-weight: bold;
+        font-family: Nunito, serif;
+    }
+    .super{
         width: 150px;
         height: 150px;
-        background-color: #a0aec0;
-        border: 5px solid #1a202c ;
+        background-color: #718096;
     }
 </style>
