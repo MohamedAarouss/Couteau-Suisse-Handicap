@@ -18,6 +18,9 @@
             crossorigin="anonymous">
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"
+            integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA=="
+            crossorigin="anonymous"></script>
 
     <!-- Styles -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -32,33 +35,33 @@
         </h2>
     </x-slot>
 
-    <div>
+    <div class="sortable">
         <div class="container">
-            <div class="font-semibold text-xl text-gray-800">
+            <h2 class="font-semibold text-xl text-gray-800">
                 Scolarité
-            </div>
+                <span class="move">+</span>
+            </h2>
 
-
-            <div id="sortableSchooling" class="row connectedSortable m-4" style="border: solid 1px">
-                <div class="text-center red m-2 square">
+            <div class="row m-4 child-container" style="border: solid 1px">
+                <div class="text-center red m-2 square move">
                     <a id="dossier" href="#">
                         Mon dossier
                     </a>
                 </div>
 
-                <div class="red m-2 square">
+                <div class="red m-2 square move">
                     <a id="sms" href="#">
                         Alert SMS
                     </a>
                 </div>
 
-                <div class="red m-2 square">
+                <div class="red m-2 square move">
                     <a id="actu" href="#">
                         Actualité & documents
                     </a>
                 </div>
 
-                <div class="red m-2 square">
+                <div class="red m-2 square move">
                     <a id="emploi_univ" href="https://ent.univ-artois.fr/esup-news/feeds/pub/item?c=1&itemID=34"
                        target="_blank">
                         Offres
@@ -66,20 +69,20 @@
                     </a>
                 </div>
 
-                <div class="red m-2 square">
+                <div class="red m-2 square move">
                     <a id="career" href="https://univ-artois.jobteaser.com/fr/users/sso_activation" target="_blank">
                         Career
                         Center
                     </a>
                 </div>
 
-                <div class="red m-2 square">
+                <div class="red m-2 square move">
                     <a id="contrat" href="http://conpere.univ-artois.fr/etudiants/accueil" target="_blank">
                         Contrat pédagogique
                     </a>
                 </div>
 
-                <div class="red m-2 square">
+                <div class="red m-2 square move">
                     <a id="convention"
                        href="http://pstagev2.univ-artois.fr/esup-pstage/stylesheets/stage/welcome.xhtml;jsessionid=4ACEDAF24617B6ADFCC0D11E2D67D7EC"
                        target="_blank">
@@ -87,7 +90,7 @@
                     </a>
                 </div>
 
-                <div class="red m-2 square">
+                <div class="red m-2 square move">
                     <a id="transferts"
                        href="https://esup-transferts.univ-artois.fr/esup-transferts/stylesheets/depart/welcome.xhtml?ticket=ST-5592-9gScmVLfJSOsJsrAOK91-auth.univ-artois.fr"
                        target="_blank">
@@ -95,14 +98,14 @@
                     </a>
                 </div>
 
-                <div class="red m-2 square">
+                <div class="red m-2 square move">
                     <a id="toeic" href="http://www.univ-artois.fr/inscription-au-toeic" target="_blank">
                         Inscription au
                         TOEIC
                     </a>
                 </div>
 
-                <div class="red m-2 square">
+                <div class="red m-2 square move">
                     <a id="ia_web"
                        href="http://www.univ-artois.fr/formations/admission-inscription-transfert/reinscription"
                        target="_blank">
@@ -110,13 +113,13 @@
                     </a>
                 </div>
 
-                <div class="red m-2 square">
+                <div class="red m-2 square move">
                     <a id="ip_web" href="http://www.univ-artois.fr/inscription-pedagogique" target="_blank">
                         IP Web
                     </a>
                 </div>
 
-                <div class="red m-2 square">
+                <div class="red m-2 square move">
                     <a id="inscription_cles" href="http://www.univ-artois.fr/inscription-au-cles" target="_blank">
                         Inscription
                         au
@@ -124,68 +127,68 @@
                     </a>
                 </div>
             </div>
+
         </div>
 
         <div class="container">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Campus en ligne
+                <span class="move">+</span>
             </h2>
 
-            <!-- Importation du component Counter
-            <livewire:counter/>
-            -->
-
-            <div id="sortableCampus" class="row connectedSortable m-4" style="border: solid 1px">
-                <div class="green m-2 square">
+            <div class="row m-4 child-container" style="border: solid 1px">
+                <div class="green m-2 square move">
                     <a id="moodle" href="https://moodle.univ-artois.fr/cours/"
                        target="_blank">
                         Moodle
                     </a>
                 </div>
 
-                <div class="green m-2 square">
+                <div class="green m-2 square move">
                     <a id="maison_des_langues"
                        href="http://www.univ-artois.fr/formations/la-maison-des-langues"
                        target="_blank">Maison
                         des langues</a>
                 </div>
 
-                <div class="green m-2 square">
+                <div class="green m-2 square move">
                     <a id="cles"
                        href="http://www.univ-artois.fr/formations/certifications/cles"
                        target="_blank">CLES</a>
                 </div>
 
-                <div class="green m-2 square">
+                <div class="green m-2 square move">
                     <a id="ressource_pedagogique"
                        href="http://www.sup-numerique.gouv.fr/" target="_blank">Ressources
                         pédagogiques</a>
                 </div>
 
-                <div class="green m-2 square">
+                <div class="green m-2 square move">
                     <a id="covoit_artois"
                        href="http://covoiturage.univ-artois.fr/covoiturage/mon-compte"
                        target="_blank">CoVoit'Artois</a>
                 </div>
 
-                <div class="green m-2 square">
+                <div class="green m-2 square move">
                     <a id="sport"
                        href="https://atlas.univ-artois.fr/atlas_etu/mes_inscriptions.php" target="_blank">Inscriptions
                         Activités Sportives</a>
                 </div>
             </div>
+
         </div>
 
         <div class="container">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Aide
+                <span class="move">+</span>
             </h2>
 
-
-            <div id="sortableHelp" class="row connectedSortable m-4" style="border: solid 1px">
-                <div class="grey m-2 square">
-                    <a id="tuto"
-                       href="http://esupweb.univ-artois.fr/esup/tutos/etudiant/co/00a_guideWeb.html">Tutoriels</a>
+            <div class="row m-4 child-container" style="border: solid 1px">
+                <div class="grey m-2 square move">
+                    <a
+                        href="http://esupweb.univ-artois.fr/esup/tutos/etudiant/co/00a_guideWeb.html">Tutoriels
+                    </a>
                 </div>
             </div>
         </div>
@@ -193,33 +196,34 @@
         <div class="container">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Bureau virtuel
+                <span class="move">+</span>
             </h2>
 
-            <div id="sortableOffice" class="row connectedSortable m-4" style="border: solid 1px">
-                <div class="orange m-2 square">
-                    <a id="webmail" class="sortable orange column-space col-sm" href="https://wmailetu.univ-artois.fr/"
+            <div class="row m-4 child-container" style="border: solid 1px">
+                <div class="orange m-2 square move">
+                    <a href="https://wmailetu.univ-artois.fr/"
                        target="_blank">Mon webmail</a>
                 </div>
 
-                <div class="orange m-2 square">
-                    <a id="annuaire" href="#">Annuaire</a>
+                <div class="orange m-2 square move">
+                    <a href="#">Annuaire</a>
                 </div>
 
-                <div class="orange m-2 square">
-                    <a id="mdp" href="https://monmotdepasse.univ-artois.fr/"
+                <div class="orange m-2 square move">
+                    <a href="https://monmotdepasse.univ-artois.fr/"
                        target="_blank">Changement de mot de
                         passe</a>
                 </div>
 
-                <div class="orange m-2 square">
-                    <a id="liste"
-                       href="http://weblistes.univ-artois.fr/sympa/?ticket=ST-5314-fyHW7YtHOI0cVkVw6txr-auth.univ-artois.fr"
-                       target="_blank">Listes de diffusion</a>
+                <div class="orange m-2 square move">
+                    <a
+                        href="http://weblistes.univ-artois.fr/sympa/?ticket=ST-5314-fyHW7YtHOI0cVkVw6txr-auth.univ-artois.fr"
+                        target="_blank">Listes de diffusion</a>
                 </div>
 
-                <div class="orange m-2 square">
-                    <a id="zoom"
-                       href="http://esupweb.univ-artois.fr/esup/pages/zoom/" target="_blank">Zoom</a>
+                <div class="orange m-2 square move">
+                    <a
+                        href="http://esupweb.univ-artois.fr/esup/pages/zoom/" target="_blank">Zoom</a>
                 </div>
             </div>
         </div>
@@ -227,11 +231,12 @@
         <div class="container">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Intranet
+                <span class="move">+</span>
             </h2>
 
-            <div id="sortableIntranet" class="row connectedSortable m-4" style="border: solid 1px">
-                <div class="purple ge m-2 square">
-                    <a id="net" href="http://intranet.univ-artois.fr/etudiant"
+            <div class="row m-4 child-container" style="border: solid 1px">
+                <div class="purple ge m-2 square move">
+                    <a href="http://intranet.univ-artois.fr/etudiant"
                        target="_blank">Intranet</a>
                 </div>
             </div>
@@ -240,27 +245,28 @@
         <div class="container">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Documentation
+                <span class="move">+</span>
             </h2>
 
-            <div id="sortableDocumentation" class="row connectedSortable m-4" style="border: solid 1px">
-                <div class="blue m-2 square">
-                    <a id="encyclopedie"
-                       href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
-                       target="_blank">Encyclopaedia Universalis</a>
+            <div class="row m-4 child-container">
+                <div class="blue m-2 square move">
+                    <a
+                        href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
+                        target="_blank">Encyclopaedia Universalis</a>
                 </div>
 
-                <div class="blue m-2 square">
-                    <a id="bibliotheque"
-                       href="http://portail-bu.univ-artois.fr/medias/medias.aspx?INSTANCE=exploitation&SSO_FORCELOGON=TRUE&PORTAL_ID=general_portal.xml"
+                <div class="blue m-2 square move">
+                    <a href="http://portail-bu.univ-artois.fr/medias/medias.aspx?INSTANCE=exploitation&SSO_FORCELOGON=TRUE&PORTAL_ID=general_portal.xml"
                        target="_blank">Bibliothèques</a>
                 </div>
 
-                <div class="blue m-2 square">
-                    <a id="unt" href="http://univ-numerique.fr/"
+                <div class="blue m-2 square move">
+                    <a href="http://univ-numerique.fr/"
                        target="_blank">UNT</a>
                 </div>
             </div>
         </div>
+        <button class="btn btn-primary" id="save">Save</button>
     </div>
     </body>
 </x-app-layout>
@@ -268,11 +274,41 @@
 </html>
 
 <script>
-    $("#sortableSchooling, #sortableCampus, #sortableHelp, #sortableOffice, #sortableIntranet, #sortableDocumentation").sortable({
+    $(".sortable").sortable({
         connectWith: ".connectedSortable",
-        placeholder: 'drop-placeholder'
+        placeholder: 'movable-placeholder',
+        tolerance: 'pointer',
+        cancel: ".fixed",
+        cursor: 'move',
+        containment: "document",
+        items: "> div",
+        handle: ".move",
+        opacity: 0.7,
+        delay: 150,
+        start: function (e, ui) {
+            ui.placeholder.height(ui.helper.outerHeight());
+        }
     });
 
+    // Sort the children
+    $(".child-container").sortable({
+        items: "> div",
+        tolerance: "pointer",
+        containment: "document",
+        connectWith: '.child-container'
+    });
+
+    /*var savedOrd = $.cookie('sortOrder');
+    if (savedOrd) {
+        $.each(savedOrd.split(','), function (i, e) {
+            $('#' + e).insertAfter('#sortableDocumentation>div:eq(' + i + ')');
+        });
+    }
+
+    $('#save').click(function () {
+        var saveOrd = $('#sortableDocumentation').sortable('toArray');
+        $.cookie('sortOrder', saveOrd);
+    });*/
 </script>
 
 <style>
@@ -330,13 +366,28 @@
         font-family: Nunito, serif;
     }
 
-    .drop-placeholder {
-        background-color: lightgray;
-        height: 120px;
-        width: 120px;
-        border-radius: 4px;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        line-height: 1.2em;
+    .movable-placeholder {
+        background: #ccc;
+        width: auto;
+        height: auto;
+        padding: 20px;
+        margin: 0 0 15px 0;
+        border-style: dashed;
+        border-width: 2px;
+        border-color: #000;
+    }
+
+    .move {
+        cursor: grab;
+    }
+
+    .child-container {
+        border: solid 1px;
+        resize: both;
+        overflow: auto;
+        min-height: 130px;
+        max-height: 505px;
+        min-width: 410px;
+        max-width: 660px;
     }
 </style>
