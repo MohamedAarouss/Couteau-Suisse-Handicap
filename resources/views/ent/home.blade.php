@@ -44,25 +44,25 @@
 
             <div class="row m-4 child-container" style="border: solid 1px">
                 <div class="text-center red m-2 square move">
-                    <a id="dossier" href="#">
+                    <a class="link-size" id="dossier" href="#">
                         Mon dossier
                     </a>
                 </div>
 
                 <div class="red m-2 square move">
-                    <a id="sms" href="#">
+                    <a class="link-size" id="sms" href="#">
                         Alert SMS
                     </a>
                 </div>
 
                 <div class="red m-2 square move">
-                    <a id="actu" href="#">
+                    <a class="link-size" id="actu" href="#">
                         Actualité & documents
                     </a>
                 </div>
 
                 <div class="red m-2 square move">
-                    <a id="emploi_univ" href="https://ent.univ-artois.fr/esup-news/feeds/pub/item?c=1&itemID=34"
+                    <a class="link-size" id="emploi_univ" href="https://ent.univ-artois.fr/esup-news/feeds/pub/item?c=1&itemID=34"
                        target="_blank">
                         Offres
                         d'emploi de l'université
@@ -70,20 +70,20 @@
                 </div>
 
                 <div class="red m-2 square move">
-                    <a id="career" href="https://univ-artois.jobteaser.com/fr/users/sso_activation" target="_blank">
+                    <a class="link-size" id="career" href="https://univ-artois.jobteaser.com/fr/users/sso_activation" target="_blank">
                         Career
                         Center
                     </a>
                 </div>
 
                 <div class="red m-2 square move">
-                    <a id="contrat" href="http://conpere.univ-artois.fr/etudiants/accueil" target="_blank">
+                    <a class="link-size" id="contrat" href="http://conpere.univ-artois.fr/etudiants/accueil" target="_blank">
                         Contrat pédagogique
                     </a>
                 </div>
 
                 <div class="red m-2 square move">
-                    <a id="convention"
+                    <a class="link-size" id="convention"
                        href="http://pstagev2.univ-artois.fr/esup-pstage/stylesheets/stage/welcome.xhtml;jsessionid=4ACEDAF24617B6ADFCC0D11E2D67D7EC"
                        target="_blank">
                         Convention de stage
@@ -91,7 +91,7 @@
                 </div>
 
                 <div class="red m-2 square move">
-                    <a id="transferts"
+                    <a class="link-size" id="transferts"
                        href="https://esup-transferts.univ-artois.fr/esup-transferts/stylesheets/depart/welcome.xhtml?ticket=ST-5592-9gScmVLfJSOsJsrAOK91-auth.univ-artois.fr"
                        target="_blank">
                         Transferts-departs
@@ -99,14 +99,14 @@
                 </div>
 
                 <div class="red m-2 square move">
-                    <a id="toeic" href="http://www.univ-artois.fr/inscription-au-toeic" target="_blank">
+                    <a class="link-size" id="toeic" href="http://www.univ-artois.fr/inscription-au-toeic" target="_blank">
                         Inscription au
                         TOEIC
                     </a>
                 </div>
 
                 <div class="red m-2 square move">
-                    <a id="ia_web"
+                    <a class="link-size" id="ia_web"
                        href="http://www.univ-artois.fr/formations/admission-inscription-transfert/reinscription"
                        target="_blank">
                         IA Web
@@ -114,13 +114,13 @@
                 </div>
 
                 <div class="red m-2 square move">
-                    <a id="ip_web" href="http://www.univ-artois.fr/inscription-pedagogique" target="_blank">
+                    <a class="link-size" id="ip_web" href="http://www.univ-artois.fr/inscription-pedagogique" target="_blank">
                         IP Web
                     </a>
                 </div>
 
                 <div class="red m-2 square move">
-                    <a id="inscription_cles" href="http://www.univ-artois.fr/inscription-au-cles" target="_blank">
+                    <a class="link-size" id="inscription_cles" href="http://www.univ-artois.fr/inscription-au-cles" target="_blank">
                         Inscription
                         au
                         CLES
@@ -138,39 +138,39 @@
 
             <div class="row m-4 child-container" style="border: solid 1px">
                 <div class="green m-2 square move">
-                    <a id="moodle" href="https://moodle.univ-artois.fr/cours/"
+                    <a class="link-size" id="moodle" href="https://moodle.univ-artois.fr/cours/"
                        target="_blank">
                         Moodle
                     </a>
                 </div>
 
                 <div class="green m-2 square move">
-                    <a id="maison_des_langues"
+                    <a class="link-size" id="maison_des_langues"
                        href="http://www.univ-artois.fr/formations/la-maison-des-langues"
                        target="_blank">Maison
                         des langues</a>
                 </div>
 
                 <div class="green m-2 square move">
-                    <a id="cles"
+                    <a class="link-size" id="cles"
                        href="http://www.univ-artois.fr/formations/certifications/cles"
                        target="_blank">CLES</a>
                 </div>
 
                 <div class="green m-2 square move">
-                    <a id="ressource_pedagogique"
+                    <a class="link-size" id="ressource_pedagogique"
                        href="http://www.sup-numerique.gouv.fr/" target="_blank">Ressources
                         pédagogiques</a>
                 </div>
 
                 <div class="green m-2 square move">
-                    <a id="covoit_artois"
+                    <a class="link-size" id="covoit_artois"
                        href="http://covoiturage.univ-artois.fr/covoiturage/mon-compte"
                        target="_blank">CoVoit'Artois</a>
                 </div>
 
                 <div class="green m-2 square move">
-                    <a id="sport"
+                    <a class="link-size" id="sport"
                        href="https://atlas.univ-artois.fr/atlas_etu/mes_inscriptions.php" target="_blank">Inscriptions
                         Activités Sportives</a>
                 </div>
@@ -186,8 +186,7 @@
 
             <div class="row m-4 child-container" style="border: solid 1px">
                 <div class="grey m-2 square move">
-                    <a
-                        href="http://esupweb.univ-artois.fr/esup/tutos/etudiant/co/00a_guideWeb.html">Tutoriels
+                    <a class="link-size" href="http://esupweb.univ-artois.fr/esup/tutos/etudiant/co/00a_guideWeb.html">Tutoriels
                     </a>
                 </div>
             </div>
@@ -201,29 +200,27 @@
 
             <div class="row m-4 child-container" style="border: solid 1px">
                 <div class="orange m-2 square move">
-                    <a href="https://wmailetu.univ-artois.fr/"
+                    <a class="link-size" href="https://wmailetu.univ-artois.fr/"
                        target="_blank">Mon webmail</a>
                 </div>
 
                 <div class="orange m-2 square move">
-                    <a href="#">Annuaire</a>
+                    <a class="link-size" href="#">Annuaire</a>
                 </div>
 
                 <div class="orange m-2 square move">
-                    <a href="https://monmotdepasse.univ-artois.fr/"
+                    <a class="link-size" href="https://monmotdepasse.univ-artois.fr/"
                        target="_blank">Changement de mot de
                         passe</a>
                 </div>
 
                 <div class="orange m-2 square move">
-                    <a
-                        href="http://weblistes.univ-artois.fr/sympa/?ticket=ST-5314-fyHW7YtHOI0cVkVw6txr-auth.univ-artois.fr"
+                    <a class="link-size" href="http://weblistes.univ-artois.fr/sympa/?ticket=ST-5314-fyHW7YtHOI0cVkVw6txr-auth.univ-artois.fr"
                         target="_blank">Listes de diffusion</a>
                 </div>
 
                 <div class="orange m-2 square move">
-                    <a
-                        href="http://esupweb.univ-artois.fr/esup/pages/zoom/" target="_blank">Zoom</a>
+                    <a class="link-size" href="http://esupweb.univ-artois.fr/esup/pages/zoom/" target="_blank">Zoom</a>
                 </div>
             </div>
         </div>
@@ -236,7 +233,7 @@
 
             <div class="row m-4 child-container" style="border: solid 1px">
                 <div class="purple ge m-2 square move">
-                    <a href="http://intranet.univ-artois.fr/etudiant"
+                    <a class="link-size" href="http://intranet.univ-artois.fr/etudiant"
                        target="_blank">Intranet</a>
                 </div>
             </div>
@@ -250,18 +247,17 @@
 
             <div class="row m-4 child-container">
                 <div class="blue m-2 square move">
-                    <a
-                        href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
+                    <a class="link-size" href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
                         target="_blank">Encyclopaedia Universalis</a>
                 </div>
 
                 <div class="blue m-2 square move">
-                    <a href="http://portail-bu.univ-artois.fr/medias/medias.aspx?INSTANCE=exploitation&SSO_FORCELOGON=TRUE&PORTAL_ID=general_portal.xml"
+                    <a class="link-size" href="http://portail-bu.univ-artois.fr/medias/medias.aspx?INSTANCE=exploitation&SSO_FORCELOGON=TRUE&PORTAL_ID=general_portal.xml"
                        target="_blank">Bibliothèques</a>
                 </div>
 
                 <div class="blue m-2 square move">
-                    <a href="http://univ-numerique.fr/"
+                    <a class="link-size" href="http://univ-numerique.fr/"
                        target="_blank">UNT</a>
                 </div>
             </div>
@@ -389,5 +385,9 @@
         max-height: 505px;
         min-width: 410px;
         max-width: 660px;
+    }
+
+    .link-size {
+        padding: 8px;
     }
 </style>
