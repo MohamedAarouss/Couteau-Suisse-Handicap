@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\News;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder {
@@ -11,6 +13,7 @@ class DatabaseSeeder extends Seeder {
      * @return void
      */
     public function run() {
-        \App\Models\User::factory(1)->create();
+        User::factory(1)->create();
+        News::factory(100)->create();
     }
 }

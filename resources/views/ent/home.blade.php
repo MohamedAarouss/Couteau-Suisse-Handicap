@@ -262,7 +262,8 @@
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary" id="save">Save</button>
+        <button class="btn btn-primary" id="btnSave">Save</button>
+        <button class="btn btn-primary" id="btnClear">ClearSave</button>
     </div>
     </body>
 </x-app-layout>
@@ -270,6 +271,7 @@
 </html>
 
 <script>
+    // Sort the parents
     $(".sortable").sortable({
         connectWith: ".connectedSortable",
         placeholder: 'movable-placeholder',
@@ -281,7 +283,7 @@
         handle: ".move",
         opacity: 0.7,
         delay: 150,
-        start: function (e, ui) {
+        start: (e, ui) => {
             ui.placeholder.height(ui.helper.outerHeight());
         }
     });
@@ -294,17 +296,65 @@
         connectWith: '.child-container'
     });
 
-    /*var savedOrd = $.cookie('sortOrder');
-    if (savedOrd) {
-        $.each(savedOrd.split(','), function (i, e) {
-            $('#' + e).insertAfter('#sortableDocumentation>div:eq(' + i + ')');
-        });
-    }
 
-    $('#save').click(function () {
-        var saveOrd = $('#sortableDocumentation').sortable('toArray');
-        $.cookie('sortOrder', saveOrd);
-    });*/
+    $(function () {
+
+        $(".sortable").sortable({
+            update: function (event, ui) {
+                save1();
+            }
+        });
+        $(".sortable").disableSelection();
+        $("#btnClear").attr("Disabled", "Disabled");
+
+        // get shopping list from localStorage or create the list if it's not there
+        var shopping;
+        if (!localStorage.shoppingText) {
+            // make an array of shopping items
+            //shopping = ["Apples", "Avocados", "Pears", "Plums", "Tomatoes", "Watermelons", "Pineapples", "Asparagus", "Broccoli", "Salad Greens", "Bread", "Laundry Soap", "Dish Soap", "Tofu", "Hand Soap", "Shampoo", "Oranges", "Kitchen Bags", "Batteries"];
+            //shopping.sort();
+        } else {
+            var shoppingText = localStorage.shoppingText;
+            shopping = shoppingText.split(",");
+        }
+
+        /* build the list of shopping items */
+        // a temporary variable in which to build a the list items
+        var textToInsert = "";
+        // using $.each() to iterate over the collection
+        $.each(shopping, function (count, item) {
+            textToInsert += "<li  class=\"ui-state-default\"><span class=\"ui-icon ui-icon-arrowthick-2-n-s\"></span>" + item + "</li>";
+        });
+        // add the string with all the items to the list
+        $(".sortable").append(textToInsert);
+
+        $("#btnSave").click(function (event) {
+            // not really required because we will save whenever we update the list
+            event.preventDefault();
+            save1();
+        });
+
+        $("#btnClear").click(function (event) {
+            // clear localStorage so we can start fresh
+            event.preventDefault();
+            localStorage.removeItem("shoppingText");
+            $("#btnSave").removeAttr("Disabled");
+            $(this).attr("Disabled", "Disabled");
+        });
+
+        function save1() {
+            // put items in sortable into an array
+            var theArray = [];
+            $("div", ".sortable").each(function (count, item) {
+                theArray[count] = $(this).text();
+            });
+            var shoppingText = theArray.toString();
+            localStorage.setItem("shoppingText", shoppingText);
+            $("#btnClear").removeAttr("Disabled");
+            $("#btnSave").attr("Disabled", "Disabled");
+            //console.log(localStorage.shoppingText);
+        }
+    });
 </script>
 
 <style>
