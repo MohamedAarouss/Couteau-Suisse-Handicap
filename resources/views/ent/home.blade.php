@@ -337,6 +337,7 @@
 <script>
 
     $(document).ready(function () {
+        var initialLocaleCode = 'fr';
 
         var SITEURL = "{{url('/')}}";
 
@@ -353,21 +354,18 @@
 
 
         var calendar = $('#calendar').fullCalendar({
+
             header: {
                 left: 'prev,next today',
                 center: 'title',
-                right: 'month,basicWeek,basicDay'
+                right: 'month,basicWeek,basicDay,listMonth'
             },
             navLinks: true, // can click day/week names to navigate views
             editable: true,
             eventLimit: true, // allow "more" link when too many events
-            eventResize: function(info) {
-                alert(info.event.title + " end is now " + info.event.end.toISOString());
+            locale: initialLocaleCode,
+            dayMaxEvents: true,
 
-                if (!confirm("is this okay?")) {
-                    info.revert();
-                }
-            },
 
 
             events: SITEURL + "/fullcalendareventmaster",
