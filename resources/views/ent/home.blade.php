@@ -24,13 +24,16 @@
 
 
     <!--Calendar-->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.js"></script>
+
 
 
     <!-- Styles -->
@@ -48,6 +51,7 @@
             {{ __('ENT') }}
         </h2>
     </x-slot>
+
 
     <div class="container">
 
@@ -329,6 +333,7 @@
         $.cookie('sortOrder', saveOrd);
     });*/
 </script>
+
 <script>
 
     $(document).ready(function () {
@@ -348,16 +353,29 @@
 
 
         var calendar = $('#calendar').fullCalendar({
-
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,basicWeek,basicDay'
+            },
+            navLinks: true, // can click day/week names to navigate views
             editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            eventResize: function(info) {
+                alert(info.event.title + " end is now " + info.event.end.toISOString());
+
+                if (!confirm("is this okay?")) {
+                    info.revert();
+                }
+            },
+
 
             events: SITEURL + "/fullcalendareventmaster",
 
             displayEventTime: true,
-            initialView: 'dayGridWeek',
 
 
-            editable: true,
+
 
             eventRender: function (event, element, view) {
 
@@ -510,6 +528,7 @@
     }
 
 </script>
+
 
 <style>
     .red {
