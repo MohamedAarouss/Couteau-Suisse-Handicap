@@ -29,6 +29,7 @@
 </head>
 
 <x-app-layout>
+    <body>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('ENT') }}
@@ -62,7 +63,8 @@
                 </div>
 
                 <div class="red m-2 square move">
-                    <a class="link-size" id="emploi_univ" href="https://ent.univ-artois.fr/esup-news/feeds/pub/item?c=1&itemID=34"
+                    <a class="link-size" id="emploi_univ"
+                       href="https://ent.univ-artois.fr/esup-news/feeds/pub/item?c=1&itemID=34"
                        target="_blank">
                         Offres
                         d'emploi de l'université
@@ -70,14 +72,16 @@
                 </div>
 
                 <div class="red m-2 square move">
-                    <a class="link-size" id="career" href="https://univ-artois.jobteaser.com/fr/users/sso_activation" target="_blank">
+                    <a class="link-size" id="career" href="https://univ-artois.jobteaser.com/fr/users/sso_activation"
+                       target="_blank">
                         Career
                         Center
                     </a>
                 </div>
 
                 <div class="red m-2 square move">
-                    <a class="link-size" id="contrat" href="http://conpere.univ-artois.fr/etudiants/accueil" target="_blank">
+                    <a class="link-size" id="contrat" href="http://conpere.univ-artois.fr/etudiants/accueil"
+                       target="_blank">
                         Contrat pédagogique
                     </a>
                 </div>
@@ -99,7 +103,8 @@
                 </div>
 
                 <div class="red m-2 square move">
-                    <a class="link-size" id="toeic" href="http://www.univ-artois.fr/inscription-au-toeic" target="_blank">
+                    <a class="link-size" id="toeic" href="http://www.univ-artois.fr/inscription-au-toeic"
+                       target="_blank">
                         Inscription au
                         TOEIC
                     </a>
@@ -114,13 +119,15 @@
                 </div>
 
                 <div class="red m-2 square move">
-                    <a class="link-size" id="ip_web" href="http://www.univ-artois.fr/inscription-pedagogique" target="_blank">
+                    <a class="link-size" id="ip_web" href="http://www.univ-artois.fr/inscription-pedagogique"
+                       target="_blank">
                         IP Web
                     </a>
                 </div>
 
                 <div class="red m-2 square move">
-                    <a class="link-size" id="inscription_cles" href="http://www.univ-artois.fr/inscription-au-cles" target="_blank">
+                    <a class="link-size" id="inscription_cles" href="http://www.univ-artois.fr/inscription-au-cles"
+                       target="_blank">
                         Inscription
                         au
                         CLES
@@ -215,8 +222,9 @@
                 </div>
 
                 <div class="orange m-2 square move">
-                    <a class="link-size" href="http://weblistes.univ-artois.fr/sympa/?ticket=ST-5314-fyHW7YtHOI0cVkVw6txr-auth.univ-artois.fr"
-                        target="_blank">Listes de diffusion</a>
+                    <a class="link-size"
+                       href="http://weblistes.univ-artois.fr/sympa/?ticket=ST-5314-fyHW7YtHOI0cVkVw6txr-auth.univ-artois.fr"
+                       target="_blank">Listes de diffusion</a>
                 </div>
 
                 <div class="orange m-2 square move">
@@ -247,12 +255,14 @@
 
             <div class="row m-4 child-container">
                 <div class="blue m-2 square move">
-                    <a class="link-size" href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
-                        target="_blank">Encyclopaedia Universalis</a>
+                    <a class="link-size"
+                       href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
+                       target="_blank">Encyclopaedia Universalis</a>
                 </div>
 
                 <div class="blue m-2 square move">
-                    <a class="link-size" href="http://portail-bu.univ-artois.fr/medias/medias.aspx?INSTANCE=exploitation&SSO_FORCELOGON=TRUE&PORTAL_ID=general_portal.xml"
+                    <a class="link-size"
+                       href="http://portail-bu.univ-artois.fr/medias/medias.aspx?INSTANCE=exploitation&SSO_FORCELOGON=TRUE&PORTAL_ID=general_portal.xml"
                        target="_blank">Bibliothèques</a>
                 </div>
 
