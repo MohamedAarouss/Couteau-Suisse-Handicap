@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\EntController;
 use App\Http\Controllers\NewsController;
+
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +27,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
      * Pages du controller Ent
      */
 
-    Route::get('/ent/home', [EntController::class, 'index'])->name('ent.home');
+    Route::get('/ent', [EntController::class, 'index'])->name('ent.home');
 
     Route::get('/campus', function () {
         return view('/ent/campus');
@@ -47,14 +49,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
         return view('ent/documentation');
     });
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-
     /**
      * Pages du controller News
      */
-
     Route::get('/news', [NewsController::class, 'index'])->name('news.index');
     Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
 });
