@@ -3,8 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
-.env.local
-
+.env
 .env.backup
 .phpunit.result.cache
 Homestead.json
@@ -210,4 +209,3 @@ dist
 .pnp.*
 
 .idea/
-!/public/js/app.js

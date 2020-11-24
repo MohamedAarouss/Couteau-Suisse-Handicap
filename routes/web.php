@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EntController;
+use App\Http\Controllers\FullCalendarEventMasterController;
 use App\Http\Controllers\NewsController;
 
 use Illuminate\Http\Request;
@@ -54,4 +55,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
      */
     Route::get('/news', [NewsController::class, 'index'])->name('news.index');
     Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
+
+    //fullcalender
+
+    Route::get('/fullcalendareventmaster',[FullCalendarEventMasterController::class,'index']);
+
+    Route::post('/fullcalendareventmaster/create',[FullCalendarEventMasterController::class,'create']);
+
+    Route::post('/fullcalendareventmaster/update',[FullCalendarEventMasterController::class,'update']);
+
+    Route::post('/fullcalendareventmaster/delete',[FullCalendarEventMasterController::class,'destroy']);
+
 });
