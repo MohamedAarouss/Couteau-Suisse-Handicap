@@ -7,6 +7,7 @@
     <title>Laravel</title>
 
     <!-- Fonts -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
@@ -35,17 +36,17 @@
         </h2>
     </x-slot>
 
-        <div class="container-fluid">
-            <div class="row sortable">
+        <div class="container">
+            <div class="row sortable mt-3">
                 <div class="col-6">
-                    <div class="card">
+                    <div class="card mt-2" style="border-color: #D2351F">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-gray-800 move">Scolarité
-                                <span class="move">+</span>
+                            <h1 class="card-title font-semibold text-xl text-center" style="color: #D2351F">Scolarité
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container">
+                            <div class="row m-4 child-container" style="border-color: #D2351F;">
                                 <div class="text-center red m-2 square move">
                                     <a class="link-size" id="dossier" href="#">
                                         Mon dossier
@@ -134,14 +135,14 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="card">
+                    <div class="card mt-2" style="border-color: #28A60E">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-gray-800">Campus en ligne
+                            <h1 class="card-title font-semibold text-xl text-center" style="color:#28A60E;">Campus en ligne
                                 <span class="move">+</span>
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border: solid 1px">
+                            <div class="row m-4 child-container" style="border-color: #28A60E">
                                 <div class="green m-2 square move">
                                     <a class="link-size" id="moodle" href="https://moodle.univ-artois.fr/cours/"
                                        target="_blank">
@@ -184,14 +185,14 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="card">
+                    <div class="card mt-2" style="border-color: dimgrey">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-gray-800">Aide
+                            <h1 class="card-title font-semibold text-xl text-center" style="color: dimgrey">Aide
                                 <span class="move">+</span>
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border: solid 1px">
+                            <div class="row m-4 child-container" style="border-color: dimgrey">
                                 <div class="grey m-2 square move">
                                     <a class="link-size" href="http://esupweb.univ-artois.fr/esup/tutos/etudiant/co/00a_guideWeb.html">Tutoriels
                                     </a>
@@ -201,14 +202,14 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="card">
+                    <div class="card mt-2" style="border-color: #E47A00">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-gray-800">Bureau virtuel
+                            <h1 class="card-title font-semibold text-xl text-center" style="color: #E47A00">Bureau virtuel
                                 <span class="move">+</span>
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border: solid 1px">
+                            <div class="row m-4 child-container" style="border-color: #E47A00">
                                 <div class="orange m-2 square move">
                                     <a class="link-size" href="https://wmailetu.univ-artois.fr/"
                                        target="_blank">Mon webmail</a>
@@ -237,14 +238,14 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="card">
+                    <div class="card mt-2" style="border-color: blueviolet">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-gray-800">Intranet
+                            <h1 class="card-title font-semibold text-xl text-center" style="color: blueviolet">Intranet
                                 <span class="move">+</span>
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border: solid 1px">
+                            <div class="row m-4 child-container" style="border-color: blueviolet">
                                 <div class="purple ge m-2 square move">
                                     <a class="link-size" href="http://intranet.univ-artois.fr/etudiant"
                                        target="_blank">Intranet</a>
@@ -254,14 +255,14 @@
                     </div>
                 </div>
                 <div class="col-6">
-                    <div class="card">
+                    <div class="card mt-2" style="border-color: #0087A7">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-gray-800">Documentation
+                            <h1 class="card-title font-semibold text-xl text-center" style="color: #0087A7">Documentation
                                 <span class="move">+</span>
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container">
+                            <div class="row m-4 child-container" style="border-color: #0087A7">
                                 <div class="blue m-2 square move">
                                     <a class="link-size" href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
                                        target="_blank">Encyclopaedia Universalis</a>
@@ -330,25 +331,25 @@
 
 <style>
     .red {
-        background-color: #e54a12;
+        background-color: #D2351F;
         border-radius: 5px;
         text-align: center;
     }
 
     .green {
-        background-color: darkslategray;
+        background-color: #28A60E;
         border-radius: 5px;
         text-align: center;
     }
 
     .orange {
-        background-color: orange;
+        background-color: #E47A00;
         border-radius: 5px;
         text-align: center;
     }
 
     .blue {
-        background-color: dodgerblue;
+        background-color: #0087A7;
         border-radius: 5px;
         text-align: center;
     }
@@ -405,7 +406,7 @@
         min-height: 130px;
         max-height: 505px;
         min-width: 410px;
-        max-width: 825px;
+        max-width: 550px;
     }
 
     .link-size {
