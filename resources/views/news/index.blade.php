@@ -4,8 +4,6 @@
             {{ __('Actualité') }}
         </h2>
 
-        <input type="text" wire:model="searchTerm" placeholder="Rechercher..." class="form-control m-3">
-
     </x-slot>
 
     <!-- Affichage des éléments de l'actualité et d'une barre de recherche -->
