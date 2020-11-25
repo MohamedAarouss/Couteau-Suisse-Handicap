@@ -7,7 +7,7 @@
     <title>Laravel</title>
 
     <!-- Fonts -->
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
@@ -138,7 +138,7 @@
                     <div class="card mt-2" style="border-color: #28A60E">
                         <div class="card-header">
                             <h1 class="card-title font-semibold text-xl text-center" style="color:#28A60E;">Campus en ligne
-                                <span class="move">+</span>
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
                             </h1>
                         </div>
                         <div class="card-body">
@@ -188,7 +188,7 @@
                     <div class="card mt-2" style="border-color: dimgrey">
                         <div class="card-header">
                             <h1 class="card-title font-semibold text-xl text-center" style="color: dimgrey">Aide
-                                <span class="move">+</span>
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
                             </h1>
                         </div>
                         <div class="card-body">
@@ -205,7 +205,7 @@
                     <div class="card mt-2" style="border-color: #E47A00">
                         <div class="card-header">
                             <h1 class="card-title font-semibold text-xl text-center" style="color: #E47A00">Bureau virtuel
-                                <span class="move">+</span>
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
                             </h1>
                         </div>
                         <div class="card-body">
@@ -241,7 +241,7 @@
                     <div class="card mt-2" style="border-color: blueviolet">
                         <div class="card-header">
                             <h1 class="card-title font-semibold text-xl text-center" style="color: blueviolet">Intranet
-                                <span class="move">+</span>
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
                             </h1>
                         </div>
                         <div class="card-body">
@@ -258,7 +258,7 @@
                     <div class="card mt-2" style="border-color: #0087A7">
                         <div class="card-header">
                             <h1 class="card-title font-semibold text-xl text-center" style="color: #0087A7">Documentation
-                                <span class="move">+</span>
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
                             </h1>
                         </div>
                         <div class="card-body">
