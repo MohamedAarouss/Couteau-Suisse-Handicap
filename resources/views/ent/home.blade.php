@@ -41,12 +41,12 @@
                 <div class="col-6">
                     <div class="card mt-2" style="border-color: #D2351F">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-center" style="color: #D2351F">Scolarité
-                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: #D2351F">Scolarité
+                                <span><i class="fas fa-arrows-alt"></i></span>
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border-color: #D2351F;">
+                            <div class="row m-1 child-container" style="border-color: #D2351F;">
                                 <div class="text-center red m-2 square move">
                                     <a class="link-size" id="dossier" href="#">
                                         Mon dossier
@@ -137,12 +137,12 @@
                 <div class="col-6">
                     <div class="card mt-2" style="border-color: #28A60E">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-center" style="color:#28A60E;">Campus en ligne
-                                <span class="move">+</span>
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color:#28A60E;">Campus en ligne
+                                <span>+</span>
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border-color: #28A60E">
+                            <div class="row m-1 child-container" style="border-color: #28A60E">
                                 <div class="green m-2 square move">
                                     <a class="link-size" id="moodle" href="https://moodle.univ-artois.fr/cours/"
                                        target="_blank">
@@ -187,12 +187,12 @@
                 <div class="col-6">
                     <div class="card mt-2" style="border-color: dimgrey">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-center" style="color: dimgrey">Aide
-                                <span class="move">+</span>
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: dimgrey">Aide
+                                <span>+</span>
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border-color: dimgrey">
+                            <div class="row m-1 child-container" style="border-color: dimgrey">
                                 <div class="grey m-2 square move">
                                     <a class="link-size" href="http://esupweb.univ-artois.fr/esup/tutos/etudiant/co/00a_guideWeb.html">Tutoriels
                                     </a>
@@ -204,12 +204,12 @@
                 <div class="col-6">
                     <div class="card mt-2" style="border-color: #E47A00">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-center" style="color: #E47A00">Bureau virtuel
-                                <span class="move">+</span>
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: #E47A00">Bureau virtuel
+                                <span>+</span>
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border-color: #E47A00">
+                            <div class="row m-1 child-container" style="border-color: #E47A00">
                                 <div class="orange m-2 square move">
                                     <a class="link-size" href="https://wmailetu.univ-artois.fr/"
                                        target="_blank">Mon webmail</a>
@@ -240,12 +240,12 @@
                 <div class="col-6">
                     <div class="card mt-2" style="border-color: blueviolet">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-center" style="color: blueviolet">Intranet
-                                <span class="move">+</span>
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: blueviolet">Intranet
+                                <span>+</span>
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border-color: blueviolet">
+                            <div class="row m-1 child-container" style="border-color: blueviolet">
                                 <div class="purple ge m-2 square move">
                                     <a class="link-size" href="http://intranet.univ-artois.fr/etudiant"
                                        target="_blank">Intranet</a>
@@ -262,7 +262,7 @@
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border-color: #0087A7">
+                            <div class="row m-1 child-container" style="border-color: #0087A7">
                                 <div class="blue m-2 square move">
                                     <a class="link-size" href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
                                        target="_blank">Encyclopaedia Universalis</a>
@@ -405,8 +405,8 @@
         overflow: auto;
         min-height: 130px;
         max-height: 505px;
-        min-width: 410px;
-        max-width: 550px;
+        min-width: min-content;
+        max-width: max-content;
     }
 
     .link-size {
