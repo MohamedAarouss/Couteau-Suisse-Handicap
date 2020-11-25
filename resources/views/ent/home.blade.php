@@ -420,6 +420,8 @@
 
                 var title = prompt('Nom de l\'evenement:');
 
+                var userId=1;
+
 
 
                 if (title) {
@@ -434,7 +436,7 @@
 
                         url: SITEURL + "/fullcalendareventmaster/create",
 
-                        data: 'title=' + title + '&start=' + start + '&end=' + end,
+                        data: 'title=' + title + '&start=' + start + '&end=' + end + '&userId='+userId,
 
                         type: "POST",
 
@@ -459,6 +461,8 @@
                             start: start,
 
                             end: end,
+
+                            userId:userId,
 
                             allDay: allDay
 

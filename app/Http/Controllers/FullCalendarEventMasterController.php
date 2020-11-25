@@ -18,6 +18,8 @@ class FullCalendarEventMasterController extends Controller
     public function index()
 
     {
+        //$userId=Auth::user()->id;
+
 
         if(request()->ajax())
 
@@ -41,7 +43,8 @@ class FullCalendarEventMasterController extends Controller
     {
         $insertArr = [ 'title' => $request->title,
             'start' => $request->start,
-            'end' => $request->end
+            'end' => $request->end,
+            'userId'=>$request->userId,
         ];
         $event = Event::insert($insertArr);
         return Response::json($event);
@@ -51,7 +54,10 @@ class FullCalendarEventMasterController extends Controller
     {
 
         $where = array('id' => $request->id);
-        $updateArr = ['title' => $request->title,'start' => $request->start, 'end' => $request->end];
+        $updateArr = ['title' => $request->title,
+            'start' => $request->start,
+            'end' => $request->end,
+        ];
         $event  = Event::where($where)->update($updateArr);
         return Response::json($event);
     }
