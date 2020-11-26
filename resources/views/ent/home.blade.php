@@ -15,6 +15,10 @@
         </h2>
     </x-slot>
 
+    <div>
+        {{Auth::user()->email}}
+    </div>
+
     <div class="sortable">
         <div class="container">
 

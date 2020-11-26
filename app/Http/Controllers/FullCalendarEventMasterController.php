@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Event;
 
+use Illuminate\Support\Facades\Auth;
 use Redirect,Response;
 
 
@@ -18,19 +19,30 @@ class FullCalendarEventMasterController extends Controller
     public function index()
 
     {
-        //$userId=Auth::user()->id;
-
-
+        $userId=auth()->user()->id;
+        $event=event();
         if(request()->ajax())
 
         {
-            $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
+            foreach ($event as $v){
+                if($userId==$v->userId){
+                    $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
+
+                    $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
+
+                    $data = Event::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end',"userId"]);
+
+                    return Response::json($data);
+
+                }
+           }
+            /*$start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
 
             $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
 
             $data = Event::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
 
-            return Response::json($data);
+            return Response::json($data);*/
 
         }
 
