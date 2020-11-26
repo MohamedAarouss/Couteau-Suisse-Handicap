@@ -5,16 +5,16 @@
         </h2>
     </x-slot>
 
-
-
     <div class="card">
         <div class="col-lg-4 col-sm-6 mb-4">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ $new->title }}</h5>
-                    <p class="card-text">{{ $new->user }}</p>
+                    <p class="card-text">{{ $new->username }}</p>
                     <p>{{ $new->department }} </p>
                     <p>{{ $new->informations }}</p>
+                    <p>{{ $new->url }}</p>
+                    <p>{{ $new->img }}</p>
                     <p>{{ $new->created_at->format('d/m/y H:m')  }}</p>
                 </div>
             </div>
