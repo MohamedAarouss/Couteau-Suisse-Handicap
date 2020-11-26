@@ -13,7 +13,6 @@
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-    @livewireStyles
 </head>
 
 <x-app-layout>
