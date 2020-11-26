@@ -15,9 +15,10 @@ class CreateNewsTable extends Migration {
             $table->id();
             $table->string('title');
             $table->string('user');
+            $table->string('url')->nullable();
             $table->string('department');
             $table->text('informations');
-            //$table->date('date');
+            $table->string('img')->nullable();
             $table->timestamps();
         });
     }

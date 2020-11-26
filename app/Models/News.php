@@ -10,7 +10,18 @@ use Illuminate\Database\Eloquent\Model;
 class News extends Model{
     use HasFactory;
 
+    protected $table = 'news';
+
     protected $guarded = [];
+
+    protected $fillable = [
+        'title',
+        'department',
+        'informations',
+        'img',
+        'url',
+        'user'
+    ];
 
     public function user() {
         return $this->belongsTo(User::class);
