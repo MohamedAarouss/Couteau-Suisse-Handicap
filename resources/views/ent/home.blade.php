@@ -424,36 +424,42 @@
 
     .red {
         background-color: #D2351F;
+        color: white;
         border-radius: 5px;
         text-align: center;
     }
 
     .green {
         background-color: #28A60E;
+        color: white;
         border-radius: 5px;
         text-align: center;
     }
 
     .orange {
         background-color: #E47A00;
+        color: white;
         border-radius: 5px;
         text-align: center;
     }
 
     .blue {
         background-color: #0087A7;
+        color: white;
         border-radius: 5px;
         text-align: center;
     }
 
     .purple {
         background-color: rebeccapurple;
+        color: white;
         border-radius: 5px;
         text-align: center;
     }
 
     .grey {
         background-color: gray;
+        color: white;
         border-radius: 5px;
         text-align: center;
     }
@@ -464,7 +470,7 @@
 
     a:link {
         text-decoration: none;
-        color: black;
+        color: white;
     }
 
     .square {
