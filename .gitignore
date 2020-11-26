@@ -4,6 +4,7 @@
 /storage/*.key
 /vendor
 .env
+.env.local
 .env.backup
 .phpunit.result.cache
 Homestead.json
@@ -209,3 +210,5 @@ dist
 .pnp.*
 
 .idea/
+!/.env.local
+!/.env
