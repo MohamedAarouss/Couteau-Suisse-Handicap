@@ -210,4 +210,6 @@ dist
 .pnp.*
 
 .idea/
+!/.env.local
+!/.env
 !/public/js/app.js

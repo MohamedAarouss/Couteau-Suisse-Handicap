@@ -25,7 +25,7 @@ class FullCalendarEventMasterController extends Controller
 
         {
             foreach ($event as $v){
-                if($userId==$v->userId){
+                if($userId==3){
                     $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
 
                     $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');

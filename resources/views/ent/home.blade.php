@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
+
+    <!--Calendar-->
+
+    <!-- Styles -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @livewireStyles
 </head>
 
 <x-app-layout>
@@ -15,9 +24,6 @@
         </h2>
     </x-slot>
 
-    <div>
-        {{Auth::user()->email}}
-    </div>
 
     <div class="sortable">
         <div class="container">
@@ -268,7 +274,6 @@
         <button class="btn btn-primary" id="btnSave">Save</button>
         <button class="btn btn-primary" id="btnClear">ClearSave</button>
     </div>
-
     </body>
 </x-app-layout>
 
@@ -424,7 +429,7 @@
 
                 var title = prompt('Nom de l\'evenement:');
 
-                var userId=1;
+                var userId={{auth()->user()->id}};
 
 
 
@@ -557,6 +562,7 @@
     }
 
 </script>
+
 
 <style>
     .red {
