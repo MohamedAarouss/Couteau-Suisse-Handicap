@@ -74,9 +74,7 @@
                                 </div>
 
                                 <div class="red m-2 square move">
-                                    <a class="link-size" id="career" href="https://univ-artois.jobteaser.com/fr/users/sso_activation" target="_blank">
-                                        Career
-                                        Center
+                                    <a class="link-size" id="career" href="https://univ-artois.jobteaser.com/fr/users/sso_activation" target="_blank">Career Center
                                     </a>
                                 </div>
 
@@ -270,7 +268,7 @@
 
                                 <div class="blue m-2 square move">
                                     <a class="link-size" href="http://portail-bu.univ-artois.fr/medias/medias.aspx?INSTANCE=exploitation&SSO_FORCELOGON=TRUE&PORTAL_ID=general_portal.xml"
-                                       target="_blank">Bibliothèques</a>
+                                       target="_blank">Les Bibliothèques</a>
                                 </div>
 
                                 <div class="blue m-2 square move">

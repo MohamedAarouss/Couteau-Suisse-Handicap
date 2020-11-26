@@ -199,9 +199,6 @@
         color: white;
     }
     .responsivelinks:hover {
-        color: black;
-    }
-    .responsivelinks:active {
         background-color: green;
         color: yellow;
     }
