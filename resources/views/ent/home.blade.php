@@ -41,12 +41,12 @@
                 <div class="col-6">
                     <div class="card mt-2" style="border-color: #D2351F">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-center" style="color: #D2351F">Scolarité
-                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: #D2351F">Scolarité
+                                <span><i class="fas fa-arrows-alt"></i></span>
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border-color: #D2351F;">
+                            <div class="row m-1 child-container" style="border-color: #D2351F;">
                                 <div class="text-center red m-2 square move">
                                     <a class="link-size" id="dossier" href="#">
                                         Mon dossier
@@ -74,7 +74,9 @@
                                 </div>
 
                                 <div class="red m-2 square move">
-                                    <a class="link-size" id="career" href="https://univ-artois.jobteaser.com/fr/users/sso_activation" target="_blank">Career Center
+                                    <a class="link-size" id="career" href="https://univ-artois.jobteaser.com/fr/users/sso_activation" target="_blank">
+                                        Career
+                                        Center
                                     </a>
                                 </div>
 
@@ -140,7 +142,7 @@
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border-color: #28A60E">
+                            <div class="row m-1 child-container" style="border-color: #28A60E">
                                 <div class="green m-2 square move">
                                     <a class="link-size" id="moodle" href="https://moodle.univ-artois.fr/cours/"
                                        target="_blank">
@@ -190,7 +192,7 @@
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border-color: dimgrey">
+                            <div class="row m-1 child-container" style="border-color: dimgrey">
                                 <div class="grey m-2 square move">
                                     <a class="link-size" href="http://esupweb.univ-artois.fr/esup/tutos/etudiant/co/00a_guideWeb.html">Tutoriels
                                     </a>
@@ -207,7 +209,7 @@
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border-color: #E47A00">
+                            <div class="row m-1 child-container" style="border-color: #E47A00">
                                 <div class="orange m-2 square move">
                                     <a class="link-size" href="https://wmailetu.univ-artois.fr/"
                                        target="_blank">Mon webmail</a>
@@ -243,7 +245,7 @@
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border-color: blueviolet">
+                            <div class="row m-1 child-container" style="border-color: blueviolet">
                                 <div class="purple ge m-2 square move">
                                     <a class="link-size" href="http://intranet.univ-artois.fr/etudiant"
                                        target="_blank">Intranet</a>
@@ -260,7 +262,7 @@
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-4 child-container" style="border-color: #0087A7">
+                            <div class="row m-1 child-container" style="border-color: #0087A7">
                                 <div class="blue m-2 square move">
                                     <a class="link-size" href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
                                        target="_blank">Encyclopaedia Universalis</a>
@@ -268,7 +270,7 @@
 
                                 <div class="blue m-2 square move">
                                     <a class="link-size" href="http://portail-bu.univ-artois.fr/medias/medias.aspx?INSTANCE=exploitation&SSO_FORCELOGON=TRUE&PORTAL_ID=general_portal.xml"
-                                       target="_blank">Les Bibliothèques</a>
+                                       target="_blank">Bibliothèques</a>
                                 </div>
 
                                 <div class="blue m-2 square move">
@@ -285,8 +287,71 @@
     <button class="btn btn-primary" id="save">Save</button>
 
     </body>
-</x-app-layout>
+    <footer class="mainfooter" role="contentinfo">
+        <div class="footer-middle">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-pad">
+                            <h4>Scolarité</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#">LIEN 1</a></li>
+                                <li><a href="#">LIEN 2</a></li>
+                                <li><a href="#">LIEN 3</a></li>
+                                <li><a href="#">LIEN 4</a></li>
+                                <li><a href="#">LIEN 5</a></li>
+                                <li><a href="#">LIEN 6</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-pad">
+                            <h4>Campus en ligne</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#">LIEN 1</a></li>
+                                <li><a href="#">LIEN 2</a></li>
+                                <li><a href="#">LIEN 3</a></li>
+                                <li><a href="#">LIEN 4</a></li>
+                                <li><a href="#">LIEN 5</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-pad">
+                            <h4>Bureau virtuel</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#">LIEN 1</a></li>
+                                <li><a href="#">LIEN 2</a></li>
+                                <li><a href="#">LIEN 3</a></li>
+                                <li><a href="#">LIEN 4</a></li>
+                                <li><a href="#">LIEN 5</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="footer-pad">
+                            <h4>Documentation</h4>
+                            <ul class="list-unstyled">
+                                <li><a href="#">LIEN 1</a></li>
+                                <li><a href="#">LIEN 2</a></li>
+                                <li><a href="#">LIEN 3</a></li>
+                                <li><a href="#">LIEN 4</a></li>
+                                <li><a href="#">LIEN 5</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 copy">
+                        <p class="text-center">&copy; Copyright 2018 - Company Name.  All rights reserved.</p>
+                    </div>
+                </div>
 
+
+            </div>
+        </div>
+    </footer>
+</x-app-layout>
 </html>
 
 <script>
@@ -328,6 +393,35 @@
 </script>
 
 <style>
+    footer {
+        background: #16222A;
+        background: linear-gradient(59deg, #0087A7, #024772);
+        color: white;
+        margin-top:100px;
+    }
+
+    footer a {
+        color: #fff;
+        font-size: 14px;
+        transition-duration: 0.2s;
+    }
+
+    footer a:hover {
+        color: #FA944B;
+        text-decoration: none;
+    }
+
+    .copy {
+        font-size: 12px;
+        padding: 10px;
+        border-top: 1px solid #FFFFFF;
+    }
+
+    .footer-middle {
+        padding-top: 2em;
+        color: white;
+    }
+
     .red {
         background-color: #D2351F;
         border-radius: 5px;
@@ -403,8 +497,8 @@
         overflow: auto;
         min-height: 130px;
         max-height: 505px;
-        min-width: 410px;
-        max-width: 550px;
+        min-width: min-content;
+        max-width: max-content;
     }
 
     .link-size {
