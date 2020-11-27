@@ -10,34 +10,35 @@
         <div class="response alert alert-success mt-2" style="display: none;"></div>
         <div id='calendar'></div>
     </div>
-    @if(auth()->user()->handicap=="oui")
-
-        <div class="container">
-            <h2 class="font-semibold text-xl text-gray-800">
-                Mon Handicap
-                <span class="move">+</span>
-            </h2>
-
-            <div class="row m-4 child-container" style="border: solid 1px">
-                <div class="text-center red m-2 square move">
-                    <a class="link-size" id="dossier" href="#">
-                        PAEH
-                    </a>
-                </div>
-
-                <div class="red m-2 square move">
-                    <a class="link-size" id="sms" href="http://www.univ-artois.fr/vie-etudiante/etudes-et-handicap">
-                        Aide mission handicap
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-    @endif
 
     <div class="container">
         <div class="row sortable mt-3">
+            @if(auth()->user()->handicap=="oui")
+            <div class="col-6">
+                <div class="card mt-2" style="border-color: #D2351F">
+                    <div class="card-header">
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #D2351F">Mon handicap
+                            <span><i class="fas fa-arrows-alt"></i></span>
+                        </h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="row m-1 child-container" style="border-color: #D2351F;">
+                            <div class="text-center red m-2 square move">
+                                <a class="link-size" id="sms" href="http://www.univ-artois.fr/vie-etudiante/etudes-et-handicap">
+                                    Aide mission handicap
+                                </a>
+                            </div>
+
+                            <div class="red m-2 square move">
+                                <a class="link-size" id="dossier" href="#">
+                                    PAEH
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #D2351F">
                     <div class="card-header">
@@ -143,7 +144,7 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #28A60E">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center" style="color:#28A60E;">Campus en ligne
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color:#28A60E;">Campus en ligne
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
@@ -193,7 +194,7 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: dimgrey">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center" style="color: dimgrey">Aide
+                        <h1 class="card-title font-semibold text-xl text-center move"  style="color: dimgrey">Aide
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
@@ -211,7 +212,7 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #E47A00">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center" style="color: #E47A00">Bureau virtuel
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #E47A00">Bureau virtuel
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
@@ -249,7 +250,7 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: blueviolet">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center" style="color: blueviolet">Intranet
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: blueviolet">Intranet
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
@@ -266,7 +267,7 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #0087A7">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center" style="color: #0087A7">Documentation
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #0087A7">Documentation
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
