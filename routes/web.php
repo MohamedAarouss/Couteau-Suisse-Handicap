@@ -29,17 +29,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
      * Pages du controller Ent
      */
 
-    //$user= Auth::user()->handicap;
+    Route::get('/ent', [EntController::class, 'index'])->name('ent.home');
 
-    if(true){
-        Route::get('/ent', [EntController::class, 'index'])->name('ent.home');
-
-    }
-    else {
-
-        Route::get('/ent', [EntController::class, 'index'])->name('ent.home');
-
-    }
     Route::get('/campus', function () {
         return view('/ent/campus');
     });
@@ -62,7 +53,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
     /**
      * Pages du controller News
-     */
+    */
     Route::get('/news', [NewsController::class, 'index'])->name('news.index');
     Route::get('/new/{id}', [NewsController::class, 'show'])->name('news.show');
 

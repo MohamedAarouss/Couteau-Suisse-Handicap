@@ -63,16 +63,32 @@ class NewsController extends Controller {
 
 
     public function edit($id) {
-        //
+        if (is_numeric($id)) {
+            $new = News::where('id', $id)->with('user')->first();
+            //$this->authorize('edit', $course);
+
+            return view('news.edit', [
+                'new' => $new,
+            ]);
+        } else {
+            abort(404);
+        }
     }
 
 
-    public function update(Request $request, $id) {
-        //
+    public function update(Request $request) {
+        $rules = $this->validations;
+        $rules['id'] = 'required|exists:news';
+
+        $postData = $this->validate($request, $rules);
+        $new = News::where('id', $postData['id']);
+        $new->update($postData);
+
+        return redirect()->route('news.index');
     }
 
 
     public function destroy($id) {
-        //
+
     }
 }
