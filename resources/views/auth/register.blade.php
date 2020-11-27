@@ -33,11 +33,13 @@
             </div>
             <div>
                 <input type="radio" id="oui" name="handicap" value="oui"
-                       autocomplete="handicap" checked>
+                       autocomplete="handicap" >
                 <label for="oui">Oui</label>
                 <input type="radio" id="non" name="handicap" value="non"
                        autocomplete="handicap"
-                       checked>
+                       checked
+
+                       >
                 <label for="non">Non</label>
             </div>
 
