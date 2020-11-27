@@ -347,38 +347,73 @@
 </script>
 
 <style>
+    footer {
+        background: #16222A;
+        background: linear-gradient(59deg, #0087A7, #024772);
+        color: white;
+        margin-top:100px;
+    }
+
+    footer a {
+        color: #fff;
+        font-size: 14px;
+        transition-duration: 0.2s;
+    }
+
+    footer a:hover {
+        color: #FA944B;
+        text-decoration: none;
+    }
+
+    .copy {
+        font-size: 12px;
+        padding: 10px;
+        border-top: 1px solid #FFFFFF;
+    }
+
+    .footer-middle {
+        padding-top: 2em;
+        color: white;
+    }
+
     .red {
-        background-color: #e54a12;
+        background-color: #D2351F;
+        color: white;
         border-radius: 5px;
         text-align: center;
     }
 
     .green {
-        background-color: darkslategray;
+        background-color: #28A60E;
+        color: white;
         border-radius: 5px;
         text-align: center;
     }
 
     .orange {
-        background-color: orange;
+        background-color: #E47A00;
+        color: white;
         border-radius: 5px;
         text-align: center;
     }
 
     .blue {
-        background-color: dodgerblue;
+        background-color: #0087A7;
+        color: white;
         border-radius: 5px;
         text-align: center;
     }
 
     .purple {
         background-color: rebeccapurple;
+        color: white;
         border-radius: 5px;
         text-align: center;
     }
 
     .grey {
         background-color: gray;
+        color: white;
         border-radius: 5px;
         text-align: center;
     }
@@ -389,7 +424,7 @@
 
     a:link {
         text-decoration: none;
-        color: black;
+        color: white;
     }
 
     .square {
@@ -422,8 +457,8 @@
         overflow: auto;
         min-height: 130px;
         max-height: 505px;
-        min-width: 410px;
-        max-width: 660px;
+        min-width: min-content;
+        max-width: max-content;
     }
 
     .link-size {

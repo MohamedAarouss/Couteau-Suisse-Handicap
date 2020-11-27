@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                   <!-- Logo à insérer ici -->
+                    <!-- Logo à insérer ici -->
                 </div>
 
                 <!-- Navigation Links -->
@@ -88,14 +88,14 @@
                             @endforeach
 
                             <div class="border-t border-gray-100"></div>
-                        @endif
+                    @endif
 
-                        <!-- Authentication -->
+                    <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
                             <x-jet-dropdown-link href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
+                                                 onclick="event.preventDefault();
                                                             this.closest('form').submit();">
                                 {{ __('Logout') }}
                             </x-jet-dropdown-link>
@@ -153,12 +153,12 @@
                     </x-jet-responsive-nav-link>
                 @endif
 
-                <!-- Authentication -->
+            <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
                     <x-jet-responsive-nav-link href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
+                                               onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                         {{ __('Logout') }}
                     </x-jet-responsive-nav-link>
@@ -196,3 +196,17 @@
         </div>
     </div>
 </nav>
+
+<style>
+    .responsivelinks{
+        color: white;
+    }
+    .responsivelinks:hover {
+        background-color: green;
+        color: yellow;
+    }
+    .links:hover{
+        background-color: #024772;
+        color: white;
+    }
+</style>
