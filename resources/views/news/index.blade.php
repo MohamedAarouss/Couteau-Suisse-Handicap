@@ -17,7 +17,7 @@
 
     <!-- Affichage des éléments de l'actualité et d'une barre de recherche -->
     @livewire('filter')
-
+    @include('footer')
 </x-app-layout>
 
 <style>

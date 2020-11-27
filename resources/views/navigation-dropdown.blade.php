@@ -1,20 +1,22 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }" class="border-b border-gray-100" style="background-color: #024772">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <!-- Logo à insérer ici -->
+                    <a href="{{ route('news.index') }}">
+                        <img src="/images/artoisbis.png" class="block h-12 w-auto" alt="Logo de l'université d'artois" />
+                    </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('news.index') }}" :active="request()->routeIs('news.index')">
+                    <x-jet-nav-link href="{{ route('news.index') }}" :active="request()->routeIs('news.index')" style="color: white">
                         {{ __('Actualité') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('ent.home') }}" :active="request()->routeIs('ent.home')">
+                    <x-jet-nav-link href="{{ route('ent.home') }}" :active="request()->routeIs('ent.home')" style="color: white">
                         {{ __('Ent') }}
                     </x-jet-nav-link>
                 </div>
@@ -30,7 +32,7 @@
                             </button>
                         @else
                             <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                                <div>{{ Auth::user()->name }}</div>
+                                <div style="color: white">{{ Auth::user()->name }}</div>
 
                                 <div class="ml-1">
                                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -43,11 +45,11 @@
 
                     <x-slot name="content">
                         <!-- Account Management -->
-                        <div class="block px-4 py-2 text-xs text-gray-400">
+                        <div class="block px-4 py-2 text-xs" style="font-weight: bold">
                             {{ __('Manage Account') }}
                         </div>
 
-                        <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                        <x-jet-dropdown-link href="{{ route('profile.show') }}" class="links">
                             {{ __('Profile') }}
                         </x-jet-dropdown-link>
 
@@ -119,11 +121,11 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('news.index') }}" :active="request()->routeIs('news.index')">
+            <x-jet-responsive-nav-link href="{{ route('news.index') }}" :active="request()->routeIs('news.index')" style="color: white">
                 {{ __('Actualité') }}
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{ route('ent.home') }}" :active="request()->routeIs('ent.home')">
+            <x-jet-responsive-nav-link href="{{ route('ent.home') }}" :active="request()->routeIs('ent.home')" style="color: white">
                 {{ __('Ent') }}
             </x-jet-responsive-nav-link>
         </div>
@@ -136,19 +138,19 @@
                 </div>
 
                 <div class="ml-3">
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                    <div class="font-medium text-base" style="color: white">{{ Auth::user()->name }}</div>
+                    <div class="font-medium text-sm" style="color: white">{{ Auth::user()->email }}</div>
                 </div>
             </div>
 
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
-                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" class="responsivelinks" :active="request()->routeIs('profile.show')" style="color: white">
                     {{ __('Profile') }}
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                    <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
+                    <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')" style="color: white">
                         {{ __('API Tokens') }}
                     </x-jet-responsive-nav-link>
                 @endif
@@ -157,7 +159,7 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <x-jet-responsive-nav-link href="{{ route('logout') }}"
+                    <x-jet-responsive-nav-link href="{{ route('logout') }} " style="color: white"
                                                onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                         {{ __('Logout') }}
@@ -196,7 +198,6 @@
         </div>
     </div>
 </nav>
-
 <style>
     .responsivelinks{
         color: white;
