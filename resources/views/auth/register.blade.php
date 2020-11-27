@@ -33,7 +33,7 @@
             </div>
             <div>
                 <input type="radio" id="oui" name="handicap" value="oui"
-                       autocomplete="handicap">
+                       autocomplete="handicap" checked>
                 <label for="oui">Oui</label>
                 <input type="radio" id="non" name="handicap" value="non"
                        autocomplete="handicap"

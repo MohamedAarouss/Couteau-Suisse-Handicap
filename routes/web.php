@@ -29,7 +29,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
      * Pages du controller Ent
      */
 
-    //$user= Auth::user();
+    //$user= Auth::user()->handicap;
 
     if(true){
         Route::get('/ent', [EntController::class, 'index'])->name('ent.home');

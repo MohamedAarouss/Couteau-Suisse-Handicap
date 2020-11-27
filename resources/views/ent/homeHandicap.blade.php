@@ -17,6 +17,7 @@
 
 <x-app-layout>
     <body>
+    <p>handicap = {{auth()->user()->handicap}}</p>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('ENT') }}
@@ -24,6 +25,7 @@
     </x-slot>
 
 
+    <div class="sortable">
         <div class="container">
 
             <div class="response alert alert-success mt-2" style="display: none;"></div>
@@ -31,35 +33,9 @@
             <div id='calendar'></div>
 
         </div>
+    </div>
 
     <div class="sortable">
-
-        @if(auth()->user()->handicap=="oui")
-
-            <div class="container">
-                <h2 class="font-semibold text-xl text-gray-800">
-                    Mon Handicap
-                    <span class="move">+</span>
-                </h2>
-
-                <div class="row m-4 child-container" style="border: solid 1px">
-                    <div class="text-center red m-2 square move">
-                        <a class="link-size" id="dossier" href="#">
-                            PAEH
-                        </a>
-                    </div>
-
-                    <div class="red m-2 square move">
-                        <a class="link-size" id="sms" href="http://www.univ-artois.fr/vie-etudiante/etudes-et-handicap">
-                            Aide mission handicap
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-
-        @endif
-
         <div class="container">
             <h2 class="font-semibold text-xl text-gray-800">
                 Scolarité

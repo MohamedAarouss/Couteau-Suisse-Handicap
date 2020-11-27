@@ -24,8 +24,8 @@ class FullCalendarEventMasterController extends Controller
         if(request()->ajax())
 
         {
-            foreach ($event as $v){
-                if($userId==3){
+            //foreach ($event as $v){
+                if($userId==4){
                     $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
 
                     $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
@@ -35,7 +35,7 @@ class FullCalendarEventMasterController extends Controller
                     return Response::json($data);
 
                 }
-           }
+           //}
             /*$start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
 
             $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
