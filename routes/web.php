@@ -4,7 +4,6 @@ use App\Http\Controllers\EntController;
 use App\Http\Controllers\NewsController;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\FullCalendarEventMasterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -52,26 +51,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
     /**
      * Pages du controller News
-     */
+    */
     Route::get('/news', [NewsController::class, 'index'])->name('news.index');
     Route::get('/new/{id}', [NewsController::class, 'show'])->name('news.show');
 
     Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
     Route::post('/news/store', [NewsController::class, 'store'])->name('news.store');
 
-    Route::get('/news/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
-    Route::put('/news/{id}', [NewsController::class, 'update'])->name('news.update');
+    Route::get('/new/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
+    Route::put('/new/{id}', [NewsController::class, 'update'])->name('news.update');
 
-    Route::delete('/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
-
-    //fullcalender
-
-    Route::get('/fullcalendareventmaster',[FullCalendarEventMasterController::class,'index']);
-
-    Route::post('/fullcalendareventmaster/create',[FullCalendarEventMasterController::class,'create']);
-
-    Route::post('/fullcalendareventmaster/update',[FullCalendarEventMasterController::class,'update']);
-
-    Route::post('/fullcalendareventmaster/delete',[FullCalendarEventMasterController::class,'destroy']);
-
+    Route::delete('/new/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
 });
