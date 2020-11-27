@@ -24,7 +24,7 @@
     @endif
 
     <div id="intranet">
-        <a id="retour" href="/home">Retour au tableau de bord</a>
+        <a id="retour" href="/ent/home">Retour au tableau de bord</a>
         <br>
         <a id="net" href="http://intranet.univ-artois.fr/etudiant">Intranet</a>
 

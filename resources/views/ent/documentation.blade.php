@@ -24,7 +24,7 @@
     @endif
 
     <div id="documentation">
-        <a id="retour" href="/home">Retour au tableau de bord</a>
+        <a id="retour" href="/ent/home">Retour au tableau de bord</a>
         <br>
         <a id="encyclopedie" href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr" target="_blank">Encyclopaedia Universalis</a>
         <br>

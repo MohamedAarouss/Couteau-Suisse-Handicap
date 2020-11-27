@@ -25,7 +25,7 @@
     @endif
 
     <div id="campus_en_ligne">
-        <a id="retour" href="/home">Retour au tableau de bord</a>
+        <a id="retour" href="/ent/home">Retour au tableau de bord</a>
         <br>
         <a id="moodle" href="https://moodle.univ-artois.fr/cours/" target="_blank">Moodle</a>
         <br>
