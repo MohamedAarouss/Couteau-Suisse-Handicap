@@ -1,10 +1,11 @@
 <?php
 
 use App\Http\Controllers\EntController;
+use App\Http\Controllers\FullCalendarEventMasterController;
 use App\Http\Controllers\NewsController;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\FullCalendarEventMasterController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,8 +29,17 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
      * Pages du controller Ent
      */
 
-    Route::get('/ent', [EntController::class, 'index'])->name('ent.home');
+    //$user= Auth::user()->handicap;
 
+    if(true){
+        Route::get('/ent', [EntController::class, 'index'])->name('ent.home');
+
+    }
+    else {
+
+        Route::get('/ent', [EntController::class, 'index'])->name('ent.home');
+
+    }
     Route::get('/campus', function () {
         return view('/ent/campus');
     });
