@@ -25,7 +25,7 @@
                     <p class="card-text">{{ $new->username }}</p>
                     <p>{{ $new->department }} </p>
                     <p>{{ $new->informations }}</p>
-                    <a href="{{ $new->url }}"></a>
+                    <a href="{{ $new->url }}">Lien</a>
                     <img src="{{asset('storage/images/' . $new->img)}}" alt="image"/>
                     <p>{{ $new->created_at->format('d/m/y H:m')  }}</p>
                 </div>
