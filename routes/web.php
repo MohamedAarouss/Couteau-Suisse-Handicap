@@ -59,7 +59,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::post('/news/store', [NewsController::class, 'store'])->name('news.store');
 
     Route::get('/new/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
-    Route::put('/new/{id}', [NewsController::class, 'update'])->name('news.update');
+    Route::post('new/{id}', [NewsController::class, 'update'])->name('news.update');
 
-    Route::delete('/new/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+    Route::get('/new/destroy/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
 });

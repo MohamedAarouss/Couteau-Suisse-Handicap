@@ -12,6 +12,8 @@
                class="btn btn-primary mt-3 mr-2">
                 Modifier une news
             </a>
+
+            <a href="{{url('new/destroy/' . $new->id)}}" onclick="return confirm('Etes-vous sur de vouloir supprimer cette news ?')" class="btn btn-danger">Supprimer la news</a>
         @endif
     </div>
 
@@ -23,8 +25,8 @@
                     <p class="card-text">{{ $new->username }}</p>
                     <p>{{ $new->department }} </p>
                     <p>{{ $new->informations }}</p>
-                    <p>{{ $new->url }}</p>
-                    <p>{{ $new->img }}</p>
+                    <a href="{{ $new->url }}"></a>
+                    <img src="{{asset('storage/images/' . $new->img)}}" alt="image"/>
                     <p>{{ $new->created_at->format('d/m/y H:m')  }}</p>
                 </div>
             </div>

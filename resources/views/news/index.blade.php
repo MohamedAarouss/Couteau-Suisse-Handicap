@@ -5,7 +5,14 @@
         </h2>
     </x-slot>
 
-    <!-- Afficher le bouton de création de news seulement pour les administrateurs -->
+    <!-- Affiche un message de status lors de la manipulation d'une news -->
+    @if (session('success'))
+        <div class="alert alert-success">
+            <strong>{{session('success')}}</strong>
+        </div>
+    @endif
+
+<!-- Affiche le bouton de création de news seulement pour les administrateurs -->
     <div class="float-right">
         @if (Auth::user()->role ==='admin')
             <a href="{{url('news/create')}}"
@@ -17,6 +24,7 @@
 
     <!-- Affichage des éléments de l'actualité et d'une barre de recherche -->
     @livewire('filter')
+
     @include('footer')
 </x-app-layout>
 

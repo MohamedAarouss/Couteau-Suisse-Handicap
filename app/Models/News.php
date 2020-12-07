@@ -12,8 +12,6 @@ class News extends Model{
 
     protected $table = 'news';
 
-    protected $guarded = [];
-
     protected $fillable = [
         'title',
         'department',

@@ -6,20 +6,23 @@ use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class NewsController extends Controller {
+class NewsController extends Controller
+{
     private $validations;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->validations = [
             'title' => 'required',
             'url' => '',
-            'image' => '',
+            'img' => '',
             'department' => 'required',
             'informations' => 'required',
         ];
     }
 
-    public function index() {
+    public function index()
+    {
         $news = News::with('user'); //->simplePaginate(5);
 
         return view('news.index', [
@@ -28,29 +31,43 @@ class NewsController extends Controller {
     }
 
 
-    public function create() {
+    public function create()
+    {
         return view('news.create');
     }
 
 
-    public function store(Request $request) {
-        $postData = $this->validate($request, $this->validations);
+    public function store(Request $request)
+    {
+        $data = $this->validate($request, $this->validations);
         /*News::create($request->all());*/
 
-        News::create([
-            'title' => $request->title,
-            'user' => Auth::user()->name,
-            'department' => $request->department,
-            'informations' => $request->informations,
-            'url' => $request->url,
-            'img' => $request->img,
-        ]);
+        $new = new News();
 
-        return redirect()->route('news.index')->with('status', 'La news a bien été créée.');
+        $new->title = $request->input('title');
+        $new->department = $request->input('department');
+        $new->user = Auth::user()->name;
+        $new->informations = $request->input('informations');
+        $new->url = $request->input('url');
+
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('storage/images', $filename);
+            $new->img = $filename;
+        } else {
+            $new->img = '';
+        }
+
+        $new->save();
+
+        return redirect()->route('news.index')->with('success', 'La news a été créée avec succès.');
     }
 
 
-    public function show($id) {
+    public function show($id)
+    {
         if (is_numeric($id)) {
             $new = News::where('id', $id)->with('user')->first();
 
@@ -62,7 +79,8 @@ class NewsController extends Controller {
     }
 
 
-    public function edit($id) {
+    public function edit($id)
+    {
         if (is_numeric($id)) {
             $new = News::where('id', $id)->with('user')->first();
             //$this->authorize('edit', $course);
@@ -76,19 +94,37 @@ class NewsController extends Controller {
     }
 
 
-    public function update(Request $request) {
-        $rules = $this->validations;
-        $rules['id'] = 'required|exists:news';
+    public function update(Request $request, $id)
+    {
+        $new = News::find($id);
 
-        $postData = $this->validate($request, $rules);
-        $new = News::where('id', $postData['id']);
-        $new->update($postData);
+        $new->title = $request->input('title');
+        $new->department = $request->input('department');
+        $new->user = Auth::user()->name;
+        $new->informations = $request->input('informations');
+        $new->url = $request->input('url');
 
-        return redirect()->route('news.index');
+        if ($request->hasFile('img')) {
+            $file = $request->file('img');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('storage/images', $filename);
+            $new->img = $filename;
+        } else {
+            $new->img = '';
+        }
+
+        $new->save();
+
+        return redirect()->route('news.index')->with('success', 'La news a été modifiée.');
     }
 
 
-    public function destroy($id) {
+    public function destroy($id)
+    {
+        $new = News::findOrFail($id);
+        $new->delete();
 
+        return redirect()->route('news.index')->with('success', 'La news a été supprimée.');
     }
 }

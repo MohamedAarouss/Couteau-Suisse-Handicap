@@ -9,7 +9,7 @@
     <br>
 
     <div class="container">
-        <form action="{{url('new/'.$new->id)}}" enctype="multipart/form-data" method="PATCH">
+        <form action="{{route('news.update', $new->id)}}" enctype="multipart/form-data" method="POST">
             @csrf
             <div class="row">
                 <div class="col-md-6">
@@ -20,6 +20,7 @@
                                class="form-control"
                                name="title"
                                tabindex="1"
+                               required
                                value="{{old('title', $new->title)}}"
                         >
                     </div>
@@ -30,12 +31,14 @@
                                 class="form-control"
                                 name="department"
                                 tabindex="5"
-                                value="{{old('department', $new->department)}}"
                                 required>
-                            <option>Informatique</option>
-                            <option>MMI</option>
-                            <option>TC</option>
-                            <option>GEA</option>
+                            <option class="font-bold" value="">-- Choisissez un département --</option>
+                            <option value="INFORMATIQUE" {{old('department') == "informatique" ? 'selected': ""}}>
+                                Informatique
+                            </option>
+                            <option value="MMI" {{old('department') == "mmi" ? 'selected': ""}}>MMI</option>
+                            <option value="TC" {{old('department') == "tc" ? 'selected': ""}}>TC</option>
+                            <option value="GEA" {{old('department') == "gea" ? 'selected': ""}}>GEA</option>
                         </select>
                     </div>
 
@@ -58,8 +61,8 @@
                                   name="informations"
                                   minlength="20"
                                   tabindex="2"
-                                  value="{{old('informations', $new->informations)}}">
-                            </textarea>
+                                  required
+                        >{{old('informations', $new->informations)}}</textarea>
                     </div>
 
                     <div class="form-group">
@@ -68,14 +71,13 @@
                                type="file"
                                class="form-control"
                                name="img"
-                               tabindex="3"
-                               value="{{old('img', $new->img)}}">
+                               tabindex="3">
                     </div>
                 </div>
             </div>
 
             <div class="row flex items-center justify-center mt-5">
-                <button type="submit" class="btn btn-outline-success rounded-pill p-3">Modifier une news</button>
+                <button type="submit" class="btn btn-outline-success rounded-pill p-3">Modifier la news</button>
             </div>
             <br>
             <br>

@@ -11,6 +11,7 @@
     <div class="container">
         <form action="{{route('news.store')}}" enctype="multipart/form-data" method="POST">
             @csrf
+
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -20,7 +21,8 @@
                                class="form-control"
                                name="title"
                                tabindex="1"
-                               >
+                               required
+                        >
                     </div>
 
                     <div class="form-group">
@@ -30,10 +32,11 @@
                                 name="department"
                                 tabindex="5"
                                 required>
-                            <option>Informatique</option>
-                            <option>MMI</option>
-                            <option>TC</option>
-                            <option>GEA</option>
+                            <option class="font-bold" value="">-- Choisissez un département --</option>
+                            <option value="INFORMATIQUE">Informatique</option>
+                            <option value="MMI">MMI</option>
+                            <option value="TC">TC</option>
+                            <option value="GEA">GEA</option>
                         </select>
                     </div>
 
@@ -55,8 +58,7 @@
                                   name="informations"
                                   minlength="20"
                                   tabindex="2"
-                                  >
-                            </textarea>
+                                  required></textarea>
                     </div>
 
                     <div class="form-group">
@@ -81,7 +83,6 @@
 </x-app-layout>
 
 <style>
-
     .container {
         margin-top: 4%;
     }
