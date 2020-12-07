@@ -28,6 +28,20 @@
                 <x-jet-label for="password_confirmation" value="{{ __('Confirm Password') }}" />
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
+            <div class="mt-4">
+                <x-jet-label value="{{ __('Handicap') }}"></x-jet-label>
+            </div>
+            <div>
+                <input type="radio" id="oui" name="handicap" value="oui"
+                       autocomplete="handicap" >
+                <label for="oui">Oui</label>
+                <input type="radio" id="non" name="handicap" value="non"
+                       autocomplete="handicap"
+                       checked
+
+                       >
+                <label for="non">Non</label>
+            </div>
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">

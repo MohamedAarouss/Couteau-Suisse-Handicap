@@ -62,4 +62,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::post('new/{id}', [NewsController::class, 'update'])->name('news.update');
 
     Route::get('/new/destroy/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+    Route::get('/fullcalendareventmaster',[FullCalendarEventMasterController::class,'index']);
+
+    Route::post('/fullcalendareventmaster/create',[FullCalendarEventMasterController::class,'create']);
+
+    Route::post('/fullcalendareventmaster/update',[FullCalendarEventMasterController::class,'update']);
+
+    Route::post('/fullcalendareventmaster/delete',[FullCalendarEventMasterController::class,'destroy']);
+
+
 });

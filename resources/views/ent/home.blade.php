@@ -1,4 +1,5 @@
 <x-app-layout>
+    <body>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('ENT') }}
@@ -12,6 +13,32 @@
 
     <div class="container">
         <div class="row sortable mt-3">
+            @if(auth()->user()->handicap=="oui")
+            <div class="col-6">
+                <div class="card mt-2" style="border-color: #D2351F">
+                    <div class="card-header">
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #D2351F">Mon handicap
+                            <span><i class="fas fa-arrows-alt"></i></span>
+                        </h1>
+                    </div>
+                    <div class="card-body">
+                        <div class="row m-1 child-container" style="border-color: #D2351F;">
+                            <div class="text-center red m-2 square move">
+                                <a class="link-size" id="sms" href="http://www.univ-artois.fr/vie-etudiante/etudes-et-handicap">
+                                    Aide mission handicap
+                                </a>
+                            </div>
+
+                            <div class="red m-2 square move">
+                                <a class="link-size" id="dossier" href="#">
+                                    PAEH
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endif
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #D2351F">
                     <div class="card-header">
@@ -117,7 +144,7 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #28A60E">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center" style="color:#28A60E;">Campus en ligne
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color:#28A60E;">Campus en ligne
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
@@ -167,7 +194,7 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: dimgrey">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center" style="color: dimgrey">Aide
+                        <h1 class="card-title font-semibold text-xl text-center move"  style="color: dimgrey">Aide
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
@@ -185,7 +212,7 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #E47A00">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center" style="color: #E47A00">Bureau virtuel
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #E47A00">Bureau virtuel
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
@@ -223,7 +250,7 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: blueviolet">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center" style="color: blueviolet">Intranet
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: blueviolet">Intranet
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
@@ -240,7 +267,7 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #0087A7">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center" style="color: #0087A7">Documentation
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #0087A7">Documentation
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
@@ -267,6 +294,8 @@
                 </div>
             </div>
         </div>
+        <button class="btn btn-primary" id="btnSave">Save</button>
+        <button class="btn btn-primary" id="btnClear">ClearSave</button>
     </div>
 
     <button class="btn btn-primary" id="save">Save</button>
@@ -275,6 +304,7 @@
     @include('footer')
 </x-app-layout>
 
+</html>
 
 <script>
     // Sort the parents
@@ -364,24 +394,31 @@
 </script>
 
 <script>
+
     $(document).ready(function () {
         var initialLocaleCode = 'fr';
+
         var SITEURL = "{{url('/')}}";
 
         $.ajaxSetup({
+
             headers: {
+
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+
             },
+
         });
 
 
+
         var calendar = $('#calendar').fullCalendar({
+
             header: {
                 left: 'prev,next today',
                 center: 'title',
                 right: 'month,basicWeek,basicDay,listMonth'
             },
-
             navLinks: true, // can click day/week names to navigate views
             editable: true,
             eventLimit: true, // allow "more" link when too many events
@@ -389,106 +426,170 @@
             dayMaxEvents: true,
 
 
+
             events: SITEURL + "/fullcalendareventmaster",
+
             displayEventTime: true,
 
 
-            eventRender: function (event) {
+
+
+            eventRender: function (event, element, view) {
+
                 if (event.allDay === 'true') {
+
                     event.allDay = true;
 
                 } else {
+
                     event.allDay = false;
+
                 }
+
             },
 
             selectable: true,
+
             selectHelper: true,
 
             select: function (start, end, allDay) {
+
                 var title = prompt('Nom de l\'evenement:');
-                var userId = 1;
+
+                var userId={{auth()->user()->id}};
+
 
 
                 if (title) {
+
                     var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+
                     var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
 
 
+
                     $.ajax({
+
                         url: SITEURL + "/fullcalendareventmaster/create",
-                        data: 'title=' + title + '&start=' + start + '&end=' + end + '&userId=' + userId,
+
+                        data: 'title=' + title + '&start=' + start + '&end=' + end + '&userId='+userId,
+
                         type: "POST",
 
-                        success: () => {
+                        success: function (data) {
+
                             displayMessage("Ajout effectué");
+
                             $('#calendar').fullCalendar('removeEvents');
-                            $('#calendar').fullCalendar('refetchEvents');
+
+                            $('#calendar').fullCalendar('refetchEvents' );
+
                         }
+
                     });
 
                     calendar.fullCalendar('renderEvent',
+
                         {
+
                             title: title,
+
                             start: start,
+
                             end: end,
-                            userId: userId,
+
+                            userId:userId,
+
                             allDay: allDay
+
                         },
+
                         true
+
                     );
+
                 }
+
                 calendar.fullCalendar('unselect');
 
             },
 
 
-            eventDrop: function (event) {
+
+            eventDrop: function (event, delta) {
+
                 var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
+
                 var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
 
                 $.ajax({
+
                     url: SITEURL + '/fullcalendareventmaster/update',
+
                     data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
+
                     type: "POST",
 
-                    success: () => {
+                    success: function (response) {
+
                         displayMessage("Modification effectué");
+
                     }
+
                 });
+
             },
 
             eventClick: function (event) {
+
                 var deleteMsg = confirm("Voulez-vous supprimer?");
 
                 if (deleteMsg) {
 
                     $.ajax({
+
                         type: "POST",
+
                         url: SITEURL + '/fullcalendareventmaster/delete',
+
                         data: "&id=" + event.id,
 
                         success: function (response) {
-                            if (parseInt(response) > 0) {
+
+                            if(parseInt(response) > 0) {
+
                                 $('#calendar').fullCalendar('removeEvents', event.id);
+
                                 displayMessage("Suppression effectué");
 
                             }
+
                         }
+
                     });
+
                 }
+
             }
+
         });
+
     });
 
+
+
     function displayMessage(message) {
-        $(".response").css('display', 'block');
-        $(".response").html("" + message + "");
-        setInterval(function () {
-            $(".response").fadeOut();
-        }, 4000);
+
+        $(".response").css('display','block');
+
+        $(".response").html(""+message+"");
+
+        setInterval(function() { $(".response").fadeOut(); }, 4000);
+
     }
+
 </script>
+
 
 
 <style>
