@@ -3,27 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\News;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class NewsController extends Controller
 {
-    private $validations;
-
-    public function __construct()
-    {
-        $this->validations = [
-            'title' => 'required',
-            'url' => '',
-            'img' => '',
-            'department' => 'required',
-            'informations' => 'required',
-        ];
-    }
-
     public function index()
     {
-        $news = News::with('user'); //->simplePaginate(5);
+        $news = News::with('user');
 
         return view('news.index', [
             'news' => $news
@@ -37,11 +25,8 @@ class NewsController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        $data = $this->validate($request, $this->validations);
-        /*News::create($request->all());*/
-
         $new = new News();
 
         $new->title = $request->input('title');
@@ -57,7 +42,7 @@ class NewsController extends Controller
             $file->move('storage/images', $filename);
             $new->img = $filename;
         } else {
-            $new->img = '';
+            $new->img = null;
         }
 
         $new->save();
@@ -83,7 +68,7 @@ class NewsController extends Controller
     {
         if (is_numeric($id)) {
             $new = News::where('id', $id)->with('user')->first();
-            //$this->authorize('edit', $course);
+            // $this->authorize('edit', $course);
 
             return view('news.edit', [
                 'new' => $new,
@@ -91,16 +76,16 @@ class NewsController extends Controller
         } else {
             abort(404);
         }
+        return 0;
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $id): RedirectResponse
     {
         $new = News::find($id);
 
         $new->title = $request->input('title');
         $new->department = $request->input('department');
-        $new->user = Auth::user()->name;
         $new->informations = $request->input('informations');
         $new->url = $request->input('url');
 
@@ -111,7 +96,7 @@ class NewsController extends Controller
             $file->move('storage/images', $filename);
             $new->img = $filename;
         } else {
-            $new->img = '';
+            $new->img = null;
         }
 
         $new->save();
@@ -120,7 +105,7 @@ class NewsController extends Controller
     }
 
 
-    public function destroy($id)
+    public function destroy($id): RedirectResponse
     {
         $new = News::findOrFail($id);
         $new->delete();

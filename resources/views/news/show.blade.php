@@ -13,7 +13,9 @@
                 Modifier une news
             </a>
 
-            <a href="{{url('new/destroy/' . $new->id)}}" onclick="return confirm('Etes-vous sur de vouloir supprimer cette news ?')" class="btn btn-danger">Supprimer la news</a>
+            <a href="{{url('new/destroy/' . $new->id)}}"
+               onclick="return confirm('Etes-vous sur de vouloir supprimer cette news ?')" class="btn btn-danger">Supprimer
+                la news</a>
         @endif
     </div>
 
@@ -22,11 +24,21 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ $new->title }}</h5>
-                    <p class="card-text">{{ $new->username }}</p>
+                    <p class="card-text">{{ $new->user }}</p>
                     <p>{{ $new->department }} </p>
                     <p>{{ $new->informations }}</p>
-                    <a href="{{ $new->url }}">Lien</a>
-                    <img src="{{asset('storage/images/' . $new->img)}}" alt="image"/>
+
+                    @if ($new->url !== null)
+                        <div id="video-url" class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="{{ $new->url }}"
+                                    allowfullscreen></iframe>
+                        </div>
+                    @endif
+
+                    @if ($new->img !== null)
+                        <img src="{{asset('storage/images/' . $new->img)}}"/>
+                    @endif
+
                     <p>{{ $new->created_at->format('d/m/y H:m')  }}</p>
                 </div>
             </div>

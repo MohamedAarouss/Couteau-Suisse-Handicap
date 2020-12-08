@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EntController;
+use App\Http\Controllers\FullCalendarEventMasterController;
 use App\Http\Controllers\NewsController;
 
 use Illuminate\Http\Request;
