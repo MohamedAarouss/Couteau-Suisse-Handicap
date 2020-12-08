@@ -22,7 +22,7 @@ class Filter extends Component {
             'news' => News::where(function ($query) {
                 $query->where('department', 'LIKE', '%' . $this->searchTerm . '%')
                     ->orWhere('user', 'LIKE', '%' . $this->searchTerm . '%');
-            })->paginate(5)
+            })->paginate(6)
         ]);
     }
 }
