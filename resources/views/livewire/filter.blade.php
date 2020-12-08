@@ -26,7 +26,7 @@
             </div>
         @endforeach
     </div>
-    <div class="container mt-3" style="text-align: left">
+    <div class="container mt-3" style="text-align: center">
         <div class="format">
             {{$news->links('livewire.pagination')}}
         </div>
