@@ -19,6 +19,7 @@ class CreateNewsTable extends Migration {
             $table->string('department');
             $table->text('informations');
             $table->string('img')->nullable();
+            $table->string('read_state')->default('non lu');
             $table->timestamps();
         });
     }

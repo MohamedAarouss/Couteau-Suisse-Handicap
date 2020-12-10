@@ -56,10 +56,16 @@ class NewsController extends Controller
         if (is_numeric($id)) {
             $new = News::where('id', $id)->with('user')->first();
 
+            if (strcmp($new->read_state, 'non lu') === 0) {
+                $new->read_state = 'visionné';
+                $new->save();
+            }
+
             return view('news.show', [
                 'new' => $new
             ]);
         }
+
         abort(404);
     }
 
