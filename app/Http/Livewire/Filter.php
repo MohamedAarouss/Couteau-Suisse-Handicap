@@ -26,7 +26,7 @@ class Filter extends Component
                     ->orWhere('user', 'LIKE', '%' . $this->searchTerm . '%')
                     ->orWhere('read_state', 'LIKE', '%' . $this->searchTerm . '%')
                     ->orWhere('title', 'LIKE', '%' . $this->searchTerm . '%');
-            })->orderBy('created_at', 'DESC')->paginate(5)
+            })->orderBy('created_at', 'DESC')->paginate(6)
         ]);
     }
 }

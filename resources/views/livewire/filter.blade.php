@@ -20,7 +20,7 @@
                                     <p class="text-muted font-bold">Département {{ $new->department }} </p>
                                     <p>{{ $new->informations }}</p>
                                     @if($new->url != null)
-                                        <p class="text-muted font-italic">Cette actualité inclus une vidéo</p>
+                                        <p class="text-muted font-italic">Cette actualité inclue une vidéo</p>
                                     @endif
                                     <p class="text-muted">{{ $new->created_at->format('d/m/y H:m') }}</p>
                                     <a href="{{url('new/' . $new->id)}}" class="btn btn-success">
@@ -30,12 +30,6 @@
                         </div>
                 </div>
                 @endforeach
-
-                <div style="text-align: center">
-                    <div class="format">
-                        {{$news->links('livewire.pagination')}}
-                    </div>
-                </div>
             </div>
     </div>
     <div class="container mt-3" style="text-align: center">

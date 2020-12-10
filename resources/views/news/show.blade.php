@@ -9,6 +9,18 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
+                <div class="float-right">
+                    @if (Auth::user()->role ==='admin')
+                        <a href="{{url('new/edit/' . $new->id)}}"
+                           class="btn btn-primary">
+                            Modifier une news
+                        </a>
+
+                        <a href="{{url('new/destroy/' . $new->id)}}"
+                           onclick="return confirm('Etes-vous sur de vouloir supprimer cette news ?')" class="btn btn-danger">Supprimer
+                            la news</a>
+                    @endif
+                </div>
                 <h3 class="card-title">{{ $new->title }}</h3>
             </div>
             <div class="card-body">
@@ -25,24 +37,11 @@
                 @endif
                 <p>Crée le {{ $new->created_at->format('d/m/y à H:m') }}</p>
             </div>
+
             <div class="card-footer">
                 <a href="{{url('/news')}}" class="btn btn-success ml-3">Retour</a>
-                @if (Auth::user()->role ==='admin')
-                    <a href="{{url('new/edit/' . $new->id)}}"
-                       class="btn btn-primary mt-3 mr-2">
-                        Modifier une news
-                    </a>
-
-                    <a href="{{url('new/destroy/' . $new->id)}}"
-                       onclick="return confirm('Etes-vous sur de vouloir supprimer cette news ?')" class="btn btn-danger">Supprimer
-                        la news</a>
-                @endif
             </div>
         </div>
-    </div>
-
-    <div>
-        <a href="{{url('/news')}}" class="btn btn-success ml-3">Retour</a>
     </div>
 </x-app-layout>
 

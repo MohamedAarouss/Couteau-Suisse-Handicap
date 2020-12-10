@@ -33,12 +33,12 @@
                                 tabindex="5"
                                 required>
                             <option class="font-bold" value="">-- Choisissez un département --</option>
-                            <option value="INFORMATIQUE" {{old('department') == "informatique" ? 'selected': ""}}>
+                            <option value="Informatique" {{old('department', $new->department) == "Informatique" ? 'selected': ""}}>
                                 Informatique
                             </option>
-                            <option value="MMI" {{old('department') == "mmi" ? 'selected': ""}}>MMI</option>
-                            <option value="TC" {{old('department') == "tc" ? 'selected': ""}}>TC</option>
-                            <option value="GEA" {{old('department') == "gea" ? 'selected': ""}}>GEA</option>
+                            <option value="MMI" {{old('department', $new->department) == "MMI" ? "selected": ""}}>MMI</option>
+                            <option value="TC" {{old('department', $new->department) == "TC" ? 'selected': ""}}>TC</option>
+                            <option value="GEA" {{old('department', $new->department) == "GEA" ? 'selected': ""}}>GEA</option>
                         </select>
                     </div>
 

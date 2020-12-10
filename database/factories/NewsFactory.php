@@ -27,8 +27,7 @@ class NewsFactory extends Factory
             'title' => $this->faker->jobTitle,
             'user' => User::all()->random()->name,
             'department' => $this->faker->randomElement(['Informatique', 'MMI', 'GEA', 'TC']),
-            'informations' => $this->faker->text($maxNbChars = 200),
-            'img' => $this->faker->imageUrl("https://via.placeholder.com/150")
+            'informations' => $this->faker->text($maxNbChars = 200)
         ];
     }
 }
