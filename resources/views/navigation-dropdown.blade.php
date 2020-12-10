@@ -12,11 +12,11 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('news.index') }}" :active="request()->routeIs('news.index')" style="color: white">
+                    <x-jet-nav-link href="{{ route('news.index') }}" :active="request()->routeIs('news.index')">
                         {{ __('Actualité') }}
                     </x-jet-nav-link>
 
-                    <x-jet-nav-link href="{{ route('ent.home') }}" :active="request()->routeIs('ent.home')" style="color: white">
+                    <x-jet-nav-link href="{{ route('ent.home') }}" :active="request()->routeIs('ent.home')">
                         {{ __('Ent') }}
                     </x-jet-nav-link>
                 </div>
@@ -35,7 +35,7 @@
                                 <div style="color: white">{{ Auth::user()->name }}</div>
 
                                 <div class="ml-1">
-                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" style="color:white">
                                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                     </svg>
                                 </div>
@@ -49,12 +49,12 @@
                             {{ __('Manage Account') }}
                         </div>
 
-                        <x-jet-dropdown-link href="{{ route('profile.show') }}" class="links">
+                        <x-jet-dropdown-link href="{{ route('profile.show') }}">
                             {{ __('Profile') }}
                         </x-jet-dropdown-link>
 
                         @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                            <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                            <x-jet-dropdown-link href="{{ route('api-tok    ens.index') }}">
                                 {{ __('API Tokens') }}
                             </x-jet-dropdown-link>
                         @endif
@@ -121,11 +121,11 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="{{ route('news.index') }}" :active="request()->routeIs('news.index')" style="color: white">
+            <x-jet-responsive-nav-link href="{{ route('news.index') }}" :active="request()->routeIs('news.index')">
                 {{ __('Actualité') }}
             </x-jet-responsive-nav-link>
 
-            <x-jet-responsive-nav-link href="{{ route('ent.home') }}" :active="request()->routeIs('ent.home')" style="color: white">
+            <x-jet-responsive-nav-link href="{{ route('ent.home') }}" :active="request()->routeIs('ent.home')">
                 {{ __('Ent') }}
             </x-jet-responsive-nav-link>
         </div>
@@ -138,19 +138,19 @@
                 </div>
 
                 <div class="ml-3">
-                    <div class="font-medium text-base" style="color: white">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm" style="color: white">{{ Auth::user()->email }}</div>
+                    <div class="font-medium text-base text-gray-50">{{ Auth::user()->name }}</div>
+                    <div class="font-medium text-sm text-gray-50">{{ Auth::user()->email }}</div>
                 </div>
             </div>
 
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
-                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" class="responsivelinks" :active="request()->routeIs('profile.show')" style="color: white">
+                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" class="responsivelinks" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
                 </x-jet-responsive-nav-link>
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                    <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')" style="color: white">
+                    <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
                         {{ __('API Tokens') }}
                     </x-jet-responsive-nav-link>
                 @endif
@@ -159,7 +159,7 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <x-jet-responsive-nav-link href="{{ route('logout') }} " style="color: white"
+                    <x-jet-responsive-nav-link href="{{ route('logout') }} "
                                                onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                         {{ __('Logout') }}
@@ -198,16 +198,4 @@
         </div>
     </div>
 </nav>
-<style>
-    .responsivelinks{
-        color: white;
-    }
-    .responsivelinks:hover {
-        background-color: green;
-        color: yellow;
-    }
-    .links:hover{
-        background-color: #024772;
-        color: white;
-    }
-</style>
+
