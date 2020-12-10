@@ -8,6 +8,7 @@
             <div class="col-lg-4 col-sm-6 mb-2 mt-3">
                 <div class="card">
                     <div class="card-header">
+                        <p class="float-right">{{$new->read_state}}</p>
                         <h5 class="card-title font-bold">{{ $new->title }}</h5>
                     </div>
                     @if ($new->read_state === 'non lu')
@@ -15,16 +16,15 @@
                             @else
                                 <div class="card-body card border-success">
                                     @endif
-                                    <p class="float-right">{{$new->read_state}}</p>
-                                    <p class="card-text">{{ $new->username }}</p>
+                                    <p class="card-text">{{ $new->user }}</p>
                                     <p class="text-muted font-bold">Département {{ $new->department }} </p>
                                     <p>{{ $new->informations }}</p>
                                     @if($new->url != null)
-                                        <p class="text-muted font-italic">Cette actualité inclue une vidéo</p>
+                                        <p class="text-muted font-italic">Cette actualité inclue une vidéo.</p>
                                     @endif
-                                    <p class="text-muted">{{ $new->created_at->format('d/m/y H:m') }}</p>
+                                    <p class="text-muted">Ajoutée le {{ $new->created_at->format('d/m/y à H:m') }}</p>
                                     <a href="{{url('new/' . $new->id)}}" class="btn btn-success">
-                                        Plus de details
+                                        Plus de détails
                                     </a>
                                 </div>
                         </div>

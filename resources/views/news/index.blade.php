@@ -12,12 +12,12 @@
         </div>
     @endif
 
-<!-- Affiche le bouton de création de news seulement pour les administrateurs -->
+<!-- Affiche le bouton de création d'actualités seulement pour les administrateurs -->
     <div class="float-right">
         @if (Auth::user()->role ==='admin')
             <a href="{{url('news/create')}}"
                class="btn btn-primary mt-3 mr-2">
-                Ajouter une nouvelle news
+                Ajouter une nouvelle actualité
             </a>
         @endif
     </div>

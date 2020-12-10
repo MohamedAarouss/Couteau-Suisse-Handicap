@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('NEWS') }}
+            {{ __('Actualité') }}
         </h2>
     </x-slot>
 
@@ -18,7 +18,7 @@
 
                         <a href="{{url('new/destroy/' . $new->id)}}"
                            onclick="return confirm('Etes-vous sur de vouloir supprimer cette news ?')" class="btn btn-danger">Supprimer
-                            la news</a>
+                            l'actualité'</a>
                     @endif
                 </div>
                 <h3 class="card-title">{{ $new->title }}</h3>
@@ -35,7 +35,6 @@
                 @if ($new->img !== null)
                     <img src="{{asset('storage/images/' . $new->img)}}"/>
                 @endif
-                <p>Crée le {{ $new->created_at->format('d/m/y à H:m') }}</p>
             </div>
 
             <div class="card-footer">
