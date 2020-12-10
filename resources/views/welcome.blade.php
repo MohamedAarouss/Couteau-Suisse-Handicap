@@ -42,16 +42,15 @@
                         <a href="{{ route('news.index') }}" class="btn btn-primary btn-lg " role="button">Voir les actualités</a>
                     </div>
                 @else
-
-                <div class="flex justify-center mt-4 sm:items-center ">
                     <div class="flex justify-center mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg h2 text-center">
 
-                        <div> Connectez-vous pour accéder aux différentes fonctionnalités de l'ENT de l'Université d'Artois ! </div>
+                        <div>Connecter vous pour accéder aux différentes fonctionnalités de l'ENT de l'Université d'Artois ! </div>
 
                     </div>
-                    <a href="{{ route('login') }}" class="btn btn-primary btn-lg mr-2" role="button">Se connecter</a>
-                    <a href="{{ route('register') }}" class="btn btn-secondary btn-lg" role="button">S'inscrire</a>
-                </div>
+                    <div class="flex justify-center mt-4 sm:items-center ">
+                        <a href="{{ route('login') }}" class="btn btn-primary btn-lg mr-2" role="button">Se connecter</a>
+                        <a href="{{ route('register') }}" class="btn btn-primary btn-lg " role="button">S'inscrire</a>
+                    </div>
                 @endif
             </div>
     </body>
