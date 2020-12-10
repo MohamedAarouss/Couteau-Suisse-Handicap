@@ -4,36 +4,38 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\EventAppointment;
 use Illuminate\Http\Request;
 
-use App\Models\Event;
+
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Redirect,Response;
 
 
-class FullCalendarEventMasterController extends Controller
+class FullCalendarEventAppointmentMasterController extends Controller
 
 {
 
     public function index()
 
     {
+        /*$user=Auth::user();
        $userId=auth()->user()->id;
         $event=DB::select('select * from events');
         //console.log($event);
         $start=array();
-        $end=array();
+        $end=array();*/
 
         if(request()->ajax())
 
         {
 
-            foreach ($event as $v){
+            /*foreach ($event as $v){
                 if($userId==$v->userId){
-                    $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
-                    //array_push($start,(!empty($v->start)) ? ($v->start) : (''));
+                    //$start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
+                    array_push($start,(!empty($v->start)) ? ($v->start) : (''));
 
                     //$start= (!empty($v->start)) ? ($v->start) : ('');
                     //$end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
@@ -50,21 +52,25 @@ class FullCalendarEventMasterController extends Controller
                 }
 
            }
-            return Response::json($data);
+            return Response::json($data);*/
 
 
-            /*$start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
+            $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
 
             $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
 
-            $data = Event::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
+            $data = EventAppointment::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
 
-            return Response::json($data);*/
+            return Response::json($data);
 
         }
 
-        return view('home');
+        return view('ent.rendez_vous');
 
+    }
+    public function store(Request $request){
+        $dataEvent=request()->all();
+        print_r($dataEvent);
     }
 
     public function create(Request $request)
@@ -75,7 +81,7 @@ class FullCalendarEventMasterController extends Controller
             'end' => $request->end,
             'userId'=>$request->userId,
         ];
-        $event = Event::insert($insertArr);
+        $event = EventAppointment::insert($insertArr);
         return Response::json($event);
     }
     public function update(Request $request)
@@ -87,7 +93,7 @@ class FullCalendarEventMasterController extends Controller
             'start' => $request->start,
             'end' => $request->end,
         ];
-        $event  = Event::where($where)->update($updateArr);
+        $event  = EventAppointment::where($where)->update($updateArr);
         return Response::json($event);
     }
 
@@ -97,7 +103,7 @@ class FullCalendarEventMasterController extends Controller
 
     public function destroy(Request $request)
     {
-        $event = Event::where('id',$request->id)->delete();
+        $event = EventAppointment::where('id',$request->id)->delete();
         return Response::json($event);
     }
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EntController;
 use App\Http\Controllers\FullCalendarEventMasterController;
+use App\Http\Controllers\FullCalendarEventAppointmentMasterController;
 use App\Http\Controllers\NewsController;
 
 use Illuminate\Http\Request;
@@ -65,6 +66,21 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
     Route::delete('/news/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
 
+
+    //rendez_vous
+    Route::get('/rendez_vous', function () {
+        return view('/ent/rendez_vous');
+    })->name('ent.rendez_vous');
+    Route::get('/fullcalendareventappointmentmaster',[FullCalendarEventAppointmentMasterController::class,'index']);
+
+    Route::post('/fullcalendareventappointmentmaster/create',[FullCalendarEventAppointmentMasterController::class,'create']);
+
+    Route::post('/fullcalendareventappointmentmaster/update',[FullCalendarEventAppointmentMasterController::class,'update']);
+
+    Route::post('/fullcalendareventappointmentmaster/delete',[FullCalendarEventAppointmentMasterController::class,'destroy']);
+
+
+
     //fullcalender
 
     Route::get('/fullcalendareventmaster',[FullCalendarEventMasterController::class,'index']);
@@ -74,5 +90,8 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::post('/fullcalendareventmaster/update',[FullCalendarEventMasterController::class,'update']);
 
     Route::post('/fullcalendareventmaster/delete',[FullCalendarEventMasterController::class,'destroy']);
+
+
+
 
 });

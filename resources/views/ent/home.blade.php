@@ -419,6 +419,7 @@
                 center: 'title',
                 right: 'month,basicWeek,basicDay,listMonth'
             },
+            weekends: false,
             navLinks: true, // can click day/week names to navigate views
             editable: true,
             eventLimit: true, // allow "more" link when too many events
@@ -462,9 +463,9 @@
 
                 if (title) {
 
-                    var start = $.fullCalendar.formatDate(start, "Y-MM-DD HH:mm:ss");
+                    var start = $.fullCalendar.formatDate(start, "Y-MM-DD H:mm:ss");
 
-                    var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
+                    var end = $.fullCalendar.formatDate(end, "Y-MM-DD H:mm:ss");
 
 
 
@@ -480,9 +481,9 @@
 
                             displayMessage("Ajout effectué");
 
-                            $('#calendar').fullCalendar('removeEvents');
+                            /*$('#calendar').fullCalendar('removeEvents');
 
-                            $('#calendar').fullCalendar('refetchEvents' );
+                            $('#calendar').fullCalendar('refetchEvents' );*/
 
                         }
 
