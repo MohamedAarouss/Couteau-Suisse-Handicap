@@ -67,7 +67,6 @@
         background: #16222A;
         background: linear-gradient(59deg, #0087A7, #024772);
         color: white;
-        margin-top: 100px;
     }
 
     footer a {

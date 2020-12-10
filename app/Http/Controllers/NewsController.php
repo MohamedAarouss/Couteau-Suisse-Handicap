@@ -57,7 +57,7 @@ class NewsController extends Controller
             $new = News::where('id', $id)->with('user')->first();
 
             if (strcmp($new->read_state, 'non lu') === 0) {
-                $new->read_state = 'visionné';
+                $new->read_state = 'consulté';
                 $new->save();
             }
 

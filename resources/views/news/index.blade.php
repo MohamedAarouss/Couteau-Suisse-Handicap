@@ -13,7 +13,7 @@
     @endif
 
 <!-- Affiche le bouton de création d'actualités seulement pour les administrateurs -->
-    <div class="float-right">
+    <div class="float-right mt-2 mr-4">
         @if (Auth::user()->role ==='admin')
             <a href="{{url('news/create')}}"
                class="btn btn-primary mt-3 mr-2">
@@ -24,7 +24,6 @@
 
     <!-- Affichage des éléments de l'actualité et d'une barre de recherche -->
     @livewire('filter')
-
     @include('footer')
 </x-app-layout>
 

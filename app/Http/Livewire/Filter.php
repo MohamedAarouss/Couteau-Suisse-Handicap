@@ -12,11 +12,6 @@ class Filter extends Component
 
     public $searchTerm;
 
-    public function updatingSearch()
-    {
-        $this->resetPage();
-    }
-
     public function render()
     {
         return view('livewire.filter', [

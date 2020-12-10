@@ -5,6 +5,9 @@
         </h2>
     </x-slot>
 
+    <br>
+    <br>
+
     <!-- Afficher le bouton de création de news seulement pour les administrateurs -->
     <div class="container">
         <div class="card">
