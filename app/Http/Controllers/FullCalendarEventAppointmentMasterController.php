@@ -21,56 +21,19 @@ class FullCalendarEventAppointmentMasterController extends Controller
     public function index()
 
     {
-        /*$user=Auth::user();
-       $userId=auth()->user()->id;
-        $event=DB::select('select * from events');
-        //console.log($event);
-        $start=array();
-        $end=array();*/
-
-        if(request()->ajax())
-
-        {
-
-            /*foreach ($event as $v){
-                if($userId==$v->userId){
-                    //$start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
-                    array_push($start,(!empty($v->start)) ? ($v->start) : (''));
-
-                    //$start= (!empty($v->start)) ? ($v->start) : ('');
-                    //$end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
-
-                    //$end= (!empty($v->end)) ? ($v->end) : ('');
-                    array_push($end,(!empty($v->end)) ? ($v->end) : (''));
-                    $data = Event::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end','userId']);
-
-
-
-
-
-
-                }
-
-           }
-            return Response::json($data);*/
-
-
-            $start = (!empty($_GET["start"])) ? ($_GET["start"]) : ('');
-
-            $end = (!empty($_GET["end"])) ? ($_GET["end"]) : ('');
-
-            $data = EventAppointment::whereDate('start', '>=', $start)->whereDate('end',   '<=', $end)->get(['id','title','start', 'end']);
-
-            return Response::json($data);
-
-        }
-
-        return view('ent.rendez_vous');
+        return view('ent/rendez_vous');
 
     }
     public function store(Request $request){
-        $dataEvent=request()->all();
+        $dataEvent=request()->except(['_token','_method']);
         print_r($dataEvent);
+    }
+
+    public function show(){
+
+        $data['events']=EventAppointment::all();
+        //print_r($data);
+        return response()->json($data['events']);
     }
 
     public function create(Request $request)

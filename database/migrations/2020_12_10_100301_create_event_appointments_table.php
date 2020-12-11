@@ -18,9 +18,9 @@ class CreateEventAppointmentsTable extends Migration
 
             $table->string('title');
 
-            $table->dateTime('start');
+            $table->dateTimeTz('start');
 
-            $table->dateTime('end');
+            $table->dateTimeTz('end');
 
             $table->integer('userId');
 

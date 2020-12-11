@@ -55,6 +55,30 @@
                         end:info.endStr,
 
                     }) */},
+                eventClick:function(info){
+                    $('#idrdv').val(info.event.id);
+                    $('#titrerdv').val(info.event.title);
+                    moisStart=(info.event.start.getMonth()+1);
+                    jourStart=(info.event.start.getDate());
+                    anneeStart=(info.event.start.getFullYear());
+                    heureStart=(info.event.start.getHours()-1+":"+info.event.start.getMinutes());
+
+                    moisStart=(moisStart<10)?"0"+moisStart:moisStart;
+                    jourStart=(jourStart<10)?"0"+jourStart:jourStart;
+
+                    moisEnd=(info.event.end.getMonth()+1);
+                    jourEnd=(info.event.end.getDate());
+                    anneeEnd=(info.event.end.getFullYear());
+                    heureEnd=(info.event.end.getHours()-1+":"+info.event.end.getMinutes());
+
+                    moisEnd=(moisEnd<10)?"0"+moisEnd:moisEnd;
+                    jourEnd=(jourEnd<10)?"0"+jourEnd:jourEnd;
+                    $('#startrdv').val(anneeStart+"-"+moisStart+"-"+jourStart+" "+heureStart);
+                    $('#endrdv').val(anneeEnd+"-"+moisEnd+"-"+jourEnd+" "+heureEnd);
+                    $('#Modal').modal();
+                },
+
+                events:"{{url('/fullcalendareventappointmentmaster/show')}}"
 
             });
             calendar.render();
@@ -84,9 +108,12 @@
                 $.ajax(
                     {
                         type:"POST",
-                        url:"{{url('/ent')}}"+action,
+                        url:"{{url('/fullcalendareventappointmentmaster/create')}}",
                         data:objEvent,
-                        succes:function(msg){console.log(msg);},
+                        success:function(msg){console.log(msg);
+                        $('#Modal').modal('toggle');
+                        calendar.refetchEvents();
+                        },
                         error:function(){alert("Une erreur");}
 
                     }
