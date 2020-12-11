@@ -9,8 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
         dayMaxEvents: true,//si trop d'event un pop up s'affiche
 
         //menu de navigation
+        customButtons: {
+            disponibiliteBtn: {
+                text: 'Mes disponibilités',
+                click: function() {
+                    viderFormulaire();
+                    $('#DispoModal').modal();
+
+                }
+            }
+        },
         headerToolbar: {
-            left: 'prev,next today',
+            left: 'prev,next,today,disponibiliteBtn',
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
@@ -106,14 +116,21 @@ document.addEventListener('DOMContentLoaded', function() {
         envoieInformation('/'+$("#idrdv").val(),ObjEvent);
 
     });
+
+    $('#saveDispo').click(function(){
+        ObjEvent=dataGUIDispo("POST");
+        envoyerInformationDispo('',ObjEvent);
+
+    });
+
     function dataGUI(method){
-        //$user=Auth::user();
+
         nouveauEvent= {
             id:$('#idrdv').val(),
             title:$('#titrerdv').val(),
             start:$('#startrdv').val(),
             end:$('#endrdv').val(),
-            userId:1,
+            userId:"",
             '_token':$("meta[name='csrf-token']").attr("content"),
             '_method':method
         }
@@ -121,6 +138,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
+    function dataGUIDispo(method){
+
+        nouveauEvent= {
+            id:"",
+            title:"dispo",
+            start:$('#startdispo').val()+" "+$('#heurestartdispo').val(),
+            end:$('#startdispo').val()+" "+$('#heureenddispo').val(),
+            userId:"",
+            '_token':$("meta[name='csrf-token']").attr("content"),
+            '_method':method,
+        }
+        return(nouveauEvent);
+
+    }
     function envoyerInformation(action,objEvent){
         $.ajax(
             {
@@ -136,14 +167,47 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         )
     }
-    function envoieInformation(action,objEvent){
+    function envoyerInformationDispo(action,objEvent){
+        $.ajax(
+            {
+                type:"POST",
+                url:url_cree,
+                data:objEvent,
+                success:function(msg){console.log(msg);
+                    $('#DispoModal').modal('toggle');
+                    calendar.refetchEvents();
+                },
+                error:function(){alert("Une erreur");}
+
+            }
+        )
+    }
+    function envoieInformation(action,objEvent) {
+        $.ajax(
+            {
+                type: "POST",
+                url: url_ + action,
+                data: objEvent,
+                success: function (msg) {
+                    console.log(msg);
+                    $('#Modal').modal('toggle');
+                    calendar.refetchEvents();
+                },
+                error: function () {
+                    alert("Une erreur");
+                }
+
+            }
+        )
+    }
+    function envoieInformationDispo(action,objEvent){
         $.ajax(
             {
                 type:"POST",
                 url:url_+action,
                 data:objEvent,
                 success:function(msg){console.log(msg);
-                    $('#Modal').modal('toggle');
+                    $('#DispoModal').modal('toggle');
                     calendar.refetchEvents();
                 },
                 error:function(){alert("Une erreur");}

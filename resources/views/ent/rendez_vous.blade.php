@@ -51,6 +51,34 @@
             </div>
         </div>
     </div>
+</div><div class="modal fade" id="DispoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4>Rendez-vous</h4>
+
+                Date du jour de disponibilité:
+                <br />
+                <input type="text" class="form-control" name="startdispo" id="startdispo">
+
+                Heure de debut :
+                <br />
+                <input type="text" class="form-control" name="heurestartdispo" id="heurestartdispo">
+                Heure de fin:
+                <br />
+                <input type="text" class="form-control" name="heureenddispo" id="heureenddispo">
+
+            </div>
+
+            <div class="modal-footer">
+                <button id="closeDispo" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button id="saveDispo" type="button" class="btn btn-primary" >Save</button>
+                <button id="btnsupprimerDispo" type="button" class="btn btn-danger" >Supprimer</button>
+                <button id="btnmodifierDispo" type="button" class="btn btn-warning" >Modifier</button>
+
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="container">
