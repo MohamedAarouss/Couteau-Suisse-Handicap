@@ -57,14 +57,14 @@
             <div class="modal-body">
                 <h4>Rendez-vous</h4>
 
-                Date du jour de disponibilité:
+                Date du jour de disponibilité (aaaa-mm-jj):
                 <br />
                 <input type="text" class="form-control" name="startdispo" id="startdispo">
 
-                Heure de debut :
+                Heure de debut (hh:mm):
                 <br />
                 <input type="text" class="form-control" name="heurestartdispo" id="heurestartdispo">
-                Heure de fin:
+                Heure de fin (hh:mm):
                 <br />
                 <input type="text" class="form-control" name="heureenddispo" id="heureenddispo">
 
