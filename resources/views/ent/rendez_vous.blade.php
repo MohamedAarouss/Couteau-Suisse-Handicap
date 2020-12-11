@@ -90,6 +90,12 @@
                 EnvoyerInformation('',ObjEvent);
 
             });
+
+            $('#btnsupprimer').click(function(){
+                ObjEvent=dataGUI("DELETE");
+                SupprInformation('/'+$("#idrdv").val(),ObjEvent);
+
+            });
             function dataGUI(method){
                 //$user=Auth::user();
                 nouveauEvent= {
@@ -104,6 +110,7 @@
                 return(nouveauEvent);
 
             }
+
             function EnvoyerInformation(action,objEvent){
                 $.ajax(
                     {
@@ -113,6 +120,21 @@
                         success:function(msg){console.log(msg);
                         $('#Modal').modal('toggle');
                         calendar.refetchEvents();
+                        },
+                        error:function(){alert("Une erreur");}
+
+                    }
+                )
+            }
+            function SupprInformation(action,objEvent){
+                $.ajax(
+                    {
+                        type:"POST",
+                        url:"{{url('/event')}}"+action,
+                        data:objEvent,
+                        success:function(msg){console.log(msg);
+                            $('#Modal').modal('toggle');
+                            calendar.refetchEvents();
                         },
                         error:function(){alert("Une erreur");}
 
@@ -153,6 +175,7 @@
             <div class="modal-footer">
                 <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button id="save" type="button" class="btn btn-primary" >Save</button>
+                <button id="btnsupprimer" type="button" class="btn btn-danger" >Supprimer</button>
 
             </div>
         </div>

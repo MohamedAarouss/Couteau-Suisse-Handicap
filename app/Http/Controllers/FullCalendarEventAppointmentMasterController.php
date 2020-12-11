@@ -24,7 +24,7 @@ class FullCalendarEventAppointmentMasterController extends Controller
         return view('ent/rendez_vous');
 
     }
-    public function store(Request $request){
+    public function store(){
         $dataEvent=request()->except(['_token','_method']);
         print_r($dataEvent);
     }
@@ -64,10 +64,11 @@ class FullCalendarEventAppointmentMasterController extends Controller
 
 
 
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $event = EventAppointment::where('id',$request->id)->delete();
-        return Response::json($event);
+        $event = EventAppointment::findOrFail($id);
+        EventAppointment::destroy($id);
+        return response()->json($id);
     }
 
 }
