@@ -19,6 +19,13 @@
                     <x-jet-nav-link href="{{ route('ent.home') }}" :active="request()->routeIs('ent.home')">
                         {{ __('Ent') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('ent.rendez_vous') }}" :active="request()->routeIs('ent.rendez_vous')" style="color: white">
+                        {{ __('Rendez-vous') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('ent.agenda') }}" :active="request()->routeIs('ent.agenda')" style="color: white">
+                        {{ __('Agenda') }}
+                    </x-jet-nav-link>
+
                 </div>
             </div>
 

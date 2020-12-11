@@ -4,7 +4,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Models\Event;
+use App\Models\EventAppointment;
 use Illuminate\Http\Request;
 
 
@@ -14,25 +14,25 @@ use Illuminate\Support\Facades\DB;
 use Redirect,Response;
 
 
-class FullCalendarEventMasterController extends Controller
+class FullCalendarEventAppointmentMasterController extends Controller
 
 {
 
     public function index()
 
     {
-        return view('ent/agenda');
+        return view('ent/rendez_vous');
 
     }
     public function store(){
         $dataEvent=request()->except(['_token','_method']);
-        Event::insert($dataEvent);
+        EventAppointment::insert($dataEvent);
         print_r($dataEvent);
     }
 
     public function show(){
 
-        $data['events']=Event::where('userId','=',Auth::id())->get();
+        $data['events']=EventAppointment::all();
         //print_r($data);
         return response()->json($data['events']);
     }
@@ -45,7 +45,7 @@ class FullCalendarEventMasterController extends Controller
             'end' => $request->end,
             'userId'=>Auth::id(),
         ];
-        $event = Event::insert($insertArr);
+        $event = EventAppointment::insert($insertArr);
         return Response::json($event);
     }
     public function update(Request $request,$id)
@@ -53,7 +53,7 @@ class FullCalendarEventMasterController extends Controller
     {
 
         $dataEvent=request()->except(['_token','_method']);
-        $modif=Event::where('id','=',$id)->update($dataEvent);
+        $modif=EventAppointment::where('id','=',$id)->update($dataEvent);
         return response()->json($modif);
     }
 
@@ -63,8 +63,8 @@ class FullCalendarEventMasterController extends Controller
 
     public function destroy($id)
     {
-        $event = Event::findOrFail($id);
-        Event::destroy($id);
+        $event = EventAppointment::findOrFail($id);
+        EventAppointment::destroy($id);
         return response()->json($id);
     }
 

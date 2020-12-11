@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\EntController;
 use App\Http\Controllers\FullCalendarEventMasterController;
+use App\Http\Controllers\FullCalendarEventAppointmentMasterController;
 use App\Http\Controllers\NewsController;
 
 use Illuminate\Http\Request;
@@ -61,15 +62,37 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
     Route::get('/new/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
     Route::post('new/{id}', [NewsController::class, 'update'])->name('news.update');
-
     Route::get('/new/destroy/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+
+    //rendez_vous
+    Route::get('/rendez_vous', function () {
+        return view('/ent/rendez_vous');
+    })->name('ent.rendez_vous');
+    Route::resource('event',FullCalendarEventAppointmentMasterController::class);
+    Route::get('/fullcalendareventappointmentmaster',[FullCalendarEventAppointmentMasterController::class,'index']);
+    Route::get('/fullcalendareventappointmentmaster/show',[FullCalendarEventAppointmentMasterController::class,'show']);
+
+    Route::post('/fullcalendareventappointmentmaster/create',[FullCalendarEventAppointmentMasterController::class,'create']);
+
+    Route::post('/fullcalendareventappointmentmaster/update',[FullCalendarEventAppointmentMasterController::class,'update']);
+
+    Route::post('/fullcalendareventappointmentmaster/delete',[FullCalendarEventAppointmentMasterController::class,'destroy']);
+
+
+
+    //fullcalender
+    Route::get('/agenda', function () {
+        return view('/ent/agenda');
+    })->name('ent.agenda');
+    Route::resource('eventAgenda',FullCalendarEventMasterController::class);
+
     Route::get('/fullcalendareventmaster',[FullCalendarEventMasterController::class,'index']);
+    Route::get('/fullcalendareventmaster/show',[FullCalendarEventMasterController::class,'show']);
 
     Route::post('/fullcalendareventmaster/create',[FullCalendarEventMasterController::class,'create']);
 
     Route::post('/fullcalendareventmaster/update',[FullCalendarEventMasterController::class,'update']);
 
     Route::post('/fullcalendareventmaster/delete',[FullCalendarEventMasterController::class,'destroy']);
-
 
 });
