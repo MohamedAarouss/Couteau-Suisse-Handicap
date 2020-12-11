@@ -43,7 +43,7 @@ class FullCalendarEventAppointmentMasterController extends Controller
         $insertArr = [ 'title' => $request->title,
             'start' => $request->start,
             'end' => $request->end,
-            'userId'=>$request->userId,
+            'userId'=>Auth::id(),
         ];
         $event = EventAppointment::insert($insertArr);
         return Response::json($event);

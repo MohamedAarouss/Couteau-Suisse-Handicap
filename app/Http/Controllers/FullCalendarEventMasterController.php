@@ -32,7 +32,7 @@ class FullCalendarEventMasterController extends Controller
 
     public function show(){
 
-        $data['events']=Event::all();
+        $data['events']=Event::where('userId','=',Auth::id())->get();
         //print_r($data);
         return response()->json($data['events']);
     }
@@ -43,7 +43,7 @@ class FullCalendarEventMasterController extends Controller
         $insertArr = [ 'title' => $request->title,
             'start' => $request->start,
             'end' => $request->end,
-            'userId'=>$request->userId,
+            'userId'=>Auth::id(),
         ];
         $event = Event::insert($insertArr);
         return Response::json($event);

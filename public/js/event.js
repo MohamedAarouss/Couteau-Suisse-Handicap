@@ -107,13 +107,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
     function dataGUI(method){
+        //user= User::id;
         //$user=Auth::user();
         nouveauEvent= {
             id:$('#idrdv').val(),
             title:$('#titrerdv').val(),
             start:$('#startrdv').val(),
             end:$('#endrdv').val(),
-            userId:1,
+            userId:"",
             '_token':$("meta[name='csrf-token']").attr("content"),
             '_method':method
         }
