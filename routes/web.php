@@ -84,8 +84,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
 
     //fullcalender
+    Route::get('/agenda', function () {
+        return view('/ent/agenda');
+    })->name('ent.agenda');
+    Route::resource('eventAgenda',FullCalendarEventMasterController::class);
 
     Route::get('/fullcalendareventmaster',[FullCalendarEventMasterController::class,'index']);
+    Route::get('/fullcalendareventmaster/show',[FullCalendarEventMasterController::class,'show']);
 
     Route::post('/fullcalendareventmaster/create',[FullCalendarEventMasterController::class,'create']);
 

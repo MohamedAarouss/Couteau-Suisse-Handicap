@@ -52,7 +52,10 @@
         </div>
     </div>
 </div>
-<div id='calendar'></div>
+
+<div class="container">
+    <div id='calendar'></div>
+</div>
 </body>
 </x-app-layout>
 
