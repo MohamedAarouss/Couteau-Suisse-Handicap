@@ -26,6 +26,7 @@ class FullCalendarEventAppointmentMasterController extends Controller
     }
     public function store(){
         $dataEvent=request()->except(['_token','_method']);
+        EventAppointment::insert($dataEvent);
         print_r($dataEvent);
     }
 
@@ -47,17 +48,13 @@ class FullCalendarEventAppointmentMasterController extends Controller
         $event = EventAppointment::insert($insertArr);
         return Response::json($event);
     }
-    public function update(Request $request)
+    public function update(Request $request,$id)
 
     {
 
-        $where = array('id' => $request->id);
-        $updateArr = ['title' => $request->title,
-            'start' => $request->start,
-            'end' => $request->end,
-        ];
-        $event  = EventAppointment::where($where)->update($updateArr);
-        return Response::json($event);
+        $dataEvent=request()->except(['_token','_method']);
+        $modif=EventAppointment::where('id','=',$id)->update($dataEvent);
+        return response()->json($modif);
     }
 
 
