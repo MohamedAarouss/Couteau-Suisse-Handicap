@@ -13,17 +13,13 @@ class CreateEventAppointmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('event_appointments', function (Blueprint $table) {
-            $table->increments('id');
-
+        Schema::create('event_appointments', function (Blueprint $table)
+        {
+            $table->id();
             $table->string('title');
-
             $table->dateTimeTz('start');
-
             $table->dateTimeTz('end');
-
             $table->integer('userId');
-
             $table->timestamps();
         });
     }
