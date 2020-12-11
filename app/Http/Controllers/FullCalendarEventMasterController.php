@@ -64,7 +64,7 @@ class FullCalendarEventMasterController extends Controller
     public function destroy($id)
     {
         $event = Event::findOrFail($id);
-        EventAppointment::destroy($id);
+        Event::destroy($id);
         return response()->json($id);
     }
 
