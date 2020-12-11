@@ -16,11 +16,11 @@
                     @if (Auth::user()->role ==='admin')
                         <a href="{{url('new/edit/' . $new->id)}}"
                            class="btn btn-primary">
-                            Modifier une news
+                            Modifier une actualité
                         </a>
 
                         <a href="{{url('new/destroy/' . $new->id)}}"
-                           onclick="return confirm('Etes-vous sur de vouloir supprimer cette news ?')" class="btn btn-danger">Supprimer
+                           onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette actualité ?')" class="btn btn-danger">Supprimer
                             l'actualité'</a>
                     @endif
                 </div>
