@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             jourStart = (jourStart < 10) ? "0" + jourStart : jourStart;
 
             moisEnd = (info.end.getMonth() + 1);
-            jourEnd = (info.end.getDate() - 1);
+            jourEnd = (info.end.getDate());
             anneeEnd = (info.end.getFullYear());
             heureEnd = (info.end.getHours() - 1 + ":" + info.end.getMinutes());
 
