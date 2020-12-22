@@ -1,227 +1,217 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new FullCalendar.Calendar(calendarEl, {
+document.addEventListener('DOMContentLoaded', () => {
+    let calendarEl = document.getElementById('calendar');
+    let calendar = new FullCalendar.Calendar(calendarEl, {
         timeZone: 'UTC',
-
-        initialView: 'dayGridMonth',//affichage de base
-        selectable: true,//capacité de pouvoir selectioner
+        initialView: 'dayGridMonth', // Affichage de base
+        selectable: true, // Capacité de pouvoir sélectionner
         editable: true,
-        dayMaxEvents: true,//si trop d'event un pop up s'affiche
+        dayMaxEvents: true, // Si trop d'event un pop up s'affiche
 
-        //menu de navigation
+        // Menu de navigation
         customButtons: {
             disponibiliteBtn: {
                 text: 'Mes disponibilités',
-                click: function() {
+                click: () => {
                     viderFormulaire();
                     $('#DispoModal').modal();
 
                 }
             }
         },
+
         headerToolbar: {
             left: 'prev,next,today,disponibiliteBtn',
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
 
-        //action lors d'un click sur une date
-        /*dateClick: function(info) {
-            var nom=prompt("Entrez votre nom et prénom")
-            calendar.addEvent({
-                title:nom,
-                start:info.dateStr,
-            })
-        },*/
-
-        //action lors de la selection de date
-        select: function(info) {
+        // Action lors de la selection de date
+        select: (info) => {
             viderFormulaire();
 
-            $("#btnSave").prop("disabled",false);
-            $("#btnmodifier").prop("disabled",true);
-            $("#btnsupprimer").prop("disabled",true);
+            $("#btnSave").prop("disabled", false);
+            $("#btnmodifier").prop("disabled", true);
+            $("#btnsupprimer").prop("disabled", true);
 
-            moisStart=(info.start.getMonth()+1);
-            jourStart=(info.start.getDate());
-            anneeStart=(info.start.getFullYear());
-            heureStart=(info.start.getHours()-1+":"+info.start.getMinutes());
+            moisStart = (info.start.getMonth() + 1);
+            jourStart = (info.start.getDate());
+            anneeStart = (info.start.getFullYear());
+            heureStart = (info.start.getHours() - 1 + ":" + info.start.getMinutes());
 
-            moisStart=(moisStart<10)?"0"+moisStart:moisStart;
-            jourStart=(jourStart<10)?"0"+jourStart:jourStart;
+            moisStart = (moisStart < 10) ? "0" + moisStart : moisStart;
+            jourStart = (jourStart < 10) ? "0" + jourStart : jourStart;
 
-            moisEnd=(info.end.getMonth()+1);
-            jourEnd=(info.end.getDate());
-            anneeEnd=(info.end.getFullYear());
-            heureEnd=(info.end.getHours()-1+":"+info.end.getMinutes());
+            moisEnd = (info.end.getMonth() + 1);
+            jourEnd = (info.end.getDate() - 1);
+            anneeEnd = (info.end.getFullYear());
+            heureEnd = (info.end.getHours() - 1 + ":" + info.end.getMinutes());
 
-            moisEnd=(moisEnd<10)?"0"+moisEnd:moisEnd;
-            jourEnd=(jourEnd<10)?"0"+jourEnd:jourEnd;
-            $('#startrdv').val(anneeStart+"-"+moisStart+"-"+jourStart+" "+heureStart);
-            $('#endrdv').val(anneeEnd+"-"+moisEnd+"-"+jourEnd+" "+heureEnd);
-            $('#Modal').modal();
-            //var nom=prompt("Entrez votre nom et prénom");
-            /*calendar.addEvent({
-                title:$('#titrerdv').val(),
-                start:info.startStr,
-                end:info.endStr,
+            moisEnd = (moisEnd < 10) ? "0" + moisEnd : moisEnd;
+            jourEnd = (jourEnd < 10) ? "0" + jourEnd : jourEnd;
 
-            }) */},
-        eventClick:function(info){
-            $("#btnSave").prop("disabled",true);
-            $("#btnmodifier").prop("disabled",false);
-            $("#btnsupprimer").prop("disabled",false);
-
-            $('#idrdv').val(info.event.id);
-            $('#titrerdv').val(info.event.title);
-            moisStart=(info.event.start.getMonth()+1);
-            jourStart=(info.event.start.getDate());
-            anneeStart=(info.event.start.getFullYear());
-            heureStart=(info.event.start.getHours()-1+":"+info.event.start.getMinutes());
-
-            moisStart=(moisStart<10)?"0"+moisStart:moisStart;
-            jourStart=(jourStart<10)?"0"+jourStart:jourStart;
-
-            moisEnd=(info.event.end.getMonth()+1);
-            jourEnd=(info.event.end.getDate());
-            anneeEnd=(info.event.end.getFullYear());
-            heureEnd=(info.event.end.getHours()-1+":"+info.event.end.getMinutes());
-
-            moisEnd=(moisEnd<10)?"0"+moisEnd:moisEnd;
-            jourEnd=(jourEnd<10)?"0"+jourEnd:jourEnd;
-            $('#startrdv').val(anneeStart+"-"+moisStart+"-"+jourStart+" "+heureStart);
-            $('#endrdv').val(anneeEnd+"-"+moisEnd+"-"+jourEnd+" "+heureEnd);
+            $('#startrdv').val(anneeStart + "-" + moisStart + "-" + jourStart + " " + heureStart);
+            $('#endrdv').val(anneeEnd + "-" + moisEnd + "-" + jourEnd + " " + heureEnd);
             $('#Modal').modal();
         },
 
-        events:url_show,
+        eventClick: (info) => {
+            $("#btnSave").prop("disabled", true);
+            $("#btnmodifier").prop("disabled", false);
+            $("#btnsupprimer").prop("disabled", false);
+
+            $('#idrdv').val(info.event.id);
+            $('#titrerdv').val(info.event.title);
+            moisStart = (info.event.start.getMonth() + 1);
+            jourStart = (info.event.start.getDate());
+            anneeStart = (info.event.start.getFullYear());
+            heureStart = (info.event.start.getHours() - 1 + ":" + info.event.start.getMinutes());
+
+            moisStart = (moisStart < 10) ? "0" + moisStart : moisStart;
+            jourStart = (jourStart < 10) ? "0" + jourStart : jourStart;
+
+            moisEnd = (info.event.end.getMonth() + 1);
+            jourEnd = (info.event.end.getDate());
+            anneeEnd = (info.event.end.getFullYear());
+            heureEnd = (info.event.end.getHours() - 1 + ":" + info.event.end.getMinutes());
+
+            moisEnd = (moisEnd < 10) ? "0" + moisEnd : moisEnd;
+            jourEnd = (jourEnd < 10) ? "0" + jourEnd : jourEnd;
+
+            $('#startrdv').val(anneeStart + "-" + moisStart + "-" + jourStart + " " + heureStart);
+            $('#endrdv').val(anneeEnd + "-" + moisEnd + "-" + jourEnd + " " + heureEnd);
+            $('#Modal').modal();
+        },
+
+        events: url_show,
     });
     calendar.render();
     calendar.updateSize();
     calendar.setOption('locale', 'fr');
 
-    $('#save').click(function(){
-        ObjEvent=dataGUI("POST");
-        envoyerInformation('',ObjEvent);
-
+    $('#save').click(() => {
+        ObjEvent = dataGUI("POST");
+        envoyerInformation('', ObjEvent);
     });
 
-    $('#btnsupprimer').click(function(){
-        ObjEvent=dataGUI("DELETE");
-        envoieInformation('/'+$("#idrdv").val(),ObjEvent);
-
-    });
-    $('#btnmodifier').click(function(){
-        ObjEvent=dataGUI("PATCH");
-        envoieInformation('/'+$("#idrdv").val(),ObjEvent);
-
+    $('#btnsupprimer').click(() => {
+        ObjEvent = dataGUI("DELETE");
+        envoieInformation('/' + $("#idrdv").val(), ObjEvent);
     });
 
-    $('#saveDispo').click(function(){
-        ObjEvent=dataGUIDispo("POST");
-        envoyerInformationDispo('',ObjEvent);
-
+    $('#btnmodifier').click(() => {
+        ObjEvent = dataGUI("PATCH");
+        envoieInformation('/' + $("#idrdv").val(), ObjEvent);
     });
 
-    function dataGUI(method){
+    $('#saveDispo').click(() => {
+        ObjEvent = dataGUIDispo("POST");
+        envoyerInformationDispo('', ObjEvent);
+    });
 
-        nouveauEvent= {
-            id:$('#idrdv').val(),
-            title:$('#titrerdv').val(),
-            start:$('#startrdv').val(),
-            end:$('#endrdv').val(),
-            userId:"",
-            '_token':$("meta[name='csrf-token']").attr("content"),
-            '_method':method
+    function dataGUI(method) {
+        nouveauEvent = {
+            id: $('#idrdv').val(),
+            title: $('#titrerdv').val(),
+            start: $('#startrdv').val(),
+            end: $('#endrdv').val(),
+            userId: "",
+            '_token': $("meta[name='csrf-token']").attr("content"),
+            '_method': method
         }
-        return(nouveauEvent);
 
+        return (nouveauEvent);
     }
 
-    function dataGUIDispo(method){
-
-        nouveauEvent= {
-            id:"",
-            title:"dispo",
-            start:$('#startdispo').val()+" "+$('#heurestartdispo').val(),
-            end:$('#startdispo').val()+" "+$('#heureenddispo').val(),
-            userId:"",
-            '_token':$("meta[name='csrf-token']").attr("content"),
-            '_method':method,
+    function dataGUIDispo(method) {
+        nouveauEvent = {
+            id: "",
+            title: "dispo",
+            start: $('#startdispo').val() + " " + $('#heurestartdispo').val(),
+            end: $('#startdispo').val() + " " + $('#heureenddispo').val(),
+            userId: "",
+            '_token': $("meta[name='csrf-token']").attr("content"),
+            '_method': method,
         }
-        return(nouveauEvent);
 
+        return (nouveauEvent);
     }
-    function envoyerInformation(action,objEvent){
+
+    function envoyerInformation(action, objEvent) {
         $.ajax(
             {
-                type:"POST",
-                url:url_cree,
-                data:objEvent,
-                success:function(msg){console.log(msg);
+                type: "POST",
+                url: url_cree,
+                data: objEvent,
+                success: (msg) => {
+                    console.log(msg);
                     $('#Modal').modal('toggle');
                     calendar.refetchEvents();
                 },
-                error:function(){alert("Une erreur");}
-
+                error: () => {
+                    alert("Oups, une erreur est survenue !");
+                }
             }
         )
     }
-    function envoyerInformationDispo(action,objEvent){
+
+    function envoyerInformationDispo(action, objEvent) {
         $.ajax(
             {
-                type:"POST",
-                url:url_cree,
-                data:objEvent,
-                success:function(msg){console.log(msg);
+                type: "POST",
+                url: url_cree,
+                data: objEvent,
+                success: (msg) => {
+                    console.log(msg);
                     $('#DispoModal').modal('toggle');
                     calendar.refetchEvents();
                 },
-                error:function(){alert("Une erreur");}
-
+                error: () => {
+                    alert("Oups, une erreur est survenue !");
+                }
             }
         )
     }
-    function envoieInformation(action,objEvent) {
+
+    function envoieInformation(action, objEvent) {
         $.ajax(
             {
                 type: "POST",
                 url: url_ + action,
                 data: objEvent,
-                success: function (msg) {
+                success: (msg) => {
                     console.log(msg);
                     $('#Modal').modal('toggle');
                     calendar.refetchEvents();
                 },
-                error: function () {
-                    alert("Une erreur");
+                error: () => {
+                    alert("Oups, une erreur est survenue !");
                 }
-
             }
         )
     }
-    function envoieInformationDispo(action,objEvent){
+
+    function envoieInformationDispo(action, objEvent) {
         $.ajax(
             {
-                type:"POST",
-                url:url_+action,
-                data:objEvent,
-                success:function(msg){console.log(msg);
+                type: "POST",
+                url: url_ + action,
+                data: objEvent,
+                success: (msg) => {
+                    console.log(msg);
                     $('#DispoModal').modal('toggle');
                     calendar.refetchEvents();
                 },
-                error:function(){alert("Une erreur");}
-
+                error: () => {
+                    alert("Une erreur");
+                }
             }
         )
     }
 
-    function viderFormulaire(){
+    function viderFormulaire() {
         $('#idrdv').val("");
         $('#titrerdv').val("");
         $('#startrdv').val("");
         $('#endrdv').val("");
-
     }
-
 });

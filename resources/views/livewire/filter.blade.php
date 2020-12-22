@@ -9,12 +9,13 @@
                 <div class="card">
                     <div class="card-header">
                         @if ($new->read_state === 'consulté')
-                        <p class="float-right">&#10004; {{$new->read_state}}</p>
+                            <p class="float-right">&#10004; {{$new->read_state}}</p>
                         @else
                             <p class="float-right">&#10060; {{$new->read_state}}</p>
                         @endif
                         <h5 class="card-title font-bold">{{ $new->title }}</h5>
                     </div>
+
                     @if ($new->read_state === 'non lu')
                         <div class="card-body card border-danger">
                             @else
