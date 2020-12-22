@@ -32,11 +32,11 @@ class FullCalendarEventAppointmentMasterController extends Controller
 
     public function show(){
 
-        $data['events']=EventAppointment::all();
+        //$data['events']=EventAppointment::all();
+        $data['events']=EventAppointment::where('userId','=',Auth::id())->get();
         //print_r($data);
         return response()->json($data['events']);
     }
-
     public function create(Request $request)
 
     {
