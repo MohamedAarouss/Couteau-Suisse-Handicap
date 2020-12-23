@@ -1,12 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        timeZone: 'UTC',
+        timeZone: 'UTC+1',
 
-        initialView: 'dayGridMonth',//affichage de base
+        initialView: 'timeGridWeek',//affichage de base
         selectable: true,//capacité de pouvoir selectioner
-        editable: true,
+        editable: false,
         dayMaxEvents: true,//si trop d'event un pop up s'affiche
+        businessHours: {
+            startTime: '8:00',
+            endTime: '18:00'
+        },
+        navLinks: true, // si on click sur la date on arrive sur le jour cliqué
+        nowIndicator: true,
 
         //menu de navigation
         customButtons: {
@@ -131,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
             start:$('#startrdv').val(),
             end:$('#endrdv').val(),
             userId:"",
+            display: "",
             '_token':$("meta[name='csrf-token']").attr("content"),
             '_method':method
         }
@@ -146,6 +153,8 @@ document.addEventListener('DOMContentLoaded', function() {
             start:$('#startdispo').val()+" "+$('#heurestartdispo').val(),
             end:$('#startdispo').val()+" "+$('#heureenddispo').val(),
             userId:"",
+            display:"background",
+
             '_token':$("meta[name='csrf-token']").attr("content"),
             '_method':method,
         }

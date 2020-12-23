@@ -33,7 +33,14 @@ class FullCalendarEventAppointmentMasterController extends Controller
     public function show(){
 
         //$data['events']=EventAppointment::all();
-        $data['events']=EventAppointment::where('userId','=',Auth::id())->get();
+        //$data['events']=EventAppointment::where('userId','=',Auth::id())->get();
+        $data['events']=EventAppointment::select('id','start','end','display')->get();
+        //print_r($data);
+        return response()->json($data['events']);
+    }
+    public function showall(){
+
+        $data['events']=EventAppointment::all();
         //print_r($data);
         return response()->json($data['events']);
     }
@@ -44,6 +51,7 @@ class FullCalendarEventAppointmentMasterController extends Controller
             'start' => $request->start,
             'end' => $request->end,
             'userId'=>Auth::id(),
+            'display'=>$request->display
         ];
         $event = EventAppointment::insert($insertArr);
         return Response::json($event);

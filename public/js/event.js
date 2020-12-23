@@ -1,12 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
-        timeZone: 'UTC',
+        timeZone: 'UTC+1',
 
         initialView: 'dayGridMonth',//affichage de base
         selectable: true,//capacité de pouvoir selectioner
         editable: true,
         dayMaxEvents: true,//si trop d'event un pop up s'affiche
+        navLinks: true, // si on click sur la date on arrive sur le jour cliqué
 
         //menu de navigation
         headerToolbar: {
