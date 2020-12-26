@@ -6,8 +6,8 @@
         </h2>
     </x-slot>
 
-    <div class="container">
-        <div class="row sortable mt-3">
+    <div id="container">
+        <div class="row parent-container mt-3">
             @if(auth()->user()->handicap=="oui")
                 <div class="col-6">
                     <div class="card mt-2" style="border-color: #D2351F">
@@ -22,8 +22,8 @@
                             <div class="row m-1 child-container" style="border-color: #D2351F;">
                                 <div class="text-center red m-2 square move">
                                     <a class="link-size" id="sms"
-                                       href="{{ $infos[0]->link }}">
-                                        {{ $infos[0]->title }}
+                                       href="{{ $infos[1]->link }}">
+                                        {{ $infos[1]->title }}
                                     </a>
                                 </div>
 
@@ -47,55 +47,70 @@
                     <div class="card-body">
                         <div class="row m-1 child-container" style="border-color: #D2351F;">
                             <div class="text-center red m-2 square move">
-                                <a class="link-size" id="dossier" href="{{ $infos[2]->link }}">
+                                <a class="link-size" id="dossier" href="{{ $infos[1]->link }}">
+                                    {{ $infos[1]->title }}
+                                </a>
+                            </div>
+
+                            <div class="red m-2 square move">
+                                <a class="link-size" id="sms" href="{{ $infos[1]->link }}">
+                                    {{ $infos[1]->title }}
+                                </a>
+                            </div>
+
+                            <div class="red m-2 square move">
+                                <a class="link-size" id="actu" href="{{ $infos[2]->link }}">
                                     {{ $infos[2]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
-                                <a class="link-size" id="sms" href="{{ $infos[3]->link }}">
+                                <a class="link-size" id="emploi_univ"
+                                   href="{{ $infos[3]->link }}"
+                                   target="_blank">
                                     {{ $infos[3]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
-                                <a class="link-size" id="actu" href="{{ $infos[4]->link }}">
+                                <a class="link-size" id="career"
+                                   href="{{ $infos[4]->link }}" target="_blank">
                                     {{ $infos[4]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
-                                <a class="link-size" id="emploi_univ"
-                                   href="{{ $infos[5]->link }}"
+                                <a class="link-size" id="contrat" href="{{ $infos[5]->link }}"
                                    target="_blank">
                                     {{ $infos[5]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
-                                <a class="link-size" id="career"
-                                   href="{{ $infos[6]->link }}" target="_blank">
+                                <a class="link-size" id="convention"
+                                   href="{{ $infos[6]->link }}"
+                                   target="_blank">
                                     {{ $infos[6]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
-                                <a class="link-size" id="contrat" href="{{ $infos[7]->link }}"
+                                <a class="link-size" id="transferts"
+                                   href="{{ $infos[7]->link }}"
                                    target="_blank">
                                     {{ $infos[7]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
-                                <a class="link-size" id="convention"
-                                   href="{{ $infos[8]->link }}"
+                                <a class="link-size" id="toeic" href="{{ $infos[8]->link }}"
                                    target="_blank">
                                     {{ $infos[8]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
-                                <a class="link-size" id="transferts"
+                                <a class="link-size" id="ia_web"
                                    href="{{ $infos[9]->link }}"
                                    target="_blank">
                                     {{ $infos[9]->title }}
@@ -103,31 +118,16 @@
                             </div>
 
                             <div class="red m-2 square move">
-                                <a class="link-size" id="toeic" href="{{ $infos[10]->link }}"
-                                   target="_blank">
+                                <a class="link-size" id="ip_web"
+                                   href="{{ $infos[10]->link }}" target="_blank">
                                     {{ $infos[10]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
-                                <a class="link-size" id="ia_web"
-                                   href="{{ $infos[11]->link }}"
-                                   target="_blank">
-                                    {{ $infos[11]->title }}
-                                </a>
-                            </div>
-
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="ip_web"
-                                   href="{{ $infos[12]->link }}" target="_blank">
-                                    {{ $infos[12]->title }}
-                                </a>
-                            </div>
-
-                            <div class="red m-2 square move">
                                 <a class="link-size" id="inscription_cles"
-                                   href="{{ $infos[13]->link }}" target="_blank">
-                                    {{ $infos[13]->title }}
+                                   href="{{ $infos[11]->link }}" target="_blank">
+                                    {{ $infos[11]->title }}
                                 </a>
                             </div>
                         </div>
@@ -145,39 +145,40 @@
                     <div class="card-body">
                         <div class="row m-1 child-container" style="border-color: #28A60E">
                             <div class="green m-2 square move">
-                                <a class="link-size" id="moodle" href="{{ $infos[14]->link }}"
+                                <a class="link-size" id="moodle" href="{{ $infos[12]->link }}"
                                    target="_blank">
-                                    {{ $infos[14]->title }}
+                                    {{ $infos[12]->title }}
                                 </a>
                             </div>
 
                             <div class="green m-2 square move">
                                 <a class="link-size" id="maison_des_langues"
-                                   href="{{ $infos[15]->link }}"
-                                   target="_blank"> {{ $infos[15]->title }}</a>
+                                   href="{{ $infos[13]->link }}"
+                                   target="_blank"> {{ $infos[13]->title }}</a>
                             </div>
 
                             <div class="green m-2 square move">
                                 <a class="link-size" id="cles"
+                                   href="{{ $infos[14]->link }}"
+                                   target="_blank"> {{ $infos[14]->title }}</a>
+                            </div>
+
+                            <div class="green m-2 square move">
+                                <a class="link-size" id="ressource_pedagogique"
+                                   href="{{ $infos[15]->link }}" target="_blank">
+                                    {{ $infos[15]->title }}</a>
+                            </div>
+
+                            <div class="green m-2 square move">
+                                <a class="link-size" id="covoit_artois"
                                    href="{{ $infos[16]->link }}"
                                    target="_blank"> {{ $infos[16]->title }}</a>
                             </div>
 
                             <div class="green m-2 square move">
-                                <a class="link-size" id="ressource_pedagogique"
-                                   href="{{ $infos[17]->link }}" target="_blank"> {{ $infos[17]->title }}</a>
-                            </div>
-
-                            <div class="green m-2 square move">
-                                <a class="link-size" id="covoit_artois"
-                                   href="{{ $infos[18]->link }}"
-                                   target="_blank"> {{ $infos[18]->title }}</a>
-                            </div>
-
-                            <div class="green m-2 square move">
                                 <a class="link-size" id="sport"
-                                   href="{{ $infos[19]->link }}"
-                                   target="_blank"> {{ $infos[19]->title }}</a>
+                                   href="{{ $infos[17]->link }}"
+                                   target="_blank"> {{ $infos[17]->title }}</a>
                             </div>
                         </div>
                     </div>
@@ -195,8 +196,8 @@
                         <div class="row m-1 child-container" style="border-color: dimgrey">
                             <div class="grey m-2 square move">
                                 <a class="link-size"
-                                   href="{{ $infos[20]->link }}">
-                                    {{ $infos[20]->title }}
+                                   href="{{ $infos[18]->link }}">
+                                    {{ $infos[18]->title }}
                                 </a>
                             </div>
                         </div>
@@ -214,29 +215,29 @@
                     <div class="card-body">
                         <div class="row m-1 child-container" style="border-color: #E47A00">
                             <div class="orange m-2 square move">
+                                <a class="link-size" href="{{ $infos[19]->link }}"
+                                   target="_blank"> {{ $infos[19]->title }}</a>
+                            </div>
+
+                            <div class="orange m-2 square move">
+                                <a class="link-size" href="{{ $infos[20]->link }}">
+                                    {{ $infos[20]->title }}</a>
+                            </div>
+
+                            <div class="orange m-2 square move">
                                 <a class="link-size" href="{{ $infos[21]->link }}"
                                    target="_blank"> {{ $infos[21]->title }}</a>
                             </div>
 
                             <div class="orange m-2 square move">
-                                <a class="link-size" href="{{ $infos[22]->link }}">
-                                    {{ $infos[22]->title }}</a>
+                                <a class="link-size"
+                                   href="{{ $infos[22]->link }}"
+                                   target="_blank"> {{ $infos[22]->title }}</a>
                             </div>
 
                             <div class="orange m-2 square move">
                                 <a class="link-size" href="{{ $infos[23]->link }}"
                                    target="_blank"> {{ $infos[23]->title }}</a>
-                            </div>
-
-                            <div class="orange m-2 square move">
-                                <a class="link-size"
-                                   href="{{ $infos[24]->link }}"
-                                   target="_blank"> {{ $infos[24]->title }}</a>
-                            </div>
-
-                            <div class="orange m-2 square move">
-                                <a class="link-size" href="{{ $infos[25]->link }}"
-                                   target="_blank"> {{ $infos[25]->title }}</a>
                             </div>
                         </div>
                     </div>
@@ -252,8 +253,8 @@
                     <div class="card-body">
                         <div class="row m-1 child-container" style="border-color: blueviolet">
                             <div class="purple m-2 square move">
-                                <a class="link-size" href="{{ $infos[26]->link }}"
-                                   target="_blank"> {{ $infos[26]->title }}</a>
+                                <a class="link-size" href="{{ $infos[24]->link }}"
+                                   target="_blank"> {{ $infos[24]->title }}</a>
                             </div>
                         </div>
                     </div>
@@ -271,19 +272,19 @@
                         <div class="row m-1 child-container" style="border-color: #0087A7">
                             <div class="blue m-2 square move">
                                 <a class="link-size"
-                                   href="{{ $infos[27]->link }}"
-                                   target="_blank"> {{ $infos[27]->title }}</a>
+                                   href="{{ $infos[25]->link }}"
+                                   target="_blank"> {{ $infos[25]->title }}</a>
                             </div>
 
                             <div class="blue m-2 square move">
                                 <a class="link-size"
-                                   href="{{ $infos[28]->link }}"
-                                   target="_blank"> {{ $infos[28]->title }}</a>
+                                   href="{{ $infos[26]->link }}"
+                                   target="_blank"> {{ $infos[26]->title }}</a>
                             </div>
 
                             <div class="blue m-2 square move">
-                                <a class="link-size" href="{{ $infos[29]->link }}"
-                                   target="_blank"> {{ $infos[29]->title }}</a>
+                                <a class="link-size" href="{{ $infos[27]->link }}"
+                                   target="_blank"> {{ $infos[27]->title }}</a>
                             </div>
                         </div>
                     </div>
@@ -299,8 +300,7 @@
 </html>
 
 <script>
-    // Sort the parents
-    $(".sortable").sortable({
+    $(".parent-container").sortable({
         connectWith: ".connectedSortable",
         placeholder: 'movable-placeholder',
         tolerance: 'pointer',
@@ -313,7 +313,7 @@
         delay: 150,
         start: (e, ui) => {
             ui.placeholder.height(ui.helper.outerHeight());
-        }
+        },
     });
 
     // Sort the children
@@ -321,8 +321,9 @@
         items: "> div",
         tolerance: "pointer",
         containment: "document",
-        connectWith: '.child-container'
+        connectWith: '.child-container',
     });
+
 </script>
 
 <style>
