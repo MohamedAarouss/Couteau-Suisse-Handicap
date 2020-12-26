@@ -34,8 +34,8 @@
                                 </div>
                         </div>
                 </div>
-                @endforeach
             </div>
+        @endforeach
     </div>
 
     <div class="container mt-5" style="text-align: center">

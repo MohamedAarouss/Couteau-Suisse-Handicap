@@ -9,30 +9,33 @@
     <div class="container">
         <div class="row sortable mt-3">
             @if(auth()->user()->handicap=="oui")
-            <div class="col-6">
-                <div class="card mt-2" style="border-color: #D2351F">
-                    <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #D2351F">Mon handicap
-                            <span><i class="fas fa-arrows-alt"></i></span>
-                        </h1>
-                    </div>
-                    <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: #D2351F;">
-                            <div class="text-center red m-2 square move">
-                                <a class="link-size" id="sms" href="http://www.univ-artois.fr/vie-etudiante/etudes-et-handicap">
-                                    Aide mission handicap
-                                </a>
-                            </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: #D2351F">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: #D2351F">Mon
+                                handicap
+                                <span><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="dossier" href="#">
-                                    PAEH
-                                </a>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" style="border-color: #D2351F;">
+                                <div class="text-center red m-2 square move">
+                                    <a class="link-size" id="sms"
+                                       href="{{ $infos[0]->link }}">
+                                        {{ $infos[0]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="red m-2 square move">
+                                    <a class="link-size" id="dossier" href="{{ $infos[1]->link }}">
+                                        {{ $infos[1]->title }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @endif
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #D2351F">
@@ -44,92 +47,87 @@
                     <div class="card-body">
                         <div class="row m-1 child-container" style="border-color: #D2351F;">
                             <div class="text-center red m-2 square move">
-                                <a class="link-size" id="dossier" href="#">
-                                    Mon dossier
+                                <a class="link-size" id="dossier" href="{{ $infos[2]->link }}">
+                                    {{ $infos[2]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
-                                <a class="link-size" id="sms" href="#">
-                                    Alert SMS
+                                <a class="link-size" id="sms" href="{{ $infos[3]->link }}">
+                                    {{ $infos[3]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
-                                <a class="link-size" id="actu" href="#">
-                                    Actualité & documents
+                                <a class="link-size" id="actu" href="{{ $infos[4]->link }}">
+                                    {{ $infos[4]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
                                 <a class="link-size" id="emploi_univ"
-                                   href="https://ent.univ-artois.fr/esup-news/feeds/pub/item?c=1&itemID=34"
+                                   href="{{ $infos[5]->link }}"
                                    target="_blank">
-                                    Offres
-                                    d'emploi de l'université
+                                    {{ $infos[5]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
                                 <a class="link-size" id="career"
-                                   href="https://univ-artois.jobteaser.com/fr/users/sso_activation" target="_blank">
-                                    Career
-                                    Center
+                                   href="{{ $infos[6]->link }}" target="_blank">
+                                    {{ $infos[6]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
-                                <a class="link-size" id="contrat" href="http://conpere.univ-artois.fr/etudiants/accueil"
+                                <a class="link-size" id="contrat" href="{{ $infos[7]->link }}"
                                    target="_blank">
-                                    Contrat pédagogique
+                                    {{ $infos[7]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
                                 <a class="link-size" id="convention"
-                                   href="http://pstagev2.univ-artois.fr/esup-pstage/stylesheets/stage/welcome.xhtml;jsessionid=4ACEDAF24617B6ADFCC0D11E2D67D7EC"
+                                   href="{{ $infos[8]->link }}"
                                    target="_blank">
-                                    Convention de stage
+                                    {{ $infos[8]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
                                 <a class="link-size" id="transferts"
-                                   href="https://esup-transferts.univ-artois.fr/esup-transferts/stylesheets/depart/welcome.xhtml?ticket=ST-5592-9gScmVLfJSOsJsrAOK91-auth.univ-artois.fr"
+                                   href="{{ $infos[9]->link }}"
                                    target="_blank">
-                                    Transferts-departs
+                                    {{ $infos[9]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
-                                <a class="link-size" id="toeic" href="http://www.univ-artois.fr/inscription-au-toeic"
+                                <a class="link-size" id="toeic" href="{{ $infos[10]->link }}"
                                    target="_blank">
-                                    Inscription au
-                                    TOEIC
+                                    {{ $infos[10]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
                                 <a class="link-size" id="ia_web"
-                                   href="http://www.univ-artois.fr/formations/admission-inscription-transfert/reinscription"
+                                   href="{{ $infos[11]->link }}"
                                    target="_blank">
-                                    IA Web
+                                    {{ $infos[11]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
                                 <a class="link-size" id="ip_web"
-                                   href="http://www.univ-artois.fr/inscription-pedagogique" target="_blank">
-                                    IP Web
+                                   href="{{ $infos[12]->link }}" target="_blank">
+                                    {{ $infos[12]->title }}
                                 </a>
                             </div>
 
                             <div class="red m-2 square move">
                                 <a class="link-size" id="inscription_cles"
-                                   href="http://www.univ-artois.fr/inscription-au-cles" target="_blank">
-                                    Inscription
-                                    au
-                                    CLES
+                                   href="{{ $infos[13]->link }}" target="_blank">
+                                    {{ $infos[13]->title }}
                                 </a>
                             </div>
                         </div>
@@ -139,48 +137,47 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #28A60E">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color:#28A60E;">Campus en ligne
+                        <h1 class="card-title font-semibold text-xl text-center move"
+                            style="color:#28A60E;"> Campus en ligne
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
                     <div class="card-body">
                         <div class="row m-1 child-container" style="border-color: #28A60E">
                             <div class="green m-2 square move">
-                                <a class="link-size" id="moodle" href="https://moodle.univ-artois.fr/cours/"
+                                <a class="link-size" id="moodle" href="{{ $infos[14]->link }}"
                                    target="_blank">
-                                    Moodle
+                                    {{ $infos[14]->title }}
                                 </a>
                             </div>
 
                             <div class="green m-2 square move">
                                 <a class="link-size" id="maison_des_langues"
-                                   href="http://www.univ-artois.fr/formations/la-maison-des-langues"
-                                   target="_blank">Maison
-                                    des langues</a>
+                                   href="{{ $infos[15]->link }}"
+                                   target="_blank"> {{ $infos[15]->title }}</a>
                             </div>
 
                             <div class="green m-2 square move">
                                 <a class="link-size" id="cles"
-                                   href="http://www.univ-artois.fr/formations/certifications/cles"
-                                   target="_blank">CLES</a>
+                                   href="{{ $infos[16]->link }}"
+                                   target="_blank"> {{ $infos[16]->title }}</a>
                             </div>
 
                             <div class="green m-2 square move">
                                 <a class="link-size" id="ressource_pedagogique"
-                                   href="http://www.sup-numerique.gouv.fr/" target="_blank">Ressources
-                                    pédagogiques</a>
+                                   href="{{ $infos[17]->link }}" target="_blank"> {{ $infos[17]->title }}</a>
                             </div>
 
                             <div class="green m-2 square move">
                                 <a class="link-size" id="covoit_artois"
-                                   href="http://covoiturage.univ-artois.fr/covoiturage/mon-compte"
-                                   target="_blank">CoVoit'Artois</a>
+                                   href="{{ $infos[18]->link }}"
+                                   target="_blank"> {{ $infos[18]->title }}</a>
                             </div>
 
                             <div class="green m-2 square move">
                                 <a class="link-size" id="sport"
-                                   href="https://atlas.univ-artois.fr/atlas_etu/mes_inscriptions.php" target="_blank">Inscriptions
-                                    Activités Sportives</a>
+                                   href="{{ $infos[19]->link }}"
+                                   target="_blank"> {{ $infos[19]->title }}</a>
                             </div>
                         </div>
                     </div>
@@ -189,7 +186,8 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: dimgrey">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move"  style="color: dimgrey">Aide
+                        <h1 class="card-title font-semibold text-xl text-center move"
+                            style="color: dimgrey"> Aide
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
@@ -197,7 +195,8 @@
                         <div class="row m-1 child-container" style="border-color: dimgrey">
                             <div class="grey m-2 square move">
                                 <a class="link-size"
-                                   href="http://esupweb.univ-artois.fr/esup/tutos/etudiant/co/00a_guideWeb.html">Tutoriels
+                                   href="{{ $infos[20]->link }}">
+                                    {{ $infos[20]->title }}
                                 </a>
                             </div>
                         </div>
@@ -207,36 +206,37 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #E47A00">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #E47A00">Bureau virtuel
+                        <h1 class="card-title font-semibold text-xl text-center move"
+                            style="color: #E47A00"> Bureau virtuel
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
                     <div class="card-body">
                         <div class="row m-1 child-container" style="border-color: #E47A00">
                             <div class="orange m-2 square move">
-                                <a class="link-size" href="https://wmailetu.univ-artois.fr/"
-                                   target="_blank">Mon webmail</a>
+                                <a class="link-size" href="{{ $infos[21]->link }}"
+                                   target="_blank"> {{ $infos[21]->title }}</a>
                             </div>
 
                             <div class="orange m-2 square move">
-                                <a class="link-size" href="#">Annuaire</a>
+                                <a class="link-size" href="{{ $infos[22]->link }}">
+                                    {{ $infos[22]->title }}</a>
                             </div>
 
                             <div class="orange m-2 square move">
-                                <a class="link-size" href="https://monmotdepasse.univ-artois.fr/"
-                                   target="_blank">Changement de mot de
-                                    passe</a>
+                                <a class="link-size" href="{{ $infos[23]->link }}"
+                                   target="_blank"> {{ $infos[23]->title }}</a>
                             </div>
 
                             <div class="orange m-2 square move">
                                 <a class="link-size"
-                                   href="http://weblistes.univ-artois.fr/sympa/?ticket=ST-5314-fyHW7YtHOI0cVkVw6txr-auth.univ-artois.fr"
-                                   target="_blank">Listes de diffusion</a>
+                                   href="{{ $infos[24]->link }}"
+                                   target="_blank"> {{ $infos[24]->title }}</a>
                             </div>
 
                             <div class="orange m-2 square move">
-                                <a class="link-size" href="http://esupweb.univ-artois.fr/esup/pages/zoom/"
-                                   target="_blank">Zoom</a>
+                                <a class="link-size" href="{{ $infos[25]->link }}"
+                                   target="_blank"> {{ $infos[25]->title }}</a>
                             </div>
                         </div>
                     </div>
@@ -251,9 +251,9 @@
                     </div>
                     <div class="card-body">
                         <div class="row m-1 child-container" style="border-color: blueviolet">
-                            <div class="purple ge m-2 square move">
-                                <a class="link-size" href="http://intranet.univ-artois.fr/etudiant"
-                                   target="_blank">Intranet</a>
+                            <div class="purple m-2 square move">
+                                <a class="link-size" href="{{ $infos[26]->link }}"
+                                   target="_blank"> {{ $infos[26]->title }}</a>
                             </div>
                         </div>
                     </div>
@@ -262,7 +262,8 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #0087A7">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #0087A7">Documentation
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #0087A7">
+                            Documentation
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
@@ -270,30 +271,26 @@
                         <div class="row m-1 child-container" style="border-color: #0087A7">
                             <div class="blue m-2 square move">
                                 <a class="link-size"
-                                   href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
-                                   target="_blank">Encyclopaedia Universalis</a>
+                                   href="{{ $infos[27]->link }}"
+                                   target="_blank"> {{ $infos[27]->title }}</a>
                             </div>
 
                             <div class="blue m-2 square move">
                                 <a class="link-size"
-                                   href="http://portail-bu.univ-artois.fr/medias/medias.aspx?INSTANCE=exploitation&SSO_FORCELOGON=TRUE&PORTAL_ID=general_portal.xml"
-                                   target="_blank">Bibliothèques</a>
+                                   href="{{ $infos[28]->link }}"
+                                   target="_blank"> {{ $infos[28]->title }}</a>
                             </div>
 
                             <div class="blue m-2 square move">
-                                <a class="link-size" href="http://univ-numerique.fr/"
-                                   target="_blank">UNT</a>
+                                <a class="link-size" href="{{ $infos[29]->link }}"
+                                   target="_blank"> {{ $infos[29]->title }}</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary" id="btnSave">Save</button>
-        <button class="btn btn-primary" id="btnClear">ClearSave</button>
     </div>
-
-    <button class="btn btn-primary" id="save">Save</button>
 
     </body>
     @include('footer')

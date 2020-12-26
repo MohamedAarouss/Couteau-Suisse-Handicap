@@ -2,9 +2,17 @@
 
 namespace App\Http\Controllers;
 
-class EntController extends Controller {
+use App\Models\Ent;
 
-    public function index() {
-        return view('ent.home');
+class EntController extends Controller
+{
+
+    public function index()
+    {
+        $infos = Ent::all();
+
+        return view('ent.home', [
+            'infos' => $infos
+        ]);
     }
 }
