@@ -28,21 +28,26 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     /**
      * Pages du controller Ent
      */
-
     Route::get('/ent', [EntController::class, 'index'])->name('ent.home');
+
+    //Route::post('/ent/s', [EntController::class, 'update'])->name('ent.update');
 
     Route::get('/campus', function () {
         return view('/ent/campus');
     });
+
     Route::get('/scolarite', function () {
         return view('/ent/scolarite');
     });
+
     Route::get('/intranet', function () {
         return view('/ent/intranet');
     });
+
     Route::get('/aide', function () {
         return view('/ent/aide');
     });
+
     Route::get('/bureau_virtuel', function () {
         return view('/ent/bureau');
     });
@@ -64,7 +69,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::post('new/{id}', [NewsController::class, 'update'])->name('news.update');
     Route::get('/new/destroy/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
 
-    //rendez_vous
+    // Rendez_vous
     Route::get('/rendez_vous', function () {
         return view('/ent/rendez_vous');
     })->name('ent.rendez_vous');
@@ -80,7 +85,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
 
 
 
-    //fullcalender
+    // Fullcalender
     Route::get('/agenda', function () {
         return view('/ent/agenda');
     })->name('ent.agenda');

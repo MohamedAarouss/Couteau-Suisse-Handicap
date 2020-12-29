@@ -15,4 +15,13 @@ class EntController extends Controller
             'infos' => $infos
         ]);
     }
+
+    /*public function update(Request $request): RedirectResponse
+    {
+        //$ent = Ent::all();
+        DB::table('ent')->update(['title' => $request->input('title'), 'link' => $request->input('link')]);
+        //$ent->save();
+
+        return redirect()->route('ent.home')->with('success', 'Votre espace a été modifié.');
+    }*/
 }

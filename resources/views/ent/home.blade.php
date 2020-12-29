@@ -21,14 +21,14 @@
                         <div class="card-body">
                             <div class="row m-1 child-container" style="border-color: #D2351F;">
                                 <div class="text-center red m-2 square move">
-                                    <a class="link-size" id="sms"
-                                       href="{{ $infos[1]->link }}">
-                                        {{ $infos[1]->title }}
+                                    <a class="link-size"
+                                       href="{{ $infos[0]->link }}">
+                                        {{ $infos[0]->title }}
                                     </a>
                                 </div>
 
                                 <div class="red m-2 square move">
-                                    <a class="link-size" id="dossier" href="{{ $infos[1]->link }}">
+                                    <a class="link-size" href="{{ $infos[1]->link }}">
                                         {{ $infos[1]->title }}
                                     </a>
                                 </div>
@@ -40,92 +40,93 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #D2351F">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #D2351F">Scolarité
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #D2351F">
+                            Scolarité
                             <span><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
                     <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: #D2351F;">
-                            <div class="text-center red m-2 square move">
-                                <a class="link-size" id="dossier" href="{{ $infos[1]->link }}">
+                        <div class="row m-1 child-container" id="scolarite" style="border-color: #D2351F;">
+                            <div class="text-center red m-2 square move" data-arrange="1">
+                                <a class="link-size" href="{{ $infos[0]->link }}">
+                                    {{ $infos[0]->title }}
+                                </a>
+                            </div>
+
+                            <div class="red m-2 square move" data-arrange="2">
+                                <a class="link-size" href="{{ $infos[1]->link }}">
                                     {{ $infos[1]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="sms" href="{{ $infos[1]->link }}">
-                                    {{ $infos[1]->title }}
-                                </a>
-                            </div>
-
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="actu" href="{{ $infos[2]->link }}">
+                            <div class="red m-2 square move" data-arrange="3">
+                                <a class="link-size" href="{{ $infos[2]->link }}">
                                     {{ $infos[2]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="emploi_univ"
+                            <div class="red m-2 square move" data-arrange="4">
+                                <a class="link-size"
                                    href="{{ $infos[3]->link }}"
                                    target="_blank">
                                     {{ $infos[3]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="career"
+                            <div class="red m-2 square move" data-arrange="5">
+                                <a class="link-size"
                                    href="{{ $infos[4]->link }}" target="_blank">
                                     {{ $infos[4]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="contrat" href="{{ $infos[5]->link }}"
+                            <div class="red m-2 square move" data-arrange="6">
+                                <a class="link-size" href="{{ $infos[5]->link }}"
                                    target="_blank">
                                     {{ $infos[5]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="convention"
+                            <div class="red m-2 square move" data-arrange="7">
+                                <a class="link-size"
                                    href="{{ $infos[6]->link }}"
                                    target="_blank">
                                     {{ $infos[6]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="transferts"
+                            <div class="red m-2 square move" data-arrange="8">
+                                <a class="link-size"
                                    href="{{ $infos[7]->link }}"
                                    target="_blank">
                                     {{ $infos[7]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="toeic" href="{{ $infos[8]->link }}"
+                            <div class="red m-2 square move" data-arrange="9">
+                                <a class="link-size" href="{{ $infos[8]->link }}"
                                    target="_blank">
                                     {{ $infos[8]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="ia_web"
+                            <div class="red m-2 square move" data-arrange="10">
+                                <a class="link-size"
                                    href="{{ $infos[9]->link }}"
                                    target="_blank">
                                     {{ $infos[9]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="ip_web"
+                            <div class="red m-2 square move" data-arrange="11">
+                                <a class="link-size"
                                    href="{{ $infos[10]->link }}" target="_blank">
                                     {{ $infos[10]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="inscription_cles"
+                            <div class="red m-2 square move" data-arrange="12">
+                                <a class="link-size"
                                    href="{{ $infos[11]->link }}" target="_blank">
                                     {{ $infos[11]->title }}
                                 </a>
@@ -143,40 +144,40 @@
                         </h1>
                     </div>
                     <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: #28A60E">
-                            <div class="green m-2 square move">
-                                <a class="link-size" id="moodle" href="{{ $infos[12]->link }}"
+                        <div class="row m-1 child-container" id="campus" style="border-color: #28A60E">
+                            <div class="green m-2 square move" data-arrange="13">
+                                <a class="link-size" href="{{ $infos[12]->link }}"
                                    target="_blank">
                                     {{ $infos[12]->title }}
                                 </a>
                             </div>
 
-                            <div class="green m-2 square move">
-                                <a class="link-size" id="maison_des_langues"
+                            <div class="green m-2 square move" data-arrange="14">
+                                <a class="link-size"
                                    href="{{ $infos[13]->link }}"
                                    target="_blank"> {{ $infos[13]->title }}</a>
                             </div>
 
-                            <div class="green m-2 square move">
-                                <a class="link-size" id="cles"
+                            <div class="green m-2 square move" data-arrange="15">
+                                <a class="link-size"
                                    href="{{ $infos[14]->link }}"
                                    target="_blank"> {{ $infos[14]->title }}</a>
                             </div>
 
-                            <div class="green m-2 square move">
-                                <a class="link-size" id="ressource_pedagogique"
+                            <div class="green m-2 square move" data-arrange="16">
+                                <a class="link-size"
                                    href="{{ $infos[15]->link }}" target="_blank">
                                     {{ $infos[15]->title }}</a>
                             </div>
 
-                            <div class="green m-2 square move">
-                                <a class="link-size" id="covoit_artois"
+                            <div class="green m-2 square move" data-arrange="17">
+                                <a class="link-size"
                                    href="{{ $infos[16]->link }}"
                                    target="_blank"> {{ $infos[16]->title }}</a>
                             </div>
 
-                            <div class="green m-2 square move">
-                                <a class="link-size" id="sport"
+                            <div class="green m-2 square move" data-arrange="18">
+                                <a class="link-size"
                                    href="{{ $infos[17]->link }}"
                                    target="_blank"> {{ $infos[17]->title }}</a>
                             </div>
@@ -193,8 +194,8 @@
                         </h1>
                     </div>
                     <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: dimgrey">
-                            <div class="grey m-2 square move">
+                        <div class="row m-1 child-container" id="aide" style="border-color: dimgrey">
+                            <div class="grey m-2 square move" data-arrange="19">
                                 <a class="link-size"
                                    href="{{ $infos[18]->link }}">
                                     {{ $infos[18]->title }}
@@ -213,29 +214,29 @@
                         </h1>
                     </div>
                     <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: #E47A00">
-                            <div class="orange m-2 square move">
+                        <div class="row m-1 child-container" id="bureau" style="border-color: #E47A00">
+                            <div class="orange m-2 square move" data-arrange="20">
                                 <a class="link-size" href="{{ $infos[19]->link }}"
                                    target="_blank"> {{ $infos[19]->title }}</a>
                             </div>
 
-                            <div class="orange m-2 square move">
+                            <div class="orange m-2 square move" data-arrange="21">
                                 <a class="link-size" href="{{ $infos[20]->link }}">
                                     {{ $infos[20]->title }}</a>
                             </div>
 
-                            <div class="orange m-2 square move">
+                            <div class="orange m-2 square move" data-arrange="22">
                                 <a class="link-size" href="{{ $infos[21]->link }}"
                                    target="_blank"> {{ $infos[21]->title }}</a>
                             </div>
 
-                            <div class="orange m-2 square move">
+                            <div class="orange m-2 square move" data-arrange="23">
                                 <a class="link-size"
                                    href="{{ $infos[22]->link }}"
                                    target="_blank"> {{ $infos[22]->title }}</a>
                             </div>
 
-                            <div class="orange m-2 square move">
+                            <div class="orange m-2 square move" data-arrange="24">
                                 <a class="link-size" href="{{ $infos[23]->link }}"
                                    target="_blank"> {{ $infos[23]->title }}</a>
                             </div>
@@ -246,13 +247,14 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: blueviolet">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color: blueviolet">Intranet
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: blueviolet">
+                            Intranet
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
                     <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: blueviolet">
-                            <div class="purple m-2 square move">
+                        <div class="row m-1 child-container" id="intranet" style="border-color: blueviolet">
+                            <div class="purple m-2 square move" data-arrange="25">
                                 <a class="link-size" href="{{ $infos[24]->link }}"
                                    target="_blank"> {{ $infos[24]->title }}</a>
                             </div>
@@ -269,20 +271,20 @@
                         </h1>
                     </div>
                     <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: #0087A7">
-                            <div class="blue m-2 square move">
+                        <div class="row m-1 child-container" id="docu" style="border-color: #0087A7">
+                            <div class="blue m-2 square move" data-arrange="26">
                                 <a class="link-size"
                                    href="{{ $infos[25]->link }}"
                                    target="_blank"> {{ $infos[25]->title }}</a>
                             </div>
 
-                            <div class="blue m-2 square move">
+                            <div class="blue m-2 square move" data-arrange="27">
                                 <a class="link-size"
                                    href="{{ $infos[26]->link }}"
                                    target="_blank"> {{ $infos[26]->title }}</a>
                             </div>
 
-                            <div class="blue m-2 square move">
+                            <div class="blue m-2 square move" data-arrange="28">
                                 <a class="link-size" href="{{ $infos[27]->link }}"
                                    target="_blank"> {{ $infos[27]->title }}</a>
                             </div>
@@ -316,14 +318,94 @@
         },
     });
 
+    //localStorage.clear();
+
+    // Section Scolarité
+    if (localStorage.getItem('scolarite')) {
+        const [arrayScolarite, arrayCampus, arrayAide, arrayBureau, arrayIntranet, arrayDocu] =
+              [localStorage.getItem('scolarite').split(','), localStorage.getItem('campus').split(','),
+               localStorage.getItem('aide').split(','), localStorage.getItem('bureau').split(','),
+               localStorage.getItem('intranet').split(','), localStorage.getItem('docu').split(',')];
+        map = {};
+
+        // Permet de récupérer la valeur de data-arrange assignée à la div
+        // afin de sauvegarder sa position et pouvoir la réutiliser plus tard
+        $('#scolarite > div').each(function () {
+            const scolarite = $(this);
+            map[scolarite.data('arrange')] = scolarite;
+        });
+
+        $('#campus > div').each(function () {
+            const campus = $(this);
+            map[campus.data('arrange')] = campus;
+        });
+
+        $('#aide > div').each(function () {
+            const aide = $(this);
+            map[aide.data('arrange')] = aide;
+        });
+
+        $('#bureau > div').each(function () {
+            const bureau = $(this);
+            map[bureau.data('arrange')] = bureau;
+        });
+
+        $('#intranet > div').each(function () {
+            const intranet = $(this);
+            map[intranet.data('arrange')] = intranet;
+        });
+
+        $('#docu > div').each(function () {
+            const docu = $(this);
+            map[docu.data('arrange')] = docu;
+        });
+
+        // Permet d'ajouter les valeurs de chaque tableau aux cases correspondantes
+        for (let val of arrayScolarite) $('#scolarite').append(map[val]);
+        for (let val of arrayCampus) $('#campus').append(map[val]);
+        for (let val of arrayAide) $('#aide').append(map[val]);
+        for (let val of arrayBureau) $('#bureau').append(map[val]);
+        for (let val of arrayIntranet) $('#intranet').append(map[val]);
+        for (let val of arrayDocu) $('#docu').append(map[val]);
+    }
+
     // Sort the children
     $(".child-container").sortable({
         items: "> div",
         tolerance: "pointer",
         containment: "document",
         connectWith: '.child-container',
+        cancel: ".fixed",
+
+        // Au rafraichissement de la page
+        update: () => {
+            const [dataScolarite, dataCampus, dataAide, dataBureau, dataIntranet, dataDocu] = [[], [], [], [], [], []];
+
+            // Permet de sauvegarder les valeurs des cases dans des tableaux
+            $('#scolarite').find('div').each(function () { dataScolarite.push($(this).data('arrange')); });
+            $('#campus').find('div').each(function () { dataCampus.push($(this).data('arrange')); });
+            $('#aide').find('div').each(function () { dataAide.push($(this).data('arrange')); });
+            $('#bureau').find('div').each(function () { dataBureau.push($(this).data('arrange')); });
+            $('#intranet').find('div').each(function () { dataIntranet.push($(this).data('arrange')); });
+            $('#docu').find('div').each(function () { dataDocu.push($(this).data('arrange')); });
+
+            // Permet de placer correctement les cases par rapport à la position avant le rafraichissement
+            localStorage.setItem('scolarite', dataScolarite);
+            localStorage.setItem('campus', dataCampus);
+            localStorage.setItem('aide', dataAide);
+            localStorage.setItem('bureau', dataBureau);
+            localStorage.setItem('intranet', dataIntranet);
+            localStorage.setItem('docu', dataDocu);
+        }
     });
 
+    // Permet de ne pas sélectionner le texte des cases
+    $("#scolarite").disableSelection();
+    $("#campus").disableSelection();
+    $("#aide").disableSelection();
+    $("#bureau").disableSelection();
+    $("#intranet").disableSelection();
+    $("#docu").disableSelection();
 </script>
 
 <style>
