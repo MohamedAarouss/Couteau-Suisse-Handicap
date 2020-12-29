@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    var userid="";
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
         timeZone: 'UTC+1',
@@ -59,9 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             }) */},
         eventClick:function(info){
-            $("#btnSave").prop("disabled",true);
             $("#btnmodifier").prop("disabled",false);
             $("#btnsupprimer").prop("disabled",false);
+            $("#btnSave").prop("disabled",true);
 
             $('#idrdv').val(info.event.id);
             $('#titrerdv').val(info.event.title);
@@ -82,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
             jourEnd=(jourEnd<10)?"0"+jourEnd:jourEnd;
             $('#startrdv').val(anneeStart+"-"+moisStart+"-"+jourStart+" "+heureStart);
             $('#endrdv').val(anneeEnd+"-"+moisEnd+"-"+jourEnd+" "+heureEnd);
+            userid=info.event.userId;
             $('#Modal').modal();
         },
 
@@ -107,15 +109,14 @@ document.addEventListener('DOMContentLoaded', function() {
         envoieInformation('/'+$("#idrdv").val(),ObjEvent);
 
     });
+
     function dataGUI(method){
-        //user= User::id;
-        //$user=Auth::user();
         nouveauEvent= {
             id:$('#idrdv').val(),
             title:$('#titrerdv').val(),
             start:$('#startrdv').val(),
             end:$('#endrdv').val(),
-            userId:"",
+            userId:userid,
             '_token':$("meta[name='csrf-token']").attr("content"),
             '_method':method
         }

@@ -23,7 +23,7 @@ class CreateEventsTable extends Migration
 
             $table->dateTime('end');
 
-            $table->integer('userId');
+            $table->integer('userId')->nullable();
 
             $table->timestamps();
 

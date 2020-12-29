@@ -14,13 +14,18 @@
         var url_="{{url('/event')}}";
         @if(auth()->user()->personnel=="non")
         var url_show="{{url('/fullcalendareventappointmentmaster/show')}}";
+        var url_showOwn="{{url('/fullcalendareventappointmentmaster/showOwn')}}"
         console.log(url_show);
+        console.log(url_showOwn);
         @else
         var url_show="{{url('/fullcalendareventappointmentmaster/showall')}}";
+        var url_showOwn=""
         console.log(url_show);
         @endif
 
+
         var url_cree="{{url('/fullcalendareventappointmentmaster/create')}}";
+        var url_creeDispo="{{url('/fullcalendareventappointmentmaster/createDispo')}}";
     </script>
     <script src="{{asset('js/eventAppointment.js')}}"defer></script>
 

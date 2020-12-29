@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    var userid="";
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
         timeZone: 'UTC+1',
@@ -95,12 +96,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
             moisEnd=(moisEnd<10)?"0"+moisEnd:moisEnd;
             jourEnd=(jourEnd<10)?"0"+jourEnd:jourEnd;
+
+            userid=info.event.userId;
             $('#startrdv').val(anneeStart+"-"+moisStart+"-"+jourStart+" "+heureStart);
             $('#endrdv').val(anneeEnd+"-"+moisEnd+"-"+jourEnd+" "+heureEnd);
             $('#Modal').modal();
         },
 
-        events:url_show,
+        //events:url_show,
+        //events:url_showOwn,
+        eventSources: [
+            {
+                url: url_show, // use the `url` property
+                color: 'gray',    // an option!
+                textColor: 'white'  // an option!
+            },
+            {
+                url: url_showOwn, // use the `url` property
+                color: 'blue',    // an option!
+                textColor: 'white'  // an option!
+            }
+            ]
+
     });
     calendar.render();
     calendar.updateSize();
@@ -108,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $('#save').click(function(){
         ObjEvent=dataGUI("POST");
+        console.log(ObjEvent);
         envoyerInformation('',ObjEvent);
 
     });
@@ -123,9 +141,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
 
-    $('#saveDispo').click(function(){
-        ObjEvent=dataGUIDispo("POST");
-        envoyerInformationDispo('',ObjEvent);
+    $('#saveDispo').click(function() {
+        ObjEvent = dataGUIDispo("POST");
+        //console.log(ObjEvent);
+        for(let i=0;i<ObjEvent.length;i++){
+
+        envoyerInformation('', ObjEvent[i]);
+        }
 
     });
 
@@ -136,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title:$('#titrerdv').val(),
             start:$('#startrdv').val(),
             end:$('#endrdv').val(),
-            userId:"",
+            userId:userid,
             display: "",
             '_token':$("meta[name='csrf-token']").attr("content"),
             '_method':method
@@ -147,18 +169,63 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function dataGUIDispo(method){
 
-        nouveauEvent= {
-            id:"",
-            title:"dispo",
-            start:$('#startdispo').val()+" "+$('#heurestartdispo').val(),
-            end:$('#startdispo').val()+" "+$('#heureenddispo').val(),
-            userId:"",
-            display:"background",
+         day=$('#startdispo').val();
 
-            '_token':$("meta[name='csrf-token']").attr("content"),
-            '_method':method,
+
+         heureStart=$('#heurestartdispo').val();
+
+         sta= heureStart.split(":");
+         heureEnd=$('#heureenddispo').val();
+         end= heureEnd.split(":");
+         hend="";
+         events=[];
+
+         hs="";
+         ms="";
+         he= (Number(sta[0]));
+         me= (+(sta[1]));
+         i=0;
+        while(+(sta[0]+sta[1])<+(end[0]+end[1])){
+            sta= heureStart.split(":");
+            if(+(sta[0]+sta[1])>+(end[0]+end[1])){
+                break;
+            }
+
+            if(me>30){
+                hs=he;
+                ms=me;
+                he= (+ (sta[0]))+1;
+                me= ( (+(sta[1]))+30)-60;
+                heureStart=hs +":"+ms;
+                hend=he +":"+me;
+            }
+            else{
+                hs=he;
+                ms=me;
+                he= (+(sta[0]));
+                me= (+(sta[1]))+30;
+                heureStart=hs+":"+ms;
+                hend=he +":"+me;
+            }
+            console.log(day+" "+heureStart);
+            nouveauEvent= {
+                id:"",
+                title:"dispo",
+                start:day+" "+heureStart,
+                end:day+" "+hend,
+                userId:userid,
+                display:"",
+
+                '_token':$("meta[name='csrf-token']").attr("content"),
+                '_method':method,
+            }
+
+            events.push(nouveauEvent);
+            heureStart=hend;
+            i++;
         }
-        return(nouveauEvent);
+
+        return(events);
 
     }
     function envoyerInformation(action,objEvent){
@@ -180,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function() {
         $.ajax(
             {
                 type:"POST",
-                url:url_cree,
+                url:url_creeDispo,
                 data:objEvent,
                 success:function(msg){console.log(msg);
                     $('#DispoModal').modal('toggle');

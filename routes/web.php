@@ -71,9 +71,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
     Route::resource('event',FullCalendarEventAppointmentMasterController::class);
     Route::get('/fullcalendareventappointmentmaster',[FullCalendarEventAppointmentMasterController::class,'index']);
     Route::get('/fullcalendareventappointmentmaster/show',[FullCalendarEventAppointmentMasterController::class,'show']);
+    Route::get('/fullcalendareventappointmentmaster/showOwn',[FullCalendarEventAppointmentMasterController::class,'showOwn']);
     Route::get('/fullcalendareventappointmentmaster/showall',[FullCalendarEventAppointmentMasterController::class,'showall']);
 
     Route::post('/fullcalendareventappointmentmaster/create',[FullCalendarEventAppointmentMasterController::class,'create']);
+    Route::post('/fullcalendareventappointmentmaster/createDispo',[FullCalendarEventAppointmentMasterController::class,'createDispo']);
 
     Route::post('/fullcalendareventappointmentmaster/update',[FullCalendarEventAppointmentMasterController::class,'update']);
 
