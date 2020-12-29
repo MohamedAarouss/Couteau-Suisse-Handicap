@@ -6,130 +6,129 @@
         </h2>
     </x-slot>
 
-    <div class="container">
-        <div class="row sortable mt-3">
+    <div id="container">
+        <div class="row parent-container mt-3">
             @if(auth()->user()->handicap=="oui")
-            <div class="col-6">
-                <div class="card mt-2" style="border-color: #D2351F">
-                    <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #D2351F">Mon handicap
-                            <span><i class="fas fa-arrows-alt"></i></span>
-                        </h1>
-                    </div>
-                    <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: #D2351F;">
-                            <div class="text-center red m-2 square move">
-                                <a class="link-size" id="sms" href="http://www.univ-artois.fr/vie-etudiante/etudes-et-handicap">
-                                    Aide mission handicap
-                                </a>
-                            </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: #D2351F">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: #D2351F">Mon
+                                handicap
+                                <span><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="dossier" href="#">
-                                    PAEH
-                                </a>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" style="border-color: #D2351F;">
+                                <div class="text-center red m-2 square move">
+                                    <a class="link-size"
+                                       href="{{ $infos[0]->link }}">
+                                        {{ $infos[0]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="red m-2 square move">
+                                    <a class="link-size" href="{{ $infos[1]->link }}">
+                                        {{ $infos[1]->title }}
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @endif
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #D2351F">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #D2351F">Scolarité
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #D2351F">
+                            Scolarité
                             <span><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
                     <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: #D2351F;">
-                            <div class="text-center red m-2 square move">
-                                <a class="link-size" id="dossier" href="#">
-                                    Mon dossier
+                        <div class="row m-1 child-container" id="scolarite" style="border-color: #D2351F;">
+                            <div class="text-center red m-2 square move" data-arrange="1">
+                                <a class="link-size" href="{{ $infos[0]->link }}">
+                                    {{ $infos[0]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="sms" href="#">
-                                    Alert SMS
+                            <div class="red m-2 square move" data-arrange="2">
+                                <a class="link-size" href="{{ $infos[1]->link }}">
+                                    {{ $infos[1]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="actu" href="#">
-                                    Actualité & documents
+                            <div class="red m-2 square move" data-arrange="3">
+                                <a class="link-size" href="{{ $infos[2]->link }}">
+                                    {{ $infos[2]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="emploi_univ"
-                                   href="https://ent.univ-artois.fr/esup-news/feeds/pub/item?c=1&itemID=34"
+                            <div class="red m-2 square move" data-arrange="4">
+                                <a class="link-size"
+                                   href="{{ $infos[3]->link }}"
                                    target="_blank">
-                                    Offres
-                                    d'emploi de l'université
+                                    {{ $infos[3]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="career"
-                                   href="https://univ-artois.jobteaser.com/fr/users/sso_activation" target="_blank">
-                                    Career
-                                    Center
+                            <div class="red m-2 square move" data-arrange="5">
+                                <a class="link-size"
+                                   href="{{ $infos[4]->link }}" target="_blank">
+                                    {{ $infos[4]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="contrat" href="http://conpere.univ-artois.fr/etudiants/accueil"
+                            <div class="red m-2 square move" data-arrange="6">
+                                <a class="link-size" href="{{ $infos[5]->link }}"
                                    target="_blank">
-                                    Contrat pédagogique
+                                    {{ $infos[5]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="convention"
-                                   href="http://pstagev2.univ-artois.fr/esup-pstage/stylesheets/stage/welcome.xhtml;jsessionid=4ACEDAF24617B6ADFCC0D11E2D67D7EC"
+                            <div class="red m-2 square move" data-arrange="7">
+                                <a class="link-size"
+                                   href="{{ $infos[6]->link }}"
                                    target="_blank">
-                                    Convention de stage
+                                    {{ $infos[6]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="transferts"
-                                   href="https://esup-transferts.univ-artois.fr/esup-transferts/stylesheets/depart/welcome.xhtml?ticket=ST-5592-9gScmVLfJSOsJsrAOK91-auth.univ-artois.fr"
+                            <div class="red m-2 square move" data-arrange="8">
+                                <a class="link-size"
+                                   href="{{ $infos[7]->link }}"
                                    target="_blank">
-                                    Transferts-departs
+                                    {{ $infos[7]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="toeic" href="http://www.univ-artois.fr/inscription-au-toeic"
+                            <div class="red m-2 square move" data-arrange="9">
+                                <a class="link-size" href="{{ $infos[8]->link }}"
                                    target="_blank">
-                                    Inscription au
-                                    TOEIC
+                                    {{ $infos[8]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="ia_web"
-                                   href="http://www.univ-artois.fr/formations/admission-inscription-transfert/reinscription"
+                            <div class="red m-2 square move" data-arrange="10">
+                                <a class="link-size"
+                                   href="{{ $infos[9]->link }}"
                                    target="_blank">
-                                    IA Web
+                                    {{ $infos[9]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="ip_web"
-                                   href="http://www.univ-artois.fr/inscription-pedagogique" target="_blank">
-                                    IP Web
+                            <div class="red m-2 square move" data-arrange="11">
+                                <a class="link-size"
+                                   href="{{ $infos[10]->link }}" target="_blank">
+                                    {{ $infos[10]->title }}
                                 </a>
                             </div>
 
-                            <div class="red m-2 square move">
-                                <a class="link-size" id="inscription_cles"
-                                   href="http://www.univ-artois.fr/inscription-au-cles" target="_blank">
-                                    Inscription
-                                    au
-                                    CLES
+                            <div class="red m-2 square move" data-arrange="12">
+                                <a class="link-size"
+                                   href="{{ $infos[11]->link }}" target="_blank">
+                                    {{ $infos[11]->title }}
                                 </a>
                             </div>
                         </div>
@@ -139,48 +138,48 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #28A60E">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color:#28A60E;">Campus en ligne
+                        <h1 class="card-title font-semibold text-xl text-center move"
+                            style="color:#28A60E;"> Campus en ligne
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
                     <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: #28A60E">
-                            <div class="green m-2 square move">
-                                <a class="link-size" id="moodle" href="https://moodle.univ-artois.fr/cours/"
+                        <div class="row m-1 child-container" id="campus" style="border-color: #28A60E">
+                            <div class="green m-2 square move" data-arrange="13">
+                                <a class="link-size" href="{{ $infos[12]->link }}"
                                    target="_blank">
-                                    Moodle
+                                    {{ $infos[12]->title }}
                                 </a>
                             </div>
 
-                            <div class="green m-2 square move">
-                                <a class="link-size" id="maison_des_langues"
-                                   href="http://www.univ-artois.fr/formations/la-maison-des-langues"
-                                   target="_blank">Maison
-                                    des langues</a>
+                            <div class="green m-2 square move" data-arrange="14">
+                                <a class="link-size"
+                                   href="{{ $infos[13]->link }}"
+                                   target="_blank"> {{ $infos[13]->title }}</a>
                             </div>
 
-                            <div class="green m-2 square move">
-                                <a class="link-size" id="cles"
-                                   href="http://www.univ-artois.fr/formations/certifications/cles"
-                                   target="_blank">CLES</a>
+                            <div class="green m-2 square move" data-arrange="15">
+                                <a class="link-size"
+                                   href="{{ $infos[14]->link }}"
+                                   target="_blank"> {{ $infos[14]->title }}</a>
                             </div>
 
-                            <div class="green m-2 square move">
-                                <a class="link-size" id="ressource_pedagogique"
-                                   href="http://www.sup-numerique.gouv.fr/" target="_blank">Ressources
-                                    pédagogiques</a>
+                            <div class="green m-2 square move" data-arrange="16">
+                                <a class="link-size"
+                                   href="{{ $infos[15]->link }}" target="_blank">
+                                    {{ $infos[15]->title }}</a>
                             </div>
 
-                            <div class="green m-2 square move">
-                                <a class="link-size" id="covoit_artois"
-                                   href="http://covoiturage.univ-artois.fr/covoiturage/mon-compte"
-                                   target="_blank">CoVoit'Artois</a>
+                            <div class="green m-2 square move" data-arrange="17">
+                                <a class="link-size"
+                                   href="{{ $infos[16]->link }}"
+                                   target="_blank"> {{ $infos[16]->title }}</a>
                             </div>
 
-                            <div class="green m-2 square move">
-                                <a class="link-size" id="sport"
-                                   href="https://atlas.univ-artois.fr/atlas_etu/mes_inscriptions.php" target="_blank">Inscriptions
-                                    Activités Sportives</a>
+                            <div class="green m-2 square move" data-arrange="18">
+                                <a class="link-size"
+                                   href="{{ $infos[17]->link }}"
+                                   target="_blank"> {{ $infos[17]->title }}</a>
                             </div>
                         </div>
                     </div>
@@ -189,15 +188,17 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: dimgrey">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move"  style="color: dimgrey">Aide
+                        <h1 class="card-title font-semibold text-xl text-center move"
+                            style="color: dimgrey"> Aide
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
                     <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: dimgrey">
-                            <div class="grey m-2 square move">
+                        <div class="row m-1 child-container" id="aide" style="border-color: dimgrey">
+                            <div class="grey m-2 square move" data-arrange="19">
                                 <a class="link-size"
-                                   href="http://esupweb.univ-artois.fr/esup/tutos/etudiant/co/00a_guideWeb.html">Tutoriels
+                                   href="{{ $infos[18]->link }}">
+                                    {{ $infos[18]->title }}
                                 </a>
                             </div>
                         </div>
@@ -207,36 +208,37 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #E47A00">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #E47A00">Bureau virtuel
+                        <h1 class="card-title font-semibold text-xl text-center move"
+                            style="color: #E47A00"> Bureau virtuel
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
                     <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: #E47A00">
-                            <div class="orange m-2 square move">
-                                <a class="link-size" href="https://wmailetu.univ-artois.fr/"
-                                   target="_blank">Mon webmail</a>
+                        <div class="row m-1 child-container" id="bureau" style="border-color: #E47A00">
+                            <div class="orange m-2 square move" data-arrange="20">
+                                <a class="link-size" href="{{ $infos[19]->link }}"
+                                   target="_blank"> {{ $infos[19]->title }}</a>
                             </div>
 
-                            <div class="orange m-2 square move">
-                                <a class="link-size" href="#">Annuaire</a>
+                            <div class="orange m-2 square move" data-arrange="21">
+                                <a class="link-size" href="{{ $infos[20]->link }}">
+                                    {{ $infos[20]->title }}</a>
                             </div>
 
-                            <div class="orange m-2 square move">
-                                <a class="link-size" href="https://monmotdepasse.univ-artois.fr/"
-                                   target="_blank">Changement de mot de
-                                    passe</a>
+                            <div class="orange m-2 square move" data-arrange="22">
+                                <a class="link-size" href="{{ $infos[21]->link }}"
+                                   target="_blank"> {{ $infos[21]->title }}</a>
                             </div>
 
-                            <div class="orange m-2 square move">
+                            <div class="orange m-2 square move" data-arrange="23">
                                 <a class="link-size"
-                                   href="http://weblistes.univ-artois.fr/sympa/?ticket=ST-5314-fyHW7YtHOI0cVkVw6txr-auth.univ-artois.fr"
-                                   target="_blank">Listes de diffusion</a>
+                                   href="{{ $infos[22]->link }}"
+                                   target="_blank"> {{ $infos[22]->title }}</a>
                             </div>
 
-                            <div class="orange m-2 square move">
-                                <a class="link-size" href="http://esupweb.univ-artois.fr/esup/pages/zoom/"
-                                   target="_blank">Zoom</a>
+                            <div class="orange m-2 square move" data-arrange="24">
+                                <a class="link-size" href="{{ $infos[23]->link }}"
+                                   target="_blank"> {{ $infos[23]->title }}</a>
                             </div>
                         </div>
                     </div>
@@ -245,15 +247,16 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: blueviolet">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color: blueviolet">Intranet
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: blueviolet">
+                            Intranet
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
                     <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: blueviolet">
-                            <div class="purple ge m-2 square move">
-                                <a class="link-size" href="http://intranet.univ-artois.fr/etudiant"
-                                   target="_blank">Intranet</a>
+                        <div class="row m-1 child-container" id="intranet" style="border-color: blueviolet">
+                            <div class="purple m-2 square move" data-arrange="25">
+                                <a class="link-size" href="{{ $infos[24]->link }}"
+                                   target="_blank"> {{ $infos[24]->title }}</a>
                             </div>
                         </div>
                     </div>
@@ -262,38 +265,35 @@
             <div class="col-6">
                 <div class="card mt-2" style="border-color: #0087A7">
                     <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #0087A7">Documentation
+                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #0087A7">
+                            Documentation
                             <span class="move"><i class="fas fa-arrows-alt"></i></span>
                         </h1>
                     </div>
                     <div class="card-body">
-                        <div class="row m-1 child-container" style="border-color: #0087A7">
-                            <div class="blue m-2 square move">
+                        <div class="row m-1 child-container" id="docu" style="border-color: #0087A7">
+                            <div class="blue m-2 square move" data-arrange="26">
                                 <a class="link-size"
-                                   href="http://www.universalis-edu.com/?sso_id=24&ticket=ST-4849-YFtj0HYKjJmlf7OEDvGX-auth.univ-artois.fr"
-                                   target="_blank">Encyclopaedia Universalis</a>
+                                   href="{{ $infos[25]->link }}"
+                                   target="_blank"> {{ $infos[25]->title }}</a>
                             </div>
 
-                            <div class="blue m-2 square move">
+                            <div class="blue m-2 square move" data-arrange="27">
                                 <a class="link-size"
-                                   href="http://portail-bu.univ-artois.fr/medias/medias.aspx?INSTANCE=exploitation&SSO_FORCELOGON=TRUE&PORTAL_ID=general_portal.xml"
-                                   target="_blank">Bibliothèques</a>
+                                   href="{{ $infos[26]->link }}"
+                                   target="_blank"> {{ $infos[26]->title }}</a>
                             </div>
 
-                            <div class="blue m-2 square move">
-                                <a class="link-size" href="http://univ-numerique.fr/"
-                                   target="_blank">UNT</a>
+                            <div class="blue m-2 square move" data-arrange="28">
+                                <a class="link-size" href="{{ $infos[27]->link }}"
+                                   target="_blank"> {{ $infos[27]->title }}</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <button class="btn btn-primary" id="btnSave">Save</button>
-        <button class="btn btn-primary" id="btnClear">ClearSave</button>
     </div>
-
-    <button class="btn btn-primary" id="save">Save</button>
 
     </body>
     @include('footer')
@@ -302,8 +302,7 @@
 </html>
 
 <script>
-    // Sort the parents
-    $(".sortable").sortable({
+    $(".parent-container").sortable({
         connectWith: ".connectedSortable",
         placeholder: 'movable-placeholder',
         tolerance: 'pointer',
@@ -316,16 +315,97 @@
         delay: 150,
         start: (e, ui) => {
             ui.placeholder.height(ui.helper.outerHeight());
-        }
+        },
     });
+
+    //localStorage.clear();
+
+    // Section Scolarité
+    if (localStorage.getItem('scolarite')) {
+        const [arrayScolarite, arrayCampus, arrayAide, arrayBureau, arrayIntranet, arrayDocu] =
+              [localStorage.getItem('scolarite').split(','), localStorage.getItem('campus').split(','),
+               localStorage.getItem('aide').split(','), localStorage.getItem('bureau').split(','),
+               localStorage.getItem('intranet').split(','), localStorage.getItem('docu').split(',')];
+        map = {};
+
+        // Permet de récupérer la valeur de data-arrange assignée à la div
+        // afin de sauvegarder sa position et pouvoir la réutiliser plus tard
+        $('#scolarite > div').each(function () {
+            const scolarite = $(this);
+            map[scolarite.data('arrange')] = scolarite;
+        });
+
+        $('#campus > div').each(function () {
+            const campus = $(this);
+            map[campus.data('arrange')] = campus;
+        });
+
+        $('#aide > div').each(function () {
+            const aide = $(this);
+            map[aide.data('arrange')] = aide;
+        });
+
+        $('#bureau > div').each(function () {
+            const bureau = $(this);
+            map[bureau.data('arrange')] = bureau;
+        });
+
+        $('#intranet > div').each(function () {
+            const intranet = $(this);
+            map[intranet.data('arrange')] = intranet;
+        });
+
+        $('#docu > div').each(function () {
+            const docu = $(this);
+            map[docu.data('arrange')] = docu;
+        });
+
+        // Permet d'ajouter les valeurs de chaque tableau aux cases correspondantes
+        for (let val of arrayScolarite) $('#scolarite').append(map[val]);
+        for (let val of arrayCampus) $('#campus').append(map[val]);
+        for (let val of arrayAide) $('#aide').append(map[val]);
+        for (let val of arrayBureau) $('#bureau').append(map[val]);
+        for (let val of arrayIntranet) $('#intranet').append(map[val]);
+        for (let val of arrayDocu) $('#docu').append(map[val]);
+    }
 
     // Sort the children
     $(".child-container").sortable({
         items: "> div",
         tolerance: "pointer",
         containment: "document",
-        connectWith: '.child-container'
+        connectWith: '.child-container',
+        cancel: ".fixed",
+
+        // Au rafraichissement de la page
+        update: () => {
+            const [dataScolarite, dataCampus, dataAide, dataBureau, dataIntranet, dataDocu] = [[], [], [], [], [], []];
+
+            // Permet de sauvegarder les valeurs des cases dans des tableaux
+            $('#scolarite').find('div').each(function () { dataScolarite.push($(this).data('arrange')); });
+            $('#campus').find('div').each(function () { dataCampus.push($(this).data('arrange')); });
+            $('#aide').find('div').each(function () { dataAide.push($(this).data('arrange')); });
+            $('#bureau').find('div').each(function () { dataBureau.push($(this).data('arrange')); });
+            $('#intranet').find('div').each(function () { dataIntranet.push($(this).data('arrange')); });
+            $('#docu').find('div').each(function () { dataDocu.push($(this).data('arrange')); });
+
+            // Permet de placer correctement les cases par rapport à la position avant le rafraichissement
+            localStorage.setItem('scolarite', dataScolarite);
+            localStorage.setItem('campus', dataCampus);
+            localStorage.setItem('aide', dataAide);
+            localStorage.setItem('bureau', dataBureau);
+            localStorage.setItem('intranet', dataIntranet);
+            localStorage.setItem('docu', dataDocu);
+        }
     });
+
+    // Permet de ne pas sélectionner le texte des cases
+    $("#scolarite").disableSelection();
+    $("#campus").disableSelection();
+    $("#aide").disableSelection();
+    $("#bureau").disableSelection();
+    $("#intranet").disableSelection();
+    $("#docu").disableSelection();
 </script>
 
 <style>

@@ -24,7 +24,7 @@
                                     <p class="card-text">{{ $new->user }}</p>
                                     <p class="text-muted font-bold">Département {{ $new->department }} </p>
                                     <p>{{ $new->informations }}</p>
-                                    @if($new->url != null)
+                                    @if ($new->url != null)
                                         <p class="text-muted font-italic">Cette actualité inclue une vidéo.</p>
                                     @endif
                                     <p class="text-muted">Ajoutée le {{ $new->created_at->format('d/m/y à H:m') }}</p>
@@ -34,8 +34,8 @@
                                 </div>
                         </div>
                 </div>
-                @endforeach
             </div>
+        @endforeach
     </div>
 
     <div class="container mt-5" style="text-align: center">

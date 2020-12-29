@@ -49,8 +49,6 @@
         <a id="ip_web" href="http://www.univ-artois.fr/inscription-pedagogique" target="_blank">IP Web</a>
         <br>
         <a id="inscription_cles" href="http://www.univ-artois.fr/inscription-au-cles" target="_blank">Inscription au CLES</a>
-
-
     </div>
 </div>
 </body>

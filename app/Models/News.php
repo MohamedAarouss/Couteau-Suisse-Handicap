@@ -11,18 +11,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class News extends Model{
     use HasFactory;
 
-    //protected $table = 'news';
+    protected $table = 'news';
 
     protected $guarded = [];
 
-    /*protected $fillable = [
+    protected $fillable = [
         'title',
         'department',
         'informations',
         'img',
         'url',
         'user'
-    ];*/
+    ];
 
     public function user(): BelongsTo
     {
