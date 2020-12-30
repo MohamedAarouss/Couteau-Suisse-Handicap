@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },*/
 
         //action lors de la selection de date
-        select: function(info) {
+        /*select: function(info) {
             viderFormulaire();
 
             $("#btnSave").prop("disabled",false);
@@ -67,13 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
             $('#startrdv').val(anneeStart+"-"+moisStart+"-"+jourStart+" "+heureStart);
             $('#endrdv').val(anneeEnd+"-"+moisEnd+"-"+jourEnd+" "+heureEnd);
             $('#Modal').modal();
-            //var nom=prompt("Entrez votre nom et prénom");
-            /*calendar.addEvent({
-                title:$('#titrerdv').val(),
-                start:info.startStr,
-                end:info.endStr,
 
-            }) */},
+        },*/
         eventClick:function(info){
             $("#btnSave").prop("disabled",true);
             $("#btnmodifier").prop("disabled",false);
@@ -108,12 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
         eventSources: [
             {
                 url: url_show, // use the `url` property
-                color: 'gray',    // an option!
                 textColor: 'white'  // an option!
             },
             {
                 url: url_showOwn, // use the `url` property
-                color: 'blue',    // an option!
                 textColor: 'white'  // an option!
             }
             ]
@@ -136,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     });
     $('#btnmodifier').click(function(){
-        ObjEvent=dataGUI("PATCH");
+        ObjEvent=dataGUIModification("PATCH");
         envoieInformation('/'+$("#idrdv").val(),ObjEvent);
 
     });
@@ -159,6 +152,26 @@ document.addEventListener('DOMContentLoaded', function() {
             start:$('#startrdv').val(),
             end:$('#endrdv').val(),
             userId:userid,
+            status:0,
+            color:'gray',
+            display: "",
+            '_token':$("meta[name='csrf-token']").attr("content"),
+            '_method':method
+        }
+        return(nouveauEvent);
+
+    }
+    function dataGUIModification(method){
+
+        nouveauEvent= {
+            id:$('#idrdv').val(),
+            title:$('#titrerdv').val(),
+            start:$('#startrdv').val(),
+            end:$('#endrdv').val(),
+            userId:userid,
+            status:$(#),
+            color:"orange",
+            appointmentUserId:idAuth,
             display: "",
             '_token':$("meta[name='csrf-token']").attr("content"),
             '_method':method
@@ -187,11 +200,11 @@ document.addEventListener('DOMContentLoaded', function() {
          i=0;
         while(+(sta[0]+sta[1])<+(end[0]+end[1])){
             sta= heureStart.split(":");
-            if(+(sta[0]+sta[1])>+(end[0]+end[1])){
+            if(+(sta[0]+sta[1]) >= +(end[0]+end[1])){
                 break;
             }
 
-            if(me>30){
+            if(me>=30){
                 hs=he;
                 ms=me;
                 he= (+ (sta[0]))+1;

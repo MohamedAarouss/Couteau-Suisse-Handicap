@@ -23,6 +23,11 @@ class CreateEventAppointmentsTable extends Migration
             $table->dateTimeTz('end');
 
             $table->integer('userId')->nullable();
+            $table->integer('appointmentUserId')->nullable();
+            $table->integer('status');
+
+            $table->string('color');
+
             $table->string('display')->nullable();
 
             $table->timestamps();

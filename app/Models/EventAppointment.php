@@ -16,6 +16,6 @@ class EventAppointment extends Model
      */
 
     protected $fillable = [
-        'title','start','end','userId','display'
+        'title','start','end','userId','appointmentUserId','status','color','display'
     ];
 }

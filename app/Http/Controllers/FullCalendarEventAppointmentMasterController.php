@@ -43,7 +43,7 @@ class FullCalendarEventAppointmentMasterController extends Controller
     public function showOwn(){
 
         //$data['events']=EventAppointment::all();
-        $data['events']=EventAppointment::select('id','title','start','end','display')->where('userId','=',Auth::id())->get();
+        $data['events']=EventAppointment::select('id','title','start','end','display')->where('appointmentUserId','=',Auth::id())->get();
         //array_push($data['events'],EventAppointment::select('id','start','end','display')->where('userId','!=',Auth::id())->get());
 
         //$data['events']=EventAppointment::select('id','start','end','display')->where('userId','!=',Auth::id())->get();
@@ -63,6 +63,9 @@ class FullCalendarEventAppointmentMasterController extends Controller
             'start' => $request->start,
             'end' => $request->end,
             'userId'=>Auth::id(),
+            "appointmentUserId"=>null,
+            'status'=>1,
+            'color'=>"gray",
             'display'=>$request->display
         ];
         $event = EventAppointment::insert($insertArr);

@@ -26,6 +26,7 @@
 
         var url_cree="{{url('/fullcalendareventappointmentmaster/create')}}";
         var url_creeDispo="{{url('/fullcalendareventappointmentmaster/createDispo')}}";
+        var idAuth="{{Auth::id()}}";
     </script>
     <script src="{{asset('js/eventAppointment.js')}}"defer></script>
 
@@ -51,14 +52,28 @@
                 End:
                 <br />
                 <input type="text" class="form-control" name="endrdv" id="endrdv">
+                @if(auth()->user()->personnel=="oui")
+                    <br />
+                    <div>
+                        <input type="radio" id="accepted" name="status" value="2"
+                               checked>
+                        <label for="accepted">Accepter</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="refused" name="status" value="3">
+                        <label for="refused">Refuser</label>
+                    </div>
+                    @endif
+
 
             </div>
 
             <div class="modal-footer">
                 <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button id="save" type="button" class="btn btn-primary" >Save</button>
+                <button id="btnmodifier" type="button" class="btn btn-primary" >Save</button>
                 <button id="btnsupprimer" type="button" class="btn btn-danger" >Supprimer</button>
-                <button id="btnmodifier" type="button" class="btn btn-warning" >Modifier</button>
+
 
             </div>
         </div>
@@ -85,9 +100,6 @@
                 <div class="modal-footer">
                     <button id="closeDispo" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button id="saveDispo" type="button" class="btn btn-primary" >Save</button>
-                    <button id="btnsupprimerDispo" type="button" class="btn btn-danger" >Supprimer</button>
-                    <button id="btnmodifierDispo" type="button" class="btn btn-warning" >Modifier</button>
-
                 </div>
             @else
                 <div class="modal-body">
