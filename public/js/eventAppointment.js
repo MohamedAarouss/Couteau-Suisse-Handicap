@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         },*/
         eventClick:function(info){
+
             $("#btnSave").prop("disabled",true);
             $("#btnmodifier").prop("disabled",false);
             $("#btnsupprimer").prop("disabled",false);
@@ -95,7 +96,11 @@ document.addEventListener('DOMContentLoaded', function() {
             userid=info.event.userId;
             $('#startrdv').val(anneeStart+"-"+moisStart+"-"+jourStart+" "+heureStart);
             $('#endrdv').val(anneeEnd+"-"+moisEnd+"-"+jourEnd+" "+heureEnd);
+            console.log(info.event.userId);
+            if(info.event.appointmentUserId==null && info.event.appointmentUserId===idAuth){
+
             $('#Modal').modal();
+            }
         },
 
         //events:url_show,
@@ -169,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
             start:$('#startrdv').val(),
             end:$('#endrdv').val(),
             userId:userid,
-            status:$(#),
+            status:1,
             color:"orange",
             appointmentUserId:idAuth,
             display: "",

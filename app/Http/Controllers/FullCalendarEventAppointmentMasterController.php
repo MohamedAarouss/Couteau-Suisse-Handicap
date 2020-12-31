@@ -36,14 +36,14 @@ class FullCalendarEventAppointmentMasterController extends Controller
         //$data['events']=EventAppointment::select('id','start','end','display')->where('userId','=',Auth::id())->get();
         //array_push($data['events'],EventAppointment::select('id','start','end','display')->where('userId','!=',Auth::id())->get());
 
-        $data['events']=EventAppointment::select('id','start','end','display')->where('userId','!=',Auth::id())->get();
+        $data['events']=EventAppointment::select('id','start','end','display','userId','appointmentUserId','status','color')->where('userId','!=',Auth::id())->orWhere('appointmentUserId','=',Auth::id())->get();
         //print_r($data);
         return response()->json($data['events']);
     }
     public function showOwn(){
 
         //$data['events']=EventAppointment::all();
-        $data['events']=EventAppointment::select('id','title','start','end','display')->where('appointmentUserId','=',Auth::id())->get();
+        $data['events']=EventAppointment::select('id','title','start','end','display','userId','appointmentUserId','status','color')->where('appointmentUserId','=',Auth::id())->get();
         //array_push($data['events'],EventAppointment::select('id','start','end','display')->where('userId','!=',Auth::id())->get());
 
         //$data['events']=EventAppointment::select('id','start','end','display')->where('userId','!=',Auth::id())->get();

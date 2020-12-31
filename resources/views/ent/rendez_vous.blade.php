@@ -36,7 +36,6 @@
         <div class="modal-content">
             <div class="modal-body">
                 <h4>Rendez-vous</h4>
-
                 Id:
                 <br />
                 <input type="text" class="form-control" name="idrdv" id="idrdv">
@@ -56,14 +55,20 @@
                     <br />
                     <div>
                         <input type="radio" id="accepted" name="status" value="2"
-                               checked>
+                               checked
+                               autocomplete="status"
+                        >
                         <label for="accepted">Accepter</label>
                     </div>
 
                     <div>
-                        <input type="radio" id="refused" name="status" value="3">
+                        <input type="radio" id="refused" name="status" value="3"
+                               autocomplete="status"
+                        >
                         <label for="refused">Refuser</label>
                     </div>
+
+                    <input type="text" id="value">
                     @endif
 
 
