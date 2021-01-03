@@ -96,11 +96,9 @@ document.addEventListener('DOMContentLoaded', function() {
             userid=info.event.userId;
             $('#startrdv').val(anneeStart+"-"+moisStart+"-"+jourStart+" "+heureStart);
             $('#endrdv').val(anneeEnd+"-"+moisEnd+"-"+jourEnd+" "+heureEnd);
-            console.log(info.event.userId);
-            if(info.event.appointmentUserId==null && info.event.appointmentUserId===idAuth){
 
             $('#Modal').modal();
-            }
+
         },
 
         //events:url_show,
@@ -167,19 +165,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
     function dataGUIModification(method){
-
-        nouveauEvent= {
-            id:$('#idrdv').val(),
-            title:$('#titrerdv').val(),
-            start:$('#startrdv').val(),
-            end:$('#endrdv').val(),
-            userId:userid,
-            status:1,
-            color:"orange",
-            appointmentUserId:idAuth,
-            display: "",
-            '_token':$("meta[name='csrf-token']").attr("content"),
-            '_method':method
+        if(document.querySelector("#accepted:checked")){
+            nouveauEvent= {
+                id:$('#idrdv').val(),
+                title:$('#titrerdv').val(),
+                start:$('#startrdv').val(),
+                end:$('#endrdv').val(),
+                userId:userid,
+                status:2,
+                color:"green",
+                display: "",
+                '_token':$("meta[name='csrf-token']").attr("content"),
+                '_method':method
+            }
+        }
+        else if(document.querySelector("#refused:checked")){
+            nouveauEvent= {
+                id:$('#idrdv').val(),
+                title:$('#titrerdv').val(),
+                start:$('#startrdv').val(),
+                end:$('#endrdv').val(),
+                userId:userid,
+                status:3,
+                color:"red",
+                display: "",
+                '_token':$("meta[name='csrf-token']").attr("content"),
+                '_method':method
+            }
+        }
+        else {
+            nouveauEvent = {
+                id: $('#idrdv').val(),
+                title: $('#titrerdv').val(),
+                start: $('#startrdv').val(),
+                end: $('#endrdv').val(),
+                userId: userid,
+                status: 1,
+                color: "orange",
+                appointmentUserId: idAuth,
+                display: "",
+                '_token': $("meta[name='csrf-token']").attr("content"),
+                '_method': method
+            }
         }
         return(nouveauEvent);
 

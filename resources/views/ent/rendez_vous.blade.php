@@ -54,16 +54,12 @@
                 @if(auth()->user()->personnel=="oui")
                     <br />
                     <div>
-                        <input type="radio" id="accepted" name="status" value="2"
+                        <input type="radio" class="accept" id="accepted" name="status" value="2"
                                checked
-                               autocomplete="status"
                         >
                         <label for="accepted">Accepter</label>
-                    </div>
 
-                    <div>
-                        <input type="radio" id="refused" name="status" value="3"
-                               autocomplete="status"
+                        <input type="radio" class="accept" id="refused" name="status" value="3"
                         >
                         <label for="refused">Refuser</label>
                     </div>
