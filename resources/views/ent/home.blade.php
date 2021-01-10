@@ -383,12 +383,24 @@
             const [dataScolarite, dataCampus, dataAide, dataBureau, dataIntranet, dataDocu] = [[], [], [], [], [], []];
 
             // Permet de sauvegarder les valeurs des cases dans des tableaux
-            $('#scolarite').find('div').each(function () { dataScolarite.push($(this).data('arrange')); });
-            $('#campus').find('div').each(function () { dataCampus.push($(this).data('arrange')); });
-            $('#aide').find('div').each(function () { dataAide.push($(this).data('arrange')); });
-            $('#bureau').find('div').each(function () { dataBureau.push($(this).data('arrange')); });
-            $('#intranet').find('div').each(function () { dataIntranet.push($(this).data('arrange')); });
-            $('#docu').find('div').each(function () { dataDocu.push($(this).data('arrange')); });
+            $('#scolarite').find('div').each(function () {
+                dataScolarite.push($(this).data('arrange'));
+            });
+            $('#campus').find('div').each(function () {
+                dataCampus.push($(this).data('arrange'));
+            });
+            $('#aide').find('div').each(function () {
+                dataAide.push($(this).data('arrange'));
+            });
+            $('#bureau').find('div').each(function () {
+                dataBureau.push($(this).data('arrange'));
+            });
+            $('#intranet').find('div').each(function () {
+                dataIntranet.push($(this).data('arrange'));
+            });
+            $('#docu').find('div').each(function () {
+                dataDocu.push($(this).data('arrange'));
+            });
 
             // Permet de placer correctement les cases par rapport à la position avant le rafraichissement
             localStorage.setItem('scolarite', dataScolarite);
