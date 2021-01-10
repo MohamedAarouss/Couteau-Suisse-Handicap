@@ -15,6 +15,7 @@
         var url_="{{url('/eventAgenda')}}";
         var url_show="{{url('/fullcalendareventmaster/show')}}";
         var url_cree="{{url('/fullcalendareventmaster/create')}}";
+        var url_update="{{url('/fullcalendareventmaster/update')}}";
     </script>
     <script src="{{asset('js/event.js')}}"defer></script>
 

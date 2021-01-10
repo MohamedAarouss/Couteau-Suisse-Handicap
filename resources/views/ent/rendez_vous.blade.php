@@ -13,8 +13,21 @@
     <meta charset='utf-8' />
     <script>
         var url_="{{url('/event')}}";
+        @if(auth()->user()->personnel=="non")
         var url_show="{{url('/fullcalendareventappointmentmaster/show')}}";
+        var url_showOwn="{{url('/fullcalendareventappointmentmaster/showOwn')}}"
+        console.log(url_show);
+        console.log(url_showOwn);
+        @else
+        var url_show="{{url('/fullcalendareventappointmentmaster/showall')}}";
+        var url_showOwn=""
+        console.log(url_show);
+        @endif
+
+
         var url_cree="{{url('/fullcalendareventappointmentmaster/create')}}";
+        var url_creeDispo="{{url('/fullcalendareventappointmentmaster/createDispo')}}";
+        var idAuth="{{Auth::id()}}";
     </script>
     <script src="{{asset('js/eventAppointment.js')}}"defer></script>
 
@@ -24,12 +37,6 @@
         <div class="modal-content">
             <div class="modal-body">
                 <h4>Rendez-vous</h4>
-
-                Id:
-                <br />
-                <input type="text" class="form-control" name="idrdv" id="idrdv">
-
-
                 Nom Prenom:
                 <br />
                 <input type="text" class="form-control" name="titrerdv" id="titrerdv">
@@ -40,14 +47,33 @@
                 End:
                 <br />
                 <input type="text" class="form-control" name="endrdv" id="endrdv">
+                @if(auth()->user()->personnel=="oui")
+                    <br />
+                    <div>
+                        <input type="radio" class="accept" id="accepted" name="status" value="2"
+                               checked
+                        >
+                        <label for="accepted">Accepter</label>
+
+                        <input type="radio" class="accept" id="refused" name="status" value="3"
+                        >
+                        <label for="refused">Refuser</label>
+                    </div>
+
+                    <input type="text" id="value">
+                    @endif
+
 
             </div>
 
             <div class="modal-footer">
                 <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button id="save" type="button" class="btn btn-primary" >Save</button>
+                @if(auth()->user()->personnel=="non")
+                <button id="btnmodifier" type="button" class="btn btn-primary" href="">Save</button>
+                @elseif(auth()->user()->personnel=="oui")
+                    <button id="btnmodifier" type="button" class="btn btn-primary" >Save</button>
                 <button id="btnsupprimer" type="button" class="btn btn-danger" >Supprimer</button>
-                <button id="btnmodifier" type="button" class="btn btn-warning" >Modifier</button>
+                @endif
 
             </div>
         </div>
@@ -55,29 +81,40 @@
 </div><div class="modal fade" id="DispoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
+            @if(auth()->user()->personnel=="oui")
             <div class="modal-body">
                 <h4>Rendez-vous</h4>
 
-                Date du jour de disponibilité (aaaa-mm-jj):
+                Date du jour de disponibilité:
                 <br />
-                <input type="text" class="form-control" name="startdispo" id="startdispo">
+                <input type="date" class="form-control" name="startdispo" id="startdispo">
 
                 Heure de debut (hh:mm):
                 <br />
-                <input type="text" class="form-control" name="heurestartdispo" id="heurestartdispo">
+                <input type="time" class="form-control" name="heurestartdispo" id="heurestartdispo">
                 Heure de fin (hh:mm):
                 <br />
-                <input type="text" class="form-control" name="heureenddispo" id="heureenddispo">
+                <input type="time" class="form-control" name="heureenddispo" id="heureenddispo">
 
             </div>
+                <div class="modal-footer">
+                    <button id="closeDispo" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="saveDispo" type="button" class="btn btn-primary" >Save</button>
+                </div>
+            @else
+                <div class="modal-body">
 
-            <div class="modal-footer">
-                <button id="closeDispo" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button id="saveDispo" type="button" class="btn btn-primary" >Save</button>
-                <button id="btnsupprimerDispo" type="button" class="btn btn-danger" >Supprimer</button>
-                <button id="btnmodifierDispo" type="button" class="btn btn-warning" >Modifier</button>
+                <h2>Vous ne possédez pas des droits nécessaires </h2>
 
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="closeDispo" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+
+            @endif
+
+
         </div>
     </div>
 </div>

@@ -33,7 +33,26 @@ class FullCalendarEventAppointmentMasterController extends Controller
     public function show(){
 
         //$data['events']=EventAppointment::all();
-        $data['events']=EventAppointment::where('userId','=',Auth::id())->get();
+        //$data['events']=EventAppointment::select('id','start','end','display')->where('userId','=',Auth::id())->get();
+        //array_push($data['events'],EventAppointment::select('id','start','end','display')->where('userId','!=',Auth::id())->get());
+
+        $data['events']=EventAppointment::select('id','start','end','display','userId','appointmentUserId','status','color')->where('userId','!=',Auth::id())->orWhere('appointmentUserId','=',Auth::id())->get();
+        //print_r($data);
+        return response()->json($data['events']);
+    }
+    public function showOwn(){
+
+        //$data['events']=EventAppointment::all();
+        $data['events']=EventAppointment::select('id','title','start','end','display','userId','appointmentUserId','status','color')->where('appointmentUserId','=',Auth::id())->get();
+        //array_push($data['events'],EventAppointment::select('id','start','end','display')->where('userId','!=',Auth::id())->get());
+
+        //$data['events']=EventAppointment::select('id','start','end','display')->where('userId','!=',Auth::id())->get();
+        //print_r($data);
+        return response()->json($data['events']);
+    }
+    public function showall(){
+
+        $data['events']=EventAppointment::all();
         //print_r($data);
         return response()->json($data['events']);
     }
@@ -44,6 +63,22 @@ class FullCalendarEventAppointmentMasterController extends Controller
             'start' => $request->start,
             'end' => $request->end,
             'userId'=>Auth::id(),
+            "appointmentUserId"=>null,
+            'status'=>1,
+            'color'=>"gray",
+            'display'=>$request->display
+        ];
+        $event = EventAppointment::insert($insertArr);
+        return Response::json($event);
+    }
+    public function createDispo(Request $request)
+
+    {
+        $insertArr = [ 'title' => $request->title,
+            'start' => $request->start,
+            'end' => $request->end,
+            'userId'=>Auth::id(),
+            'display'=>$request->display
         ];
         $event = EventAppointment::insert($insertArr);
         return Response::json($event);
