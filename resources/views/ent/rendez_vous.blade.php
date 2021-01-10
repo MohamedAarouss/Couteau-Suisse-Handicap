@@ -36,11 +36,6 @@
         <div class="modal-content">
             <div class="modal-body">
                 <h4>Rendez-vous</h4>
-                Id:
-                <br />
-                <input type="text" class="form-control" name="idrdv" id="idrdv">
-
-
                 Nom Prenom:
                 <br />
                 <input type="text" class="form-control" name="titrerdv" id="titrerdv">
@@ -72,9 +67,12 @@
 
             <div class="modal-footer">
                 <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button id="btnmodifier" type="button" class="btn btn-primary" >Save</button>
+                @if(auth()->user()->personnel=="non")
+                <button id="btnmodifier" type="button" class="btn btn-primary" href="">Save</button>
+                @elseif(auth()->user()->personnel=="oui")
+                    <button id="btnmodifier" type="button" class="btn btn-primary" >Save</button>
                 <button id="btnsupprimer" type="button" class="btn btn-danger" >Supprimer</button>
-
+                @endif
 
             </div>
         </div>

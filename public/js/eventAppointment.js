@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     var userid="";
+    var eventid;
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
         timeZone: 'UTC+1',
@@ -75,7 +76,8 @@ document.addEventListener('DOMContentLoaded', function() {
             $("#btnmodifier").prop("disabled",false);
             $("#btnsupprimer").prop("disabled",false);
 
-            $('#idrdv').val(info.event.id);
+            //$('#idrdv').val(info.event.id);
+            eventid=info.event.id;
             $('#titrerdv').val(info.event.title);
             moisStart=(info.event.start.getMonth()+1);
             jourStart=(info.event.start.getDate());
@@ -128,12 +130,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $('#btnsupprimer').click(function(){
         ObjEvent=dataGUI("DELETE");
-        envoieInformation('/'+$("#idrdv").val(),ObjEvent);
+        envoieInformation('/'+eventid,ObjEvent);
 
     });
     $('#btnmodifier').click(function(){
         ObjEvent=dataGUIModification("PATCH");
-        envoieInformation('/'+$("#idrdv").val(),ObjEvent);
+        envoieInformation('/'+eventid,ObjEvent);
 
     });
 
@@ -150,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function dataGUI(method){
 
         nouveauEvent= {
-            id:$('#idrdv').val(),
+            id:eventid,
             title:$('#titrerdv').val(),
             start:$('#startrdv').val(),
             end:$('#endrdv').val(),
@@ -165,9 +167,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
     function dataGUIModification(method){
+        console.log(eventid);
         if(document.querySelector("#accepted:checked")){
             nouveauEvent= {
-                id:$('#idrdv').val(),
+                id:eventid,
                 title:$('#titrerdv').val(),
                 start:$('#startrdv').val(),
                 end:$('#endrdv').val(),
@@ -181,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         else if(document.querySelector("#refused:checked")){
             nouveauEvent= {
-                id:$('#idrdv').val(),
+                id:eventid,
                 title:$('#titrerdv').val(),
                 start:$('#startrdv').val(),
                 end:$('#endrdv').val(),
@@ -195,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         else {
             nouveauEvent = {
-                id: $('#idrdv').val(),
+                id: eventid,
                 title: $('#titrerdv').val(),
                 start: $('#startrdv').val(),
                 end: $('#endrdv').val(),
@@ -338,11 +341,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function viderFormulaire(){
-        $('#idrdv').val("");
         $('#titrerdv').val("");
         $('#startrdv').val("");
         $('#endrdv').val("");
 
+    }
+    function sendEmail() {
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username : "<sender’s email address>",
+            Password : "<email password>",
+            To : '<recipient’s email address>',
+            From : "<sender’s email address>",
+            Subject : "<email subject>",
+            Body : "<email body>",
+        }).then(
+            message => alert("mail sent successfully")
+        );
     }
 
 });
