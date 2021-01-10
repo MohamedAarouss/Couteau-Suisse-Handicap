@@ -47,7 +47,7 @@ class NewsController extends Controller
 
         $new->save();
 
-        return redirect()->route('news.index')->with('success', 'La news a été créée avec succès.');
+        return redirect()->route('news.index')->with('success', 'L\'actualité a été créée avec succès.');
     }
 
 
@@ -107,7 +107,7 @@ class NewsController extends Controller
 
         $new->save();
 
-        return redirect()->route('news.index')->with('success', 'La news a été modifiée.');
+        return redirect()->route('news.index')->with('success', 'L\'actualité a été modifiée avec succès.');
     }
 
 
@@ -116,6 +116,6 @@ class NewsController extends Controller
         $new = News::findOrFail($id);
         $new->delete();
 
-        return redirect()->route('news.index')->with('success', 'La news a été supprimée.');
+        return redirect()->route('news.index')->with('success', 'L\'actualité a été supprimée avec succès.');
     }
 }

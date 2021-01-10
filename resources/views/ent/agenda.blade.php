@@ -1,6 +1,7 @@
 <x-app-layout>
 
     <x-slot name="header">
+        <title>Couteau Suisse | Agenda</title>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Agenda') }}
         </h2>

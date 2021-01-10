@@ -1,7 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
+        <title>Couteau Suisse | Actualités</title>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Actualité') }}
+            {{ __('Actualités') }}
         </h2>
     </x-slot>
 
@@ -26,10 +27,3 @@
     @livewire('filter')
     @include('footer')
 </x-app-layout>
-
-<style>
-    a:link {
-        text-decoration: none;
-        color: black;
-    }
-</style>

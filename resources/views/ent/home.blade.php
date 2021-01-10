@@ -1,6 +1,7 @@
 <x-app-layout>
     <body>
     <x-slot name="header">
+        <title>Couteau Suisse | ENT</title>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('ENT') }}
         </h2>
@@ -323,9 +324,9 @@
     // Section Scolarité
     if (localStorage.getItem('scolarite')) {
         const [arrayScolarite, arrayCampus, arrayAide, arrayBureau, arrayIntranet, arrayDocu] =
-              [localStorage.getItem('scolarite').split(','), localStorage.getItem('campus').split(','),
-               localStorage.getItem('aide').split(','), localStorage.getItem('bureau').split(','),
-               localStorage.getItem('intranet').split(','), localStorage.getItem('docu').split(',')];
+            [localStorage.getItem('scolarite').split(','), localStorage.getItem('campus').split(','),
+                localStorage.getItem('aide').split(','), localStorage.getItem('bureau').split(','),
+                localStorage.getItem('intranet').split(','), localStorage.getItem('docu').split(',')];
         map = {};
 
         // Permet de récupérer la valeur de data-arrange assignée à la div

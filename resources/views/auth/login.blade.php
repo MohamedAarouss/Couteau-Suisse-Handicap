@@ -1,6 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
+            <title>Couteau Suisse | Se connecter</title>
             <img src="{{asset('images/artois.png')}}" alt="Logo de l'université d'artois" style="height: 10rem; margin-top: 10%">
         </x-slot>
 

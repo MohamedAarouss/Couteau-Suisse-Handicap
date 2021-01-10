@@ -1,8 +1,9 @@
 <x-app-layout>
 
     <x-slot name="header">
+        <title>Couteau Suisse | RDV</title>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Rendez-vous') }}
+            {{ __('RDV') }}
         </h2>
     </x-slot>
 

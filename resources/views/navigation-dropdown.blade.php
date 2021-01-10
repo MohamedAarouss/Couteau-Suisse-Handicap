@@ -13,16 +13,16 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{ route('news.index') }}" :active="request()->routeIs('news.index')">
-                        {{ __('Actualité') }}
+                        {{ __('Actualités') }}
                     </x-jet-nav-link>
 
                     <x-jet-nav-link href="{{ route('ent.home') }}" :active="request()->routeIs('ent.home')">
                         {{ __('Ent') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('ent.rendez_vous') }}" :active="request()->routeIs('ent.rendez_vous')" style="color: white">
+                    <x-jet-nav-link href="{{ route('ent.rendez_vous') }}" :active="request()->routeIs('ent.rendez_vous')">
                         {{ __('Rendez-vous') }}
                     </x-jet-nav-link>
-                    <x-jet-nav-link href="{{ route('ent.agenda') }}" :active="request()->routeIs('ent.agenda')" style="color: white">
+                    <x-jet-nav-link href="{{ route('ent.agenda') }}" :active="request()->routeIs('ent.agenda')">
                         {{ __('Agenda') }}
                     </x-jet-nav-link>
 
@@ -61,7 +61,7 @@
                         </x-jet-dropdown-link>
 
                         @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
-                            <x-jet-dropdown-link href="{{ route('api-tok    ens.index') }}">
+                            <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
                                 {{ __('API Tokens') }}
                             </x-jet-dropdown-link>
                         @endif
@@ -205,4 +205,19 @@
         </div>
     </div>
 </nav>
+
+<style>
+    a:link {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover {
+        color:black;
+    }
+
+    a:active{
+        color:black;
+    }
+</style>
 

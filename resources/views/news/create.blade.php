@@ -1,7 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
+        <title>Couteau Suisse | Ajout</title>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __("Création d'une news") }}
+            {{ __("Ajout d'une actualité") }}
         </h2>
     </x-slot>
 

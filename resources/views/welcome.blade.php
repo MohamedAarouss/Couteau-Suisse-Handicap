@@ -4,10 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Couteau-Suisse de l'Université d'Artois</title>
+        <title>Couteau Suisse | Accueil</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="icon" href="https://upload.wikimedia.org/wikipedia/fr/a/aa/Universit%C3%A9_d%27Artois_%28logo%29.svg" />
 
         <!-- Styles -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"

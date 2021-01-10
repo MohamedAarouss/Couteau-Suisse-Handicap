@@ -1,7 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
+        <title>Couteau Suisse | Détail</title>
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Actualité') }}
+            {{ __('Actualités') }}
         </h2>
     </x-slot>
 
@@ -21,7 +22,7 @@
 
                         <a href="{{url('new/destroy/' . $new->id)}}"
                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette actualité ?')" class="btn btn-danger">Supprimer
-                            l'actualité'</a>
+                            l'actualité</a>
                     @endif
                 </div>
                 <h3 class="card-title">{{ $new->title }}</h3>
