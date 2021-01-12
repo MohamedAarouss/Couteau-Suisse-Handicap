@@ -28,6 +28,9 @@
         var url_cree = "{{url('/fullcalendareventappointmentmaster/create')}}";
         var url_creeDispo = "{{url('/fullcalendareventappointmentmaster/createDispo')}}";
         var idAuth = "{{Auth::id()}}";
+        var AuthUsername = "{{Auth::user()->name}}"
+
+
     </script>
     <script src="{{asset('js/eventAppointment.js')}}" defer></script>
 
@@ -66,14 +69,14 @@
 
                 </div>
 
-                <div class="modal-footer">
-                    <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    @if(auth()->user()->personnel=="non")
-                        <button id="btnmodifier" type="button" class="btn btn-primary" href="">Save</button>
-                    @elseif(auth()->user()->personnel=="oui")
-                        <button id="btnmodifier" type="button" class="btn btn-primary">Save</button>
-                        <button id="btnsupprimer" type="button" class="btn btn-danger">Supprimer</button>
-                    @endif
+            <div class="modal-footer">
+                <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                @if(auth()->user()->personnel=="non")
+                    <button id="btnmodifier" type="button" class="btn btn-primary">Save</button>
+                @elseif(auth()->user()->personnel=="oui")
+                    <button id="btnmodifier" type="button" class="btn btn-primary" >Save</button>
+                <button id="btnsupprimer" type="button" class="btn btn-danger" >Supprimer</button>
+                @endif
 
                 </div>
             </div>

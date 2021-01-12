@@ -256,9 +256,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 hend=he +":"+me;
             }
             console.log(day+" "+heureStart);
+            console.log("nom"+AuthUsername);
             nouveauEvent= {
                 id:"",
-                title:"dispo",
+                title:"disponibilité de "+AuthUsername,
                 start:day+" "+heureStart,
                 end:day+" "+hend,
                 userId:userid,
@@ -345,19 +346,6 @@ document.addEventListener('DOMContentLoaded', function() {
         $('#startrdv').val("");
         $('#endrdv').val("");
 
-    }
-    function sendEmail() {
-        Email.send({
-            Host: "smtp.gmail.com",
-            Username : "<sender’s email address>",
-            Password : "<email password>",
-            To : '<recipient’s email address>',
-            From : "<sender’s email address>",
-            Subject : "<email subject>",
-            Body : "<email body>",
-        }).then(
-            message => alert("mail sent successfully")
-        );
     }
 
 });
