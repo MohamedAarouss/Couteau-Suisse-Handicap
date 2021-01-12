@@ -36,7 +36,7 @@ class FullCalendarEventAppointmentMasterController extends Controller
         //$data['events']=EventAppointment::select('id','start','end','display')->where('userId','=',Auth::id())->get();
         //array_push($data['events'],EventAppointment::select('id','start','end','display')->where('userId','!=',Auth::id())->get());
 
-        $data['events']=EventAppointment::select('id','start','end','display','userId','appointmentUserId','status','color')->where('userId','!=',Auth::id())->orWhere('appointmentUserId','=',Auth::id())->get();
+        $data['events']=EventAppointment::select('id','title','start','end','display','userId','appointmentUserId','status','color')->where('userId','!=',Auth::id())->where('appointmentUserId','=',null)->get();
         //print_r($data);
         return response()->json($data['events']);
     }
