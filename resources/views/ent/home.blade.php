@@ -372,7 +372,7 @@
                                 <a class="link-size"
                                    href="http://portail-bu.univ-artois.fr/medias/medias.aspx?INSTANCE=exploitation&SSO_FORCELOGON=TRUE&PORTAL_ID=general_portal.xml"
                                    target="_blank" style="color:#FFFFFF">
-                                    Bibliothèques
+                                    Bibliothèque
                                 </a>
                             </div>
 
