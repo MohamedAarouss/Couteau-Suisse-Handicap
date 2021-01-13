@@ -30,12 +30,21 @@
                 <x-jet-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
             </div>
             <div class="mt-4">
-                <x-jet-label value="{{ __('Vous avez un handicap visuel ') }}"></x-jet-label>
+                <x-jet-label value="{{ __('Avez-vous un handicap visuel ?') }}"></x-jet-label>
             </div>
             <div>
-                <input type="radio" id="oui" name="handicap" value="oui"
-                       autocomplete="handicap" >
-                <label for="oui">Oui</label>
+                <input type="radio" id="daltonien" name="handicap" value="daltonien"
+                       autocomplete="daltonien" >
+                <label for="daltonien">Daltonie</label>
+
+                <input type="radio" id="dyslexie" name="handicap" value="dyslexie"
+                       autocomplete="dyslexie" >
+                <label for="dyslexie">Dyslexie</label>
+
+                <input type="radio" id="malvoyant" name="handicap" value="malvoyant"
+                       autocomplete="malvoyant" >
+                <label for="malvoyant">Malvoyant</label>
+
                 <input type="radio" id="non" name="handicap" value="non"
                        autocomplete="handicap"
                        checked
