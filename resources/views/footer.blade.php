@@ -1,54 +1,33 @@
 <footer class="mainfooter" role="contentinfo">
     <div class="footer-middle">
         <div class="container">
-            <div class="row">
+            <div class="row mb-2">
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-pad">
-                        <h4>Scolarité</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">LIEN 1</a></li>
-                            <li><a href="#">LIEN 2</a></li>
-                            <li><a href="#">LIEN 3</a></li>
-                            <li><a href="#">LIEN 4</a></li>
-                            <li><a href="#">LIEN 5</a></li>
-                            <li><a href="#">LIEN 6</a></li>
-                        </ul>
+                        <a href="http://www.univ-artois.fr/contacts">
+                            <h4>Nous contacter</h4>
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-pad">
-                        <h4>Campus en ligne</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">LIEN 1</a></li>
-                            <li><a href="#">LIEN 2</a></li>
-                            <li><a href="#">LIEN 3</a></li>
-                            <li><a href="#">LIEN 4</a></li>
-                            <li><a href="#">LIEN 5</a></li>
-                        </ul>
+                        <a href="http://www.univ-artois.fr/">
+                            <h4>Site de l'université</h4>
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-pad">
-                        <h4>Bureau virtuel</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">LIEN 1</a></li>
-                            <li><a href="#">LIEN 2</a></li>
-                            <li><a href="#">LIEN 3</a></li>
-                            <li><a href="#">LIEN 4</a></li>
-                            <li><a href="#">LIEN 5</a></li>
-                        </ul>
+                        <a href="https://moodle.univ-artois.fr/cours/">
+                            <h4>Moodle</h4>
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-pad">
-                        <h4>Documentation</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="#">LIEN 1</a></li>
-                            <li><a href="#">LIEN 2</a></li>
-                            <li><a href="#">LIEN 3</a></li>
-                            <li><a href="#">LIEN 4</a></li>
-                            <li><a href="#">LIEN 5</a></li>
-                        </ul>
+                        <a href="https://wmail.univ-artois.fr/">
+                            <h4>Zimbra</h4>
+                        </a>
                     </div>
                 </div>
             </div>
