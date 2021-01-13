@@ -54,9 +54,10 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container mb-3">
         <div id='calendar'></div>
     </div>
 
     </body>
+    @include('footer')
 </x-app-layout>
