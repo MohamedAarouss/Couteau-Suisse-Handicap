@@ -2,10 +2,11 @@
 <ul>
 <li>git clone...</li>
 <li>composer install</li>
+<li>Modifier le .env et le .envLocal pour la base de données</li>
 <li>php artisan migrate:fresh</li>
 <li>php artisan db:seed</li>
 <li>php artisan serve</li>
-<li>Modifier le .env et le .envLocal pour la base de données</li>
+
 
 </ul>
 
