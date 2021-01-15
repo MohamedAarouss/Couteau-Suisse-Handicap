@@ -1,3 +1,17 @@
+<p>Commande pour le projet</p>
+<ul>
+<li>git clone...</li>
+<li>composer install</li>
+<li>php artisan migrate:fresh</li>
+<li>php artisan db:seed</li>
+<li>php artisan serve</li>
+<li>Modifier le .env et le .envLocal pour la base de données</li>
+
+</ul>
+
+<p>La branch master est upToDate</p>
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
