@@ -34,9 +34,13 @@
 
                 @auth
                     <div class="flex justify-center mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg h2 text-center">
-
-                        <div> Accédez aux différentes fonctionnalités de l'ENT de l'Université d'Artois ! </div>
                         <button class="sr-only">Accédez aux différentes fonctionnalités de l'ENT de l'Université d'Artois ! </button>
+
+                        <div>
+                            <button class="sr-only">Accédez aux différentes fonctionnalités de l'ENT de l'Université d'Artois !
+                            </button>
+                            Accédez aux différentes fonctionnalités de l'ENT de l'Université d'Artois !
+                        </div>
 
                     </div>
                     <div class="flex justify-center mt-4 sm:items-center ">

@@ -13,7 +13,9 @@
                 <div class="col-12">
                     <div class="card mt-2" style="border-color: #1E90FF">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-center move" style="color: #1E90FF">Scolarité
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: #1E90FF">
+                                <button class="sr-only">Scolarité</button>
+                                Scolarité
                                 <span><i class="fas fa-arrows-alt"></i></span>
                             </h1>
                         </div>
