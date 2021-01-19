@@ -8,7 +8,7 @@
     </x-slot>
 
     <div class="container">
-        <div class="row sortable mt-3">
+        <div class="row parent-container mt-3">
             @if(auth()->user()->handicap === "daltonien")
                 <div class="col-12">
                     <div class="card mt-2" style="border-color: #1E90FF">
@@ -417,27 +417,22 @@
             const scolarite = $(this);
             map[scolarite.data('arrange')] = scolarite;
         });
-
         $('#campus > div').each(function () {
             const campus = $(this);
             map[campus.data('arrange')] = campus;
         });
-
         $('#aide > div').each(function () {
             const aide = $(this);
             map[aide.data('arrange')] = aide;
         });
-
         $('#bureau > div').each(function () {
             const bureau = $(this);
             map[bureau.data('arrange')] = bureau;
         });
-
         $('#intranet > div').each(function () {
             const intranet = $(this);
             map[intranet.data('arrange')] = intranet;
         });
-
         $('#docu > div').each(function () {
             const docu = $(this);
             map[docu.data('arrange')] = docu;
