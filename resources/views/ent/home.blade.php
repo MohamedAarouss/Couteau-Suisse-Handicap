@@ -22,73 +22,73 @@
                         <div class="card-body">
                             <div class="row m-1 child-container" style="border-color: #1E90FF;">
                                 <div class="text-center red m-2 square move" style="background-color: #1E90FF" data-arrange="1">
-                                    <a class="link-size luciole" href="{{ $infos[0]->link }}" style="color:#FFFFFF">
+                                    <a class="link-size" href="{{ $infos[0]->link }}" style="color:#FFFFFF">
                                         {{ $infos[0]->title }}
                                     </a>
                                 </div>
 
                                 <div class="red m-2 square move" style="background-color: #1E90FF" data-arrange="2">
-                                    <a class="link-size luciole" href="{{ $infos[1]->link }}" style="color:#FFFFFF">
+                                    <a class="link-size" href="{{ $infos[1]->link }}" style="color:#FFFFFF">
                                         {{ $infos[1]->title }}
                                     </a>
                                 </div>
 
                                 <div class="red m-2 square move" style="background-color: #1E90FF" data-arrange="3">
-                                    <a class="link-size luciole" href="{{ $infos[2]->link }}" style="color:#FFFFFF">
+                                    <a class="link-size" href="{{ $infos[2]->link }}" style="color:#FFFFFF">
                                         {{ $infos[2]->title }}
                                     </a>
                                 </div>
 
                                 <div class="red m-2 square move" style="background-color: #1E90FF" data-arrange="4">
-                                    <a class="link-size luciole" href="{{ $infos[3]->link }}" style="color:#FFFFFF" target="_blank">
+                                    <a class="link-size" href="{{ $infos[3]->link }}" style="color:#FFFFFF" target="_blank">
                                         {{ $infos[3]->title }}
                                     </a>
                                 </div>
 
                                 <div class="red m-2 square move" style="background-color: #1E90FF" data-arrange="5">
-                                    <a class="link-size luciole" href="{{ $infos[4]->link }}" style="color:#FFFFFF" target="_blank">
+                                    <a class="link-size" href="{{ $infos[4]->link }}" style="color:#FFFFFF" target="_blank">
                                         {{ $infos[4]->title }}
                                     </a>
                                 </div>
 
                                 <div class="red m-2 square move" style="background-color: #1E90FF" data-arrange="6">
-                                    <a class="link-size luciole" href="{{ $infos[5]->link }}" style="color:#FFFFFF">
+                                    <a class="link-size" href="{{ $infos[5]->link }}" style="color:#FFFFFF">
                                         {{ $infos[5]->title }}
                                     </a>
                                 </div>
 
                                 <div class="red m-2 square move" style="background-color: #1E90FF" data-arrange="7">
-                                    <a class="link-size luciole" href="{{ $infos[6]->link }}" style="color:#FFFFFF" target="_blank">
+                                    <a class="link-size" href="{{ $infos[6]->link }}" style="color:#FFFFFF" target="_blank">
                                         {{ $infos[6]->title }}
                                     </a>
                                 </div>
 
                                 <div class="red m-2 square move" style="background-color: #1E90FF" data-arrange="8">
-                                    <a class="link-size luciole" href="{{ $infos[7]->link }}" style="color:#FFFFFF" target="_blank">
+                                    <a class="link-size" href="{{ $infos[7]->link }}" style="color:#FFFFFF" target="_blank">
                                         {{ $infos[7]->title }}
                                     </a>
                                 </div>
 
                                 <div class="red m-2 square move" style="background-color: #1E90FF" data-arrange="9">
-                                    <a class="link-size luciole" href="{{ $infos[8]->link }}" style="color:#FFFFFF" target="_blank">
+                                    <a class="link-size" href="{{ $infos[8]->link }}" style="color:#FFFFFF" target="_blank">
                                         {{ $infos[8]->title }}
                                     </a>
                                 </div>
 
                                 <div class="red m-2 square move" style="background-color: #1E90FF" data-arrange="10">
-                                    <a class="link-size luciole" href="{{ $infos[9]->link }}" style="color:#FFFFFF" target="_blank">
+                                    <a class="link-size" href="{{ $infos[9]->link }}" style="color:#FFFFFF" target="_blank">
                                         {{ $infos[9]->title }}
                                     </a>
                                 </div>
 
                                 <div class="red m-2 square move" style="background-color: #1E90FF" data-arrange="11">
-                                    <a class="link-size luciole" href="{{ $infos[10]->link }}" style="color:#FFFFFF" target="_blank">
+                                    <a class="link-size" href="{{ $infos[10]->link }}" style="color:#FFFFFF" target="_blank">
                                         {{ $infos[10]->title }}
                                     </a>
                                 </div>
 
                                 <div class="red m-2 square move" style="background-color: #1E90FF" data-arrange="12">
-                                    <a class="link-size luciole" href="{{ $infos[11]->link }}" style="color:#FFFFFF" target="_blank">
+                                    <a class="link-size" href="{{ $infos[11]->link }}" style="color:#FFFFFF" target="_blank">
                                         {{ $infos[11]->title }}
                                     </a>
                                 </div>
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                 </div>
-            @else
+            @elseif(auth()->user()->handicap === "dyslexie")
                 <div class="col-12">
                     <div class="card mt-2" style="border-color: #D2351F">
                         <div class="card-header">
@@ -174,6 +174,91 @@
 
                                 <div class="text-center red m-2 square move" data-arrange="12">
                                     <a class="link-size luciole" href="{{ $infos[11]->link }}" target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[11]->title }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @else
+                <div class="col-12">
+                    <div class="card mt-2" style="border-color: #D2351F">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: #D2351F">Scolarité
+                                <span><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" style="border-color: #D2351F;">
+                                <div class="text-center red m-2 square move" data-arrange="1">
+                                    <a class="link-size" href="{{ $infos[0]->link }}" style="color:#FFFFFF">
+                                        {{ $infos[0]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="text-center red m-2 square move" data-arrange="2">
+                                    <a class="link-size" href="{{ $infos[1]->link }}" style="color: #FFFFFF">
+                                        {{ $infos[1]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="text-center red m-2 square move" data-arrange="3">
+                                    <a class="link-size" href="{{ $infos[2]->link }}" style="color: #FFFFFF">
+                                        {{ $infos[2]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="text-center red m-2 square move" data-arrange="4">
+                                    <a class="link-size" href="{{ $infos[3]->link }}" style="color: #FFFFFF">
+                                        {{ $infos[3]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="text-center red m-2 square move" data-arrange="5">
+                                    <a class="link-size" href="{{ $infos[4]->link }}" target="_blank"  style="color: #FFFFFF">
+                                        {{ $infos[4]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="text-center red m-2 square move" data-arrange="6">
+                                    <a class="link-size" href="{{ $infos[5]->link }}" target="_blank"  style="color: #FFFFFF">
+                                        {{ $infos[5]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="text-center red m-2 square move" data-arrange="7">
+                                    <a class="link-size" href="{{ $infos[6]->link }}" target="_blank"  style="color: #FFFFFF">
+                                        {{ $infos[6]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="text-center red m-2 square move" data-arrange="8">
+                                    <a class="link-size" href="{{ $infos[7]->link }}" target="_blank"  style="color: #FFFFFF">
+                                        {{ $infos[7]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="text-center red m-2 square move" data-arrange="9">
+                                    <a class="link-size" href="{{ $infos[8]->link }}" target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[8]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="text-center red m-2 square move" data-arrange="10">
+                                    <a class="link-size" href="{{ $infos[9]->link }}" target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[9]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="text-center red m-2 square move" data-arrange="11">
+                                    <a class="link-size" href="{{ $infos[10]->link }}" target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[10]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="text-center red m-2 square move" data-arrange="12">
+                                    <a class="link-size" href="{{ $infos[11]->link }}" target="_blank" style="color: #FFFFFF">
                                         {{ $infos[11]->title }}
                                     </a>
                                 </div>
