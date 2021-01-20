@@ -13,7 +13,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <div class="float-right">
+                <div class="float-right row pb-1">
                     @if (Auth::user()->role ==='admin')
                         <a href="{{url('new/edit/' . $new->id)}}"
                            class="btn btn-primary">
@@ -29,7 +29,7 @@
                         </a>
                     @endif
                 </div>
-                <h3 class="card-title">
+                <h3 class="card-title row">
                     <button class="sr-only">{{ $new->title }}</button>
                     {{ $new->title }}
                 </h3>
@@ -42,14 +42,14 @@
                 <p class="text-muted font-bold">Département {{ $new->department }} </p>
 
                 <button class="sr-only">{{ $new->informations }}</button>
-                <p>{{ $new->informations }}</p>
+                <p class="p-3" style="border-width: thin; border-radius: 1rem">{{ $new->informations }}</p>
                 @if($new->url != null)
-                    <iframe class="col-6"
+                    <iframe class="col-8"
                             src="https://www.youtube.com/watch?v=XRDhcjAK4lw&t=7s">
                     </iframe>
                 @endif
                 @if ($new->img !== null)
-                    <img src="{{asset('storage/images/' . $new->img)}}"/>
+                    <img class="col-8 mt-3" src="{{asset('storage/images/' . $new->img)}}"/>
                 @endif
             </div>
 

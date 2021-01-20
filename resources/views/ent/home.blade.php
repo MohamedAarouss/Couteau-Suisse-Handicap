@@ -96,6 +96,168 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: #28A60E">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move"
+                                style="color:#28A60E;"> Campus en ligne
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="campus" style="border-color: #28A60E">
+                                <div class="green m-2 square move" data-arrange="13">
+                                    <a class="link-size" href="{{ $infos[12]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[12]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="14">
+                                    <a class="link-size" href="{{ $infos[13]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[13]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="15">
+                                    <a class="link-size" href="{{ $infos[14]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[14]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="16">
+                                    <a class="link-size" href="{{ $infos[15]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[15]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="17">
+                                    <a class="link-size" href="{{ $infos[16]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[16]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="18">
+                                    <a class="link-size" href="{{ $infos[17]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[17]->title }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: dimgrey">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move"
+                                style="color: dimgrey"> Aide
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="aide" style="border-color: dimgrey">
+                                <div class="grey m-2 square move" data-arrange="19">
+                                    <a class="link-size"
+                                       href="{{ $infos[18]->link }}" style="color:#FFFFFF">
+                                        {{ $infos[18]->title }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: #E47A00">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move"
+                                style="color: #E47A00"> Bureau virtuel
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="bureau" style="border-color: #E47A00">
+                                <div class="orange m-2 square move" data-arrange="20">
+                                    <a class="link-size" href="{{ $infos[19]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[19]->title }}</a>
+                                </div>
+
+                                <div class="orange m-2 square move" data-arrange="21">
+                                    <a class="link-size" href="{{ $infos[20]->link }}"
+                                       style="color: #FFFFFF"> {{ $infos[20]->title }}</a>
+                                </div>
+
+                                <div class="orange m-2 square move" data-arrange="22">
+                                    <a class="link-size" href="{{ $infos[21]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[21]->title }}</a>
+                                </div>
+
+                                <div class="orange m-2 square move" data-arrange="23">
+                                    <a class="link-size" href="{{ $infos[22]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[22]->title }}</a>
+                                </div>
+
+                                <div class="orange m-2 square move" data-arrange="24">
+                                    <a class="link-size" href="{{ $infos[23]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[23]->title }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: blueviolet">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: blueviolet">
+                                Intranet
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="intranet" style="border-color: blueviolet">
+                                <div class="purple m-2 square move" data-arrange="25">
+                                    <a class="link-size" href="{{ $infos[24]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[24]->title }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: #0087A7">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: #0087A7">
+                                Documentation
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="docu" style="border-color: #0087A7">
+                                <div class="blue m-2 square move" data-arrange="26">
+                                    <a class="link-size"
+                                       href="{{ $infos[25]->link }}" target="_blank"
+                                       style="color:#FFFFFF"> {{ $infos[25]->title }} </a>
+                                </div>
+
+                                <div class="blue m-2 square move" data-arrange="27">
+                                    <a class="link-size"
+                                       href="{{ $infos[26]->link }}" target="_blank"
+                                       style="color:#FFFFFF"> {{ $infos[26]->title }} </a>
+                                </div>
+
+                                <div class="blue m-2 square move" data-arrange="28">
+                                    <a class="link-size"
+                                       href="{{ $infos[27]->link }}" target="_blank"
+                                       style="color:#FFFFFF"> {{ $infos[27]->title }} </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             @elseif(auth()->user()->handicap === "dyslexie")
                 <div class="col-12">
                     <div class="card mt-2" style="border-color: #D2351F">
@@ -176,6 +338,168 @@
                                     <a class="link-size luciole" href="{{ $infos[11]->link }}" target="_blank" style="color: #FFFFFF">
                                         {{ $infos[11]->title }}
                                     </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: #28A60E">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move"
+                                style="color:#28A60E;"> Campus en ligne
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="campus" style="border-color: #28A60E">
+                                <div class="green m-2 square move" data-arrange="13">
+                                    <a class="link-size" href="{{ $infos[12]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[12]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="14">
+                                    <a class="link-size luciole" href="{{ $infos[13]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[13]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="15">
+                                    <a class="link-size luciole" href="{{ $infos[14]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[14]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="16">
+                                    <a class="link-size luciole" href="{{ $infos[15]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[15]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="17">
+                                    <a class="link-size luciole" href="{{ $infos[16]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[16]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="18">
+                                    <a class="link-size luciole" href="{{ $infos[17]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[17]->title }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: dimgrey">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move"
+                                style="color: dimgrey"> Aide
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="aide" style="border-color: dimgrey">
+                                <div class="grey m-2 square move" data-arrange="19">
+                                    <a class="link-size luciole"
+                                       href="{{ $infos[18]->link }}" style="color:#FFFFFF">
+                                        {{ $infos[18]->title }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: #E47A00">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move"
+                                style="color: #E47A00"> Bureau virtuel
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="bureau" style="border-color: #E47A00">
+                                <div class="orange m-2 square move" data-arrange="20">
+                                    <a class="link-size luciole" href="{{ $infos[19]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[19]->title }}</a>
+                                </div>
+
+                                <div class="orange m-2 square move" data-arrange="21">
+                                    <a class="link-size luciole" href="{{ $infos[20]->link }}"
+                                       style="color: #FFFFFF"> {{ $infos[20]->title }}</a>
+                                </div>
+
+                                <div class="orange m-2 square move" data-arrange="22">
+                                    <a class="link-size luciole" href="{{ $infos[21]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[21]->title }}</a>
+                                </div>
+
+                                <div class="orange m-2 square move" data-arrange="23">
+                                    <a class="link-size luciole" href="{{ $infos[22]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[22]->title }}</a>
+                                </div>
+
+                                <div class="orange m-2 square move" data-arrange="24">
+                                    <a class="link-size luciole" href="{{ $infos[23]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[23]->title }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: blueviolet">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: blueviolet">
+                                Intranet
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="intranet" style="border-color: blueviolet">
+                                <div class="purple m-2 square move" data-arrange="25">
+                                    <a class="link-size luciole" href="{{ $infos[24]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[24]->title }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: #0087A7">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: #0087A7">
+                                Documentation
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="docu" style="border-color: #0087A7">
+                                <div class="blue m-2 square move" data-arrange="26">
+                                    <a class="link-size luciole"
+                                       href="{{ $infos[25]->link }}" target="_blank"
+                                       style="color:#FFFFFF"> {{ $infos[25]->title }} </a>
+                                </div>
+
+                                <div class="blue m-2 square move" data-arrange="27">
+                                    <a class="link-size luciole"
+                                       href="{{ $infos[26]->link }}" target="_blank"
+                                       style="color:#FFFFFF"> {{ $infos[26]->title }} </a>
+                                </div>
+
+                                <div class="blue m-2 square move" data-arrange="28">
+                                    <a class="link-size luciole"
+                                       href="{{ $infos[27]->link }}" target="_blank"
+                                       style="color:#FFFFFF"> {{ $infos[27]->title }} </a>
                                 </div>
                             </div>
                         </div>
@@ -266,194 +590,221 @@
                         </div>
                     </div>
                 </div>
-            @endif
-            <div class="col-6">
-                <div class="card mt-2" style="border-color: #28A60E">
-                    <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move"
-                            style="color:#28A60E;"> Campus en ligne
-                            <span class="move"><i class="fas fa-arrows-alt"></i></span>
-                        </h1>
-                    </div>
-                    <div class="card-body">
-                        <div class="row m-1 child-container" id="campus" style="border-color: #28A60E">
-                            <div class="green m-2 square move" data-arrange="13">
-                                <a class="link-size luciole" href="{{ $infos[12]->link }}"
-                                   target="_blank" style="color: #FFFFFF">
-                                    {{ $infos[12]->title }}
-                                </a>
-                            </div>
-
-                            <div class="green m-2 square move" data-arrange="14">
-                                <a class="link-size luciole" href="{{ $infos[13]->link }}"
-                                   target="_blank" style="color: #FFFFFF">
-                                    {{ $infos[13]->title }}
-                                </a>
-                            </div>
-
-                            <div class="green m-2 square move" data-arrange="15">
-                                <a class="link-size luciole" href="{{ $infos[14]->link }}"
-                                   target="_blank" style="color: #FFFFFF">
-                                    {{ $infos[14]->title }}
-                                </a>
-                            </div>
-
-                            <div class="green m-2 square move" data-arrange="16">
-                                <a class="link-size luciole" href="{{ $infos[15]->link }}"
-                                   target="_blank" style="color: #FFFFFF">
-                                    {{ $infos[15]->title }}
-                                </a>
-                            </div>
-
-                            <div class="green m-2 square move" data-arrange="17">
-                                <a class="link-size luciole" href="{{ $infos[16]->link }}"
-                                   target="_blank" style="color: #FFFFFF">
-                                    {{ $infos[16]->title }}
-                                </a>
-                            </div>
-
-                            <div class="green m-2 square move" data-arrange="18">
-                                <a class="link-size luciole" href="{{ $infos[17]->link }}"
-                                   target="_blank" style="color: #FFFFFF">
-                                    {{ $infos[17]->title }}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="card mt-2" style="border-color: dimgrey">
-                    <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move"
-                            style="color: dimgrey"> Aide
-                            <span class="move"><i class="fas fa-arrows-alt"></i></span>
-                        </h1>
-                    </div>
-                    <div class="card-body">
-                        <div class="row m-1 child-container" id="aide" style="border-color: dimgrey">
-                            <div class="grey m-2 square move" data-arrange="19">
-                                <a class="link-size luciole"
-                                   href="{{ $infos[18]->link }}" style="color:#FFFFFF">
-                                    {{ $infos[18]->title }}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="card mt-2" style="border-color: #E47A00">
-                    <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move"
-                            style="color: #E47A00"> Bureau virtuel
-                            <span class="move"><i class="fas fa-arrows-alt"></i></span>
-                        </h1>
-                    </div>
-                    <div class="card-body">
-                        <div class="row m-1 child-container" id="bureau" style="border-color: #E47A00">
-                            <div class="orange m-2 square move" data-arrange="20">
-                                <a class="link-size luciole" href="{{ $infos[19]->link }}"
-                                   target="_blank" style="color: #FFFFFF"> {{ $infos[19]->title }}</a>
-                            </div>
-
-                            <div class="orange m-2 square move" data-arrange="21">
-                                <a class="link-size luciole" href="{{ $infos[20]->link }}"
-                                   style="color: #FFFFFF"> {{ $infos[20]->title }}</a>
-                            </div>
-
-                            <div class="orange m-2 square move" data-arrange="22">
-                                <a class="link-size luciole" href="{{ $infos[21]->link }}"
-                                   target="_blank" style="color: #FFFFFF"> {{ $infos[21]->title }}</a>
-                            </div>
-
-                            <div class="orange m-2 square move" data-arrange="23">
-                                <a class="link-size luciole" href="{{ $infos[22]->link }}"
-                                   target="_blank" style="color: #FFFFFF"> {{ $infos[22]->title }}</a>
-                            </div>
-
-                            <div class="orange m-2 square move" data-arrange="24">
-                                <a class="link-size luciole" href="{{ $infos[23]->link }}"
-                                   target="_blank" style="color: #FFFFFF"> {{ $infos[23]->title }}</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="card mt-2" style="border-color: blueviolet">
-                    <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color: blueviolet">
-                            Intranet
-                            <span class="move"><i class="fas fa-arrows-alt"></i></span>
-                        </h1>
-                    </div>
-                    <div class="card-body">
-                        <div class="row m-1 child-container" id="intranet" style="border-color: blueviolet">
-                            <div class="purple m-2 square move" data-arrange="25">
-                                <a class="link-size luciole" href="{{ $infos[24]->link }}"
-                                   target="_blank" style="color: #FFFFFF"> {{ $infos[24]->title }}</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="card mt-2" style="border-color: #0087A7">
-                    <div class="card-header">
-                        <h1 class="card-title font-semibold text-xl text-center move" style="color: #0087A7">
-                            Documentation
-                            <span class="move"><i class="fas fa-arrows-alt"></i></span>
-                        </h1>
-                    </div>
-                    <div class="card-body">
-                        <div class="row m-1 child-container" id="docu" style="border-color: #0087A7">
-                            <div class="blue m-2 square move" data-arrange="26">
-                                <a class="link-size luciole"
-                                   href="{{ $infos[25]->link }}" target="_blank"
-                                   style="color:#FFFFFF"> {{ $infos[25]->title }} </a>
-                            </div>
-
-                            <div class="blue m-2 square move" data-arrange="27">
-                                <a class="link-size luciole"
-                                   href="{{ $infos[26]->link }}" target="_blank"
-                                   style="color:#FFFFFF"> {{ $infos[26]->title }} </a>
-                            </div>
-
-                            <div class="blue m-2 square move" data-arrange="28">
-                                <a class="link-size luciole"
-                                   href="{{ $infos[27]->link }}" target="_blank"
-                                   style="color:#FFFFFF"> {{ $infos[27]->title }} </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @if(auth()->user()->handicap !== "non")
                 <div class="col-6">
-                    <div class="card mt-2" style="border-color: #FD6C9E">
+                    <div class="card mt-2" style="border-color: #28A60E">
                         <div class="card-header">
-                            <h1 class="card-title font-semibold text-xl text-center move" style="color: #FD6C9E">Mon handicap
-                                <span><i class="fas fa-arrows-alt"></i></span>
+                            <h1 class="card-title font-semibold text-xl text-center move"
+                                style="color:#28A60E;"> Campus en ligne
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
                             </h1>
                         </div>
                         <div class="card-body">
-                            <div class="row m-1 child-container" style="border-color: #FD6C9E;">
-                                <div class="text-center red m-2 square move" style="background-color: #FD6C9E">
-                                    <a class="link-size luciole" id="sms" href="{{ $infos[0]->link }}" style="color:#FFFFFF">
-                                        {{ $infos[0]->title }}
+                            <div class="row m-1 child-container" id="campus" style="border-color: #28A60E">
+                                <div class="green m-2 square move" data-arrange="13">
+                                    <a class="link-size" href="{{ $infos[12]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[12]->title }}
                                     </a>
                                 </div>
 
-                                <div class="red m-2 square move" style="background-color: #FD6C9E">
-                                    <a class="link-size luciole" id="dossier" href="{{ $infos[1]->link }}" style="color:#FFFFFF">
-                                        {{ $infos[1]->title }}
+                                <div class="green m-2 square move" data-arrange="14">
+                                    <a class="link-size luciole" href="{{ $infos[13]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[13]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="15">
+                                    <a class="link-size" href="{{ $infos[14]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[14]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="16">
+                                    <a class="link-size" href="{{ $infos[15]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[15]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="17">
+                                    <a class="link-size" href="{{ $infos[16]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[16]->title }}
+                                    </a>
+                                </div>
+
+                                <div class="green m-2 square move" data-arrange="18">
+                                    <a class="link-size" href="{{ $infos[17]->link }}"
+                                       target="_blank" style="color: #FFFFFF">
+                                        {{ $infos[17]->title }}
                                     </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: dimgrey">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move"
+                                style="color: dimgrey"> Aide
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="aide" style="border-color: dimgrey">
+                                <div class="grey m-2 square move" data-arrange="19">
+                                    <a class="link-size"
+                                       href="{{ $infos[18]->link }}" style="color:#FFFFFF">
+                                        {{ $infos[18]->title }}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: #E47A00">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move"
+                                style="color: #E47A00"> Bureau virtuel
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="bureau" style="border-color: #E47A00">
+                                <div class="orange m-2 square move" data-arrange="20">
+                                    <a class="link-size luciole" href="{{ $infos[19]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[19]->title }}</a>
+                                </div>
+
+                                <div class="orange m-2 square move" data-arrange="21">
+                                    <a class="link-size" href="{{ $infos[20]->link }}"
+                                       style="color: #FFFFFF"> {{ $infos[20]->title }}</a>
+                                </div>
+
+                                <div class="orange m-2 square move" data-arrange="22">
+                                    <a class="link-size" href="{{ $infos[21]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[21]->title }}</a>
+                                </div>
+
+                                <div class="orange m-2 square move" data-arrange="23">
+                                    <a class="link-size" href="{{ $infos[22]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[22]->title }}</a>
+                                </div>
+
+                                <div class="orange m-2 square move" data-arrange="24">
+                                    <a class="link-size" href="{{ $infos[23]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[23]->title }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: blueviolet">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: blueviolet">
+                                Intranet
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="intranet" style="border-color: blueviolet">
+                                <div class="purple m-2 square move" data-arrange="25">
+                                    <a class="link-size" href="{{ $infos[24]->link }}"
+                                       target="_blank" style="color: #FFFFFF"> {{ $infos[24]->title }}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mt-2" style="border-color: #0087A7">
+                        <div class="card-header">
+                            <h1 class="card-title font-semibold text-xl text-center move" style="color: #0087A7">
+                                Documentation
+                                <span class="move"><i class="fas fa-arrows-alt"></i></span>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <div class="row m-1 child-container" id="docu" style="border-color: #0087A7">
+                                <div class="blue m-2 square move" data-arrange="26">
+                                    <a class="link-size"
+                                       href="{{ $infos[25]->link }}" target="_blank"
+                                       style="color:#FFFFFF"> {{ $infos[25]->title }} </a>
+                                </div>
+
+                                <div class="blue m-2 square move" data-arrange="27">
+                                    <a class="link-size"
+                                       href="{{ $infos[26]->link }}" target="_blank"
+                                       style="color:#FFFFFF"> {{ $infos[26]->title }} </a>
+                                </div>
+
+                                <div class="blue m-2 square move" data-arrange="28">
+                                    <a class="link-size"
+                                       href="{{ $infos[27]->link }}" target="_blank"
+                                       style="color:#FFFFFF"> {{ $infos[27]->title }} </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif
+            @if(auth()->user()->handicap !== "non")
+                @if(auth()->user()->handicap === "dyslexie")
+                    <div class="col-6">
+                        <div class="card mt-2" style="border-color: #FD6C9E">
+                            <div class="card-header">
+                                <h1 class="card-title font-semibold text-xl text-center move" style="color: #FD6C9E">Mon handicap
+                                    <span><i class="fas fa-arrows-alt"></i></span>
+                                </h1>
+                            </div>
+                            <div class="card-body">
+                                <div class="row m-1 child-container" style="border-color: #FD6C9E;">
+                                    <div class="text-center red m-2 square move" style="background-color: #FD6C9E">
+                                        <a class="link-size luciole" id="sms" href="{{ $infos[0]->link }}" style="color:#FFFFFF">
+                                            {{ $infos[0]->title }}
+                                        </a>
+                                    </div>
+
+                                    <div class="red m-2 square move" style="background-color: #FD6C9E">
+                                        <a class="link-size luciole" id="dossier" href="{{ $infos[1]->link }}" style="color:#FFFFFF">
+                                            {{ $infos[1]->title }}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @else
+                    <div class="col-6">
+                        <div class="card mt-2" style="border-color: #FD6C9E">
+                            <div class="card-header">
+                                <h1 class="card-title font-semibold text-xl text-center move" style="color: #FD6C9E">Mon handicap
+                                    <span><i class="fas fa-arrows-alt"></i></span>
+                                </h1>
+                            </div>
+                            <div class="card-body">
+                                <div class="row m-1 child-container" style="border-color: #FD6C9E;">
+                                    <div class="text-center red m-2 square move" style="background-color: #FD6C9E">
+                                        <a class="link-size" id="sms" href="{{ $infos[0]->link }}" style="color:#FFFFFF">
+                                            {{ $infos[0]->title }}
+                                        </a>
+                                    </div>
+
+                                    <div class="red m-2 square move" style="background-color: #FD6C9E">
+                                        <a class="link-size" id="dossier" href="{{ $infos[1]->link }}" style="color:#FFFFFF">
+                                            {{ $infos[1]->title }}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
             @endif
         </div>
     </div>

@@ -39,15 +39,11 @@
                     @endforeach
                 </div>
 
-                <div class="container mt-5" style="text-align: center">
+                <div class="container mt-5 pb-4" style="text-align: center">
                     <div class="format">
                         {{$news->links('livewire.pagination')}}
                     </div>
                 </div>
-
-                <br>
-                <br>
-
         </div>
 
 @else
@@ -91,15 +87,11 @@
                     @endforeach
                 </div>
 
-                <div class="container mt-5" style="text-align: center">
+                <div class="container mt-5 pb-4" style="text-align: center">
                     <div class="format">
                         {{$news->links('livewire.pagination')}}
                     </div>
                 </div>
-
-                <br>
-                <br>
-
         </div>
         @endif
     </div>
