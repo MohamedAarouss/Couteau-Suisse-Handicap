@@ -207,13 +207,6 @@
                             </div>
 
                             <div class="green m-2 square move" data-arrange="15">
-                                <a class="link-size luciole" href="{{ $infos[13]->link }}"
-                                   target="_blank" style="color: #FFFFFF">
-                                    {{ $infos[13]->title }}
-                                </a>
-                            </div>
-
-                            <div class="green m-2 square move" data-arrange="15">
                                 <a class="link-size luciole" href="{{ $infos[14]->link }}"
                                    target="_blank" style="color: #FFFFFF">
                                     {{ $infos[14]->title }}
